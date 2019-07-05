@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCL_Forms", "LCL_Forms\LCL_Forms.csproj", "{A47633B3-4100-4E2B-ACF1-289C1D9C5793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCL_Controls", "LCL_Controls\LCL_Controls.csproj", "{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A47633B3-4100-4E2B-ACF1-289C1D9C5793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47633B3-4100-4E2B-ACF1-289C1D9C5793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47633B3-4100-4E2B-ACF1-289C1D9C5793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47633B3-4100-4E2B-ACF1-289C1D9C5793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {018FA14B-0B83-4105-ACA5-53612A526FF7}
+	EndGlobalSection
+EndGlobal
