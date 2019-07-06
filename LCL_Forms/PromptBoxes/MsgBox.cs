@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Landriesnidis.LCL_UI.PromptBoxes
+namespace Landriesnidis.LCL_Forms.PromptBoxes
 {
-    public partial class MsgBox : BaseBox
+    public partial class MsgBox : BaseBox<bool>
     {
         [Browsable(true)]
         public string Content { get { return labContent.Text; } set { labContent.Text = value; } }

@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Landriesnidis.LCL_UI.Components
+namespace Landriesnidis.LCL_Controls.Components
 {
     public partial class MouseMoveController : Component
     {

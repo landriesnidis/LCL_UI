@@ -1,4 +1,4 @@
-﻿namespace Landriesnidis.LCL_UI.Controls.Botton
+﻿namespace Landriesnidis.LCL_Controls.Controls.Botton
 {
     partial class ExitButton
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Landriesnidis.LCL_UI.Properties.Resources.ExitButton_0;
+            this.BackgroundImage = global::Landriesnidis.LCL_Controls.Properties.Resources.ExitButton_0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DoubleBuffered = true;
             this.Name = "ExitButton";

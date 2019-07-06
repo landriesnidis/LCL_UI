@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Landriesnidis.LCL_UI</RootNamespace>
+    <RootNamespace>Landriesnidis.LCL_Controls</RootNamespace>
     <AssemblyName>LCL_Controls</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -65,7 +65,7 @@
   <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

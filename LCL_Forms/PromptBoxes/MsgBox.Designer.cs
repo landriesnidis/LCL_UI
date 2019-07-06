@@ -1,4 +1,4 @@
-﻿namespace Landriesnidis.LCL_UI.PromptBoxes
+﻿namespace Landriesnidis.LCL_Forms.PromptBoxes
 {
     partial class MsgBox
     {
@@ -40,11 +40,13 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.btnCancel.Text = "OK";
             // 
             // labContent
             // 
             this.labContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labContent.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.labContent.Location = new System.Drawing.Point(0, 0);
             this.labContent.Name = "labContent";
             this.labContent.Size = new System.Drawing.Size(458, 97);
@@ -57,7 +59,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 200);
-            this.DefaultButtonText = "OK";
+            this.ButtonDefaultCancelText = "OK";
             this.Name = "MsgBox";
             this.panelContainer.ResumeLayout(false);
             this.panelBase.ResumeLayout(false);

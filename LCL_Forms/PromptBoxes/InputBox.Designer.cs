@@ -1,6 +1,6 @@
 ﻿namespace Landriesnidis.LCL_Forms.PromptBoxes
 {
-    partial class PasswordBox
+    partial class InputBox
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.btnOK = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
-            this.psw = new System.Windows.Forms.TextBox();
+            this.tbText = new System.Windows.Forms.TextBox();
             this.labContent = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panelBase.SuspendLayout();
@@ -39,13 +39,19 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.psw);
+            this.panelContainer.Controls.Add(this.tbText);
             this.panelContainer.Controls.Add(this.labContent);
+            this.panelContainer.Size = new System.Drawing.Size(458, 149);
+            // 
+            // panelBase
+            // 
+            this.panelBase.Size = new System.Drawing.Size(500, 252);
             // 
             // panelButtons
             // 
             this.panelButtons.Controls.Add(this.btnClean);
             this.panelButtons.Controls.Add(this.btnOK);
+            this.panelButtons.Location = new System.Drawing.Point(20, 200);
             this.panelButtons.Controls.SetChildIndex(this.btnOK, 0);
             this.panelButtons.Controls.SetChildIndex(this.btnCancel, 0);
             this.panelButtons.Controls.SetChildIndex(this.btnClean, 0);
@@ -80,17 +86,16 @@
             this.btnClean.UseVisualStyleBackColor = false;
             this.btnClean.Click += new System.EventHandler(this.BtnClean_Click);
             // 
-            // psw
+            // tbText
             // 
-            this.psw.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.psw.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.psw.Location = new System.Drawing.Point(5, 34);
-            this.psw.Margin = new System.Windows.Forms.Padding(10);
-            this.psw.Name = "psw";
-            this.psw.PasswordChar = '●';
-            this.psw.Size = new System.Drawing.Size(453, 27);
-            this.psw.TabIndex = 1;
-            this.psw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Psw_KeyDown);
+            this.tbText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbText.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.tbText.Location = new System.Drawing.Point(5, 34);
+            this.tbText.Margin = new System.Windows.Forms.Padding(10);
+            this.tbText.Multiline = true;
+            this.tbText.Name = "tbText";
+            this.tbText.Size = new System.Drawing.Size(453, 105);
+            this.tbText.TabIndex = 1;
             // 
             // labContent
             // 
@@ -103,12 +108,12 @@
             this.labContent.Text = "Content";
             this.labContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // PasswordBox
+            // InputBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 200);
-            this.Name = "PasswordBox";
+            this.ClientSize = new System.Drawing.Size(500, 252);
+            this.Name = "InputBox";
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
             this.panelBase.ResumeLayout(false);
@@ -122,7 +127,7 @@
 
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.TextBox psw;
+        private System.Windows.Forms.TextBox tbText;
         private System.Windows.Forms.Label labContent;
     }
 }

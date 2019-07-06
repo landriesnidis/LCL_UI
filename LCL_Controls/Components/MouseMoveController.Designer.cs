@@ -1,4 +1,4 @@
-﻿namespace Landriesnidis.LCL_UI.Components
+﻿namespace Landriesnidis.LCL_Controls.Components
 {
     partial class MouseMoveController
     {
