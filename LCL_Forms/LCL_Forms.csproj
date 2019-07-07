@@ -63,11 +63,11 @@
     <Compile Include="PromptBoxes\BaseBox.Designer.cs">
       <DependentUpon>BaseBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="PromptBoxes\Box.cs">
+    <Compile Include="Base\LCLForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PromptBoxes\Box.Designer.cs">
-      <DependentUpon>Box.cs</DependentUpon>
+    <Compile Include="Base\LCLForm.Designer.cs">
+      <DependentUpon>LCLForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PromptBoxes\Boxes.cs" />
     <Compile Include="PromptBoxes\MsgBox.cs">
@@ -107,8 +107,8 @@
     <EmbeddedResource Include="PromptBoxes\BaseBox.resx">
       <DependentUpon>BaseBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PromptBoxes\Box.resx">
-      <DependentUpon>Box.cs</DependentUpon>
+    <EmbeddedResource Include="Base\LCLForm.resx">
+      <DependentUpon>LCLForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PromptBoxes\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>

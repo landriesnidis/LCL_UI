@@ -115,7 +115,7 @@ namespace LCL_Forms
         }
         private void Button9_Click(object sender, EventArgs e)
         {
-            var result = DialogBoxes.PromptBox(tbTitle.Text, tbContent.Text, new string[] { "同意", "拒绝" });
+            var result = DialogBoxes.PromptBox(tbTitle.Text, tbContent.Text, new string[] { "同意", "残忍拒绝" });
             DialogBoxes.MsgBox(tbTitle.Text, $"你的选择结果是：{result.Data.ToString()}");
         }
         private void Button10_Click(object sender, EventArgs e)
@@ -136,8 +136,19 @@ namespace LCL_Forms
             
         }
 
-   
-
-        
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            var result = DialogBoxes.SelectBox(tbTitle.Text, tbContent.Text, new string[] { "土豆", "洋葱", "西红柿", "玉米" }, false, new string[] { "确定", "取消", "全选", "反选" });
+            if (!result.IsCancel)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (string s in result.Data) sb.Append(s + " ");
+                DialogBoxes.MsgBox(tbTitle.Text, $"刚才勾选的项目是：{sb}", "好的");
+            }
+            else
+            {
+                DialogBoxes.MsgBox(tbTitle.Text, "您取消了选择。", "知道啦");
+            }
+        }
     }
 }

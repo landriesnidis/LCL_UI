@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Landriesnidis.LCL_Forms.PromptBoxes
+namespace Landriesnidis.LCL_Forms.Base
 {
-    partial class Box
+    partial class LCLForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,26 +31,22 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Box));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LCLForm));
             this.panelBase = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.labTitle = new System.Windows.Forms.Label();
-            this.panelButtons = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new Landriesnidis.LCL_Controls.Controls.Botton.ExitButton();
             this.mmc = new Landriesnidis.LCL_Controls.Components.MouseMoveController(this.components);
             this.timerShake = new System.Windows.Forms.Timer(this.components);
             this.panelBase.SuspendLayout();
             this.panelContent.SuspendLayout();
-            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
             // 
             this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBase.Controls.Add(this.panelContent);
-            this.panelBase.Controls.Add(this.panelButtons);
             this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBase.Location = new System.Drawing.Point(0, 0);
             this.panelBase.Name = "panelBase";
@@ -65,7 +61,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(20, 10);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(458, 138);
+            this.panelContent.Size = new System.Drawing.Size(458, 173);
             this.panelContent.TabIndex = 2;
             // 
             // panelContainer
@@ -74,7 +70,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             this.panelContainer.Location = new System.Drawing.Point(0, 41);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panelContainer.Size = new System.Drawing.Size(458, 97);
+            this.panelContainer.Size = new System.Drawing.Size(458, 132);
             this.panelContainer.TabIndex = 2;
             // 
             // labTitle
@@ -87,28 +83,6 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             this.labTitle.TabIndex = 0;
             this.labTitle.Text = "Title";
             this.labTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panelButtons
-            // 
-            this.panelButtons.Controls.Add(this.btnCancel);
-            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(20, 148);
-            this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(458, 35);
-            this.panelButtons.TabIndex = 3;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnCancel.Location = new System.Drawing.Point(377, 0);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(81, 35);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // btnExit
             // 
@@ -128,7 +102,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             this.timerShake.Interval = 30;
             this.timerShake.Tick += new System.EventHandler(this.TimerShake_Tick);
             // 
-            // Box
+            // LCLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,25 +112,21 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             this.Controls.Add(this.panelBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(500, 200);
-            this.Name = "Box";
+            this.Name = "LCLForm";
             this.Text = "BaseForm";
             this.panelBase.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
-            this.panelButtons.ResumeLayout(false);
-            this.panelButtons.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        protected System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label labTitle;
         private LCL_Controls.Components.MouseMoveController mmc;
         protected System.Windows.Forms.Panel panelBase;
-        protected System.Windows.Forms.Panel panelButtons;
-        public System.Windows.Forms.Button btnCancel;
         protected LCL_Controls.Controls.Botton.ExitButton btnExit;
         private System.Windows.Forms.Timer timerShake;
+        public System.Windows.Forms.Panel panelContainer;
     }
 }

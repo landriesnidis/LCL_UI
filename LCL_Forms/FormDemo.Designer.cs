@@ -43,10 +43,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -178,49 +179,20 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button8);
-            this.flowLayoutPanel1.Controls.Add(this.button9);
             this.flowLayoutPanel1.Controls.Add(this.button10);
+            this.flowLayoutPanel1.Controls.Add(this.button12);
+            this.flowLayoutPanel1.Controls.Add(this.button8);
+            this.flowLayoutPanel1.Controls.Add(this.button7);
+            this.flowLayoutPanel1.Controls.Add(this.button9);
             this.flowLayoutPanel1.Controls.Add(this.button11);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 97);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(611, 325);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(3, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(192, 57);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "InputBox";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(201, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(192, 57);
-            this.button8.TabIndex = 15;
-            this.button8.Text = "SelectBox";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.Button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(399, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(192, 57);
-            this.button9.TabIndex = 14;
-            this.button9.Text = "PromptBox";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
-            // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(3, 66);
+            this.button10.Location = new System.Drawing.Point(3, 3);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(192, 57);
             this.button10.TabIndex = 13;
@@ -228,9 +200,49 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(201, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(192, 57);
+            this.button12.TabIndex = 17;
+            this.button12.Text = "SelectBox(单选)";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(399, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(192, 57);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "SelectBox(多选)";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(3, 66);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(192, 57);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "InputBox";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(201, 66);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(192, 57);
+            this.button9.TabIndex = 14;
+            this.button9.Text = "PromptBox";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
+            // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(201, 66);
+            this.button11.Location = new System.Drawing.Point(399, 66);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(192, 57);
             this.button11.TabIndex = 12;
@@ -242,11 +254,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 451);
+            this.ClientSize = new System.Drawing.Size(920, 457);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDemo";
-            this.Text = "Form1";
+            this.Text = "LCL UI Demo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -275,6 +287,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 

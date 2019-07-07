@@ -8,17 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Landriesnidis.LCL_Forms.PromptBoxes
+namespace Landriesnidis.LCL_Forms.Base
 {
-    public partial class Box : Form
+    public partial class LCLForm : Form
     {
         [Browsable(true)]
         public new string Text { get { return labTitle.Text; } set { labTitle.Text = value; } }
 
-        [Browsable(true)]
-        public string ButtonDefaultCancelText { get { return btnCancel.Text; } set { btnCancel.Text = value; } }
-
-        public Box()
+        public LCLForm()
         {
             InitializeComponent();
 
@@ -50,6 +47,5 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
                 this.Enabled = true;
             }
         }
-
     }
 }

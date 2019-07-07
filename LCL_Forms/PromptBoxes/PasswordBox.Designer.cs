@@ -32,15 +32,17 @@
             this.btnClean = new System.Windows.Forms.Button();
             this.psw = new System.Windows.Forms.TextBox();
             this.labContent = new System.Windows.Forms.Label();
-            this.panelContainer.SuspendLayout();
-            this.panelBase.SuspendLayout();
             this.panelButtons.SuspendLayout();
+            this.panelBase.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelContainer
+            // btnCancel
             // 
-            this.panelContainer.Controls.Add(this.psw);
-            this.panelContainer.Controls.Add(this.labContent);
+            this.btnCancel.Location = new System.Drawing.Point(311, 0);
+            this.btnCancel.MaximumSize = new System.Drawing.Size(0, 35);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(56, 35);
+            this.btnCancel.Size = new System.Drawing.Size(67, 35);
             // 
             // panelButtons
             // 
@@ -50,9 +52,11 @@
             this.panelButtons.Controls.SetChildIndex(this.btnCancel, 0);
             this.panelButtons.Controls.SetChildIndex(this.btnClean, 0);
             // 
-            // btnCancel
+            // panelContainer
             // 
-            this.btnCancel.Location = new System.Drawing.Point(297, 0);
+            this.panelContainer.Controls.Add(this.psw);
+            this.panelContainer.Controls.Add(this.labContent);
+            this.panelContainer.Size = new System.Drawing.Size(458, 97);
             // 
             // btnOK
             // 
@@ -72,7 +76,7 @@
             this.btnClean.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.btnClean.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClean.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnClean.Location = new System.Drawing.Point(217, 0);
+            this.btnClean.Location = new System.Drawing.Point(231, 0);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(80, 35);
             this.btnClean.TabIndex = 7;
@@ -109,11 +113,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 200);
             this.Name = "PasswordBox";
-            this.panelContainer.ResumeLayout(false);
-            this.panelContainer.PerformLayout();
-            this.panelBase.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
             this.panelButtons.PerformLayout();
+            this.panelBase.ResumeLayout(false);
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }

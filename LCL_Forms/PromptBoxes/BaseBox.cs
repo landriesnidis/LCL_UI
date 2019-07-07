@@ -1,4 +1,4 @@
-﻿using Landriesnidis.LCL_Forms.PromptBoxes;
+﻿using Landriesnidis.LCL_Forms.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Landriesnidis.LCL_Forms.PromptBoxes
 {
 
-    public partial class BaseBox<T> : Box
+    public partial class BaseBox<T> : LCLForm
     {
         /// <summary>
         /// 返回数据格式校验委托
@@ -31,6 +31,9 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
         /// </summary>
         public BoxResult<T> Result { get { return result; } }
         protected BoxResult<T> result = new BoxResult<T>();
+
+        [Browsable(true)]
+        public string ButtonDefaultCancelText { get { return btnCancel.Text; } set { btnCancel.Text = value; } }
 
         public BaseBox()
         {
@@ -57,6 +60,26 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
                 {
                     e.Cancel = true;
                     Shake();
+                }
+            }
+        }
+
+        private void BaseBox_Load(object sender, EventArgs e)
+        {
+            // 将按钮控件所在的panelButtons置于底层
+            // 这部分必须要用代码控制，因为panelButtons会遮盖到的panelContainer在父类，无法在可视化设计界面上修改。
+            panelButtons.SendToBack();
+
+            foreach(Control ctl in panelButtons.Controls)
+            {
+                if(ctl.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)ctl;
+                    btn.AutoSize = true;
+                    int heigt = panelButtons.Height;
+                    int width = (int)(heigt * 1.618);
+                    btn.MaximumSize = new System.Drawing.Size(0, heigt);
+                    btn.MinimumSize = new System.Drawing.Size(width, heigt);
                 }
             }
         }

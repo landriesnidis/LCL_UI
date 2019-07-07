@@ -33,10 +33,15 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnSelectAll = new System.Windows.Forms.Button();
             this.btnInvert = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelContainer.SuspendLayout();
             this.panelBase.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(297, 0);
             // 
             // panelContainer
             // 
@@ -50,18 +55,16 @@
             // 
             // panelButtons
             // 
-            this.panelButtons.Controls.Add(this.btnInvert);
             this.panelButtons.Controls.Add(this.btnSelectAll);
+            this.panelButtons.Controls.Add(this.btnInvert);
+            this.panelButtons.Controls.Add(this.panel1);
             this.panelButtons.Controls.Add(this.btnOK);
             this.panelButtons.Location = new System.Drawing.Point(20, 398);
             this.panelButtons.Controls.SetChildIndex(this.btnOK, 0);
             this.panelButtons.Controls.SetChildIndex(this.btnCancel, 0);
-            this.panelButtons.Controls.SetChildIndex(this.btnSelectAll, 0);
+            this.panelButtons.Controls.SetChildIndex(this.panel1, 0);
             this.panelButtons.Controls.SetChildIndex(this.btnInvert, 0);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(297, 0);
+            this.panelButtons.Controls.SetChildIndex(this.btnSelectAll, 0);
             // 
             // cb
             // 
@@ -107,11 +110,11 @@
             this.btnSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.btnSelectAll.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSelectAll.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnSelectAll.Location = new System.Drawing.Point(210, 0);
+            this.btnSelectAll.Location = new System.Drawing.Point(127, 0);
             this.btnSelectAll.Name = "btnSelectAll";
-            this.btnSelectAll.Size = new System.Drawing.Size(87, 35);
+            this.btnSelectAll.Size = new System.Drawing.Size(80, 35);
             this.btnSelectAll.TabIndex = 8;
-            this.btnSelectAll.Text = "Select All";
+            this.btnSelectAll.Text = "All";
             this.btnSelectAll.UseVisualStyleBackColor = false;
             this.btnSelectAll.Click += new System.EventHandler(this.BtnSelectAll_Click);
             // 
@@ -120,13 +123,21 @@
             this.btnInvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.btnInvert.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnInvert.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnInvert.Location = new System.Drawing.Point(130, 0);
+            this.btnInvert.Location = new System.Drawing.Point(207, 0);
             this.btnInvert.Name = "btnInvert";
             this.btnInvert.Size = new System.Drawing.Size(80, 35);
             this.btnInvert.TabIndex = 9;
             this.btnInvert.Text = "Invert";
             this.btnInvert.UseVisualStyleBackColor = false;
             this.btnInvert.Click += new System.EventHandler(this.BtnInvert_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(287, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 35);
+            this.panel1.TabIndex = 11;
             // 
             // SelectBox
             // 
@@ -150,5 +161,6 @@
         protected System.Windows.Forms.Button btnOK;
         protected System.Windows.Forms.Button btnInvert;
         protected System.Windows.Forms.Button btnSelectAll;
+        private System.Windows.Forms.Panel panel1;
     }
 }
