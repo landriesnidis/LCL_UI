@@ -1,4 +1,5 @@
-﻿using Landriesnidis.LCL_Forms.PromptBoxes;
+﻿using Landriesnidis.LCL_Forms.Base;
+using Landriesnidis.LCL_Forms.PromptBoxes;
 using Landriesnidis.LCL_Forms.ToastBox;
 using System;
 using System.Collections.Generic;

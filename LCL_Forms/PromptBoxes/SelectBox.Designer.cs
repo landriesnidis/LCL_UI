@@ -34,24 +34,17 @@
             this.btnSelectAll = new System.Windows.Forms.Button();
             this.btnInvert = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelContainer.SuspendLayout();
-            this.panelBase.SuspendLayout();
             this.panelButtons.SuspendLayout();
+            this.panelBase.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(297, 0);
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Controls.Add(this.cb);
-            this.panelContainer.Controls.Add(this.labContent);
-            this.panelContainer.Size = new System.Drawing.Size(458, 347);
-            // 
-            // panelBase
-            // 
-            this.panelBase.Size = new System.Drawing.Size(500, 450);
+            this.btnCancel.Location = new System.Drawing.Point(311, 0);
+            this.btnCancel.MaximumSize = new System.Drawing.Size(0, 35);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(56, 35);
+            this.btnCancel.Size = new System.Drawing.Size(67, 35);
             // 
             // panelButtons
             // 
@@ -66,11 +59,21 @@
             this.panelButtons.Controls.SetChildIndex(this.btnInvert, 0);
             this.panelButtons.Controls.SetChildIndex(this.btnSelectAll, 0);
             // 
+            // panelBase
+            // 
+            this.panelBase.Size = new System.Drawing.Size(500, 450);
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.cb);
+            this.panelContainer.Controls.Add(this.labContent);
+            this.panelContainer.Size = new System.Drawing.Size(458, 347);
+            // 
             // cb
             // 
             this.cb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cb.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.cb.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cb.FormattingEnabled = true;
             this.cb.Location = new System.Drawing.Point(5, 51);
             this.cb.Name = "cb";
@@ -110,7 +113,7 @@
             this.btnSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.btnSelectAll.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSelectAll.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnSelectAll.Location = new System.Drawing.Point(127, 0);
+            this.btnSelectAll.Location = new System.Drawing.Point(141, 0);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(80, 35);
             this.btnSelectAll.TabIndex = 8;
@@ -123,7 +126,7 @@
             this.btnInvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.btnInvert.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnInvert.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnInvert.Location = new System.Drawing.Point(207, 0);
+            this.btnInvert.Location = new System.Drawing.Point(221, 0);
             this.btnInvert.Name = "btnInvert";
             this.btnInvert.Size = new System.Drawing.Size(80, 35);
             this.btnInvert.TabIndex = 9;
@@ -134,7 +137,7 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(287, 0);
+            this.panel1.Location = new System.Drawing.Point(301, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 35);
             this.panel1.TabIndex = 11;
@@ -146,10 +149,10 @@
             this.ClientSize = new System.Drawing.Size(500, 450);
             this.Name = "SelectBox";
             this.Load += new System.EventHandler(this.SelectBox_Load);
-            this.panelContainer.ResumeLayout(false);
-            this.panelBase.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
             this.panelButtons.PerformLayout();
+            this.panelBase.ResumeLayout(false);
+            this.panelContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

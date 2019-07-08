@@ -30,8 +30,8 @@
         {
             this.labContent = new System.Windows.Forms.Label();
             this.panelButtons.SuspendLayout();
-            this.panelContainer.SuspendLayout();
             this.panelBase.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -67,8 +67,8 @@
             this.Name = "MsgBox";
             this.panelButtons.ResumeLayout(false);
             this.panelButtons.PerformLayout();
-            this.panelContainer.ResumeLayout(false);
             this.panelBase.ResumeLayout(false);
+            this.panelContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

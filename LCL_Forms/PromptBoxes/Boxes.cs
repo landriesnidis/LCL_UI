@@ -9,6 +9,15 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
 {
     public class DialogBoxes
     {
+
+        /// <summary>
+        /// 输入框
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="content">详细内容</param>
+        /// <param name="buttonNames">按钮名称</param>
+        /// <param name="handler">数据格式检查委托</param>
+        /// <returns></returns>
         public static BoxResult<string> InputBox(string title,string content = default,string[] buttonNames = null, InputBox.CheckFormatHandler handler = null)
         {
             InputBox box = new InputBox();
@@ -25,6 +34,14 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             box.ShowDialog();
             return box.Result;
         }
+
+        /// <summary>
+        /// 消息框
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="content">详细内容</param>
+        /// <param name="buttonNames">按钮名称</param>
+        /// <returns></returns>
         public static BoxResult<bool> MsgBox(string title, string content = default, string buttonName = null)
         {
             MsgBox box = new MsgBox();
@@ -34,6 +51,15 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             box.ShowDialog();
             return box.Result;
         }
+
+        /// <summary>
+        /// 密码框
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="content">详细内容</param>
+        /// <param name="buttonNames">按钮名称</param>
+        /// <param name="handler">数据格式检查委托</param>
+        /// <returns></returns>
         public static BoxResult<string> PasswordBox(string title, string content = default, string[] buttonNames = null, PasswordBox.CheckFormatHandler handler = null)
         {
             PasswordBox box = new PasswordBox();
@@ -50,6 +76,14 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             box.ShowDialog();
             return box.Result;
         }
+
+        /// <summary>
+        /// 提示框(选择True或False)
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="content">详细内容</param>
+        /// <param name="buttonNames">按钮名称</param>
+        /// <returns></returns>
         public static BoxResult<bool> PromptBox(string title, string content = default, string[] buttonNames = null)
         {
             PromptBox box = new PromptBox();
@@ -64,6 +98,16 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             box.ShowDialog();
             return box.Result;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="content">详细内容</param>
+        /// <param name="items">选项集合</param>
+        /// <param name="allowMultiSelection">是否可多选</param>
+        /// <param name="buttonNames">按钮名称</param>
+        /// <param name="handler">数据格式检查委托</param>
+        /// <returns></returns>
         public static BoxResult<List<string>> SelectBox(string title, string content = default, ICollection items = null,bool allowMultiSelection = false, string[] buttonNames = null, SelectBox.CheckFormatHandler handler = null)
         {
             SelectBox box = new SelectBox();

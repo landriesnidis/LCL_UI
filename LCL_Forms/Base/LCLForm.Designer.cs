@@ -36,9 +36,9 @@ namespace Landriesnidis.LCL_Forms.Base
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.labTitle = new System.Windows.Forms.Label();
+            this.timerShake = new System.Windows.Forms.Timer(this.components);
             this.btnExit = new Landriesnidis.LCL_Controls.Controls.Botton.ExitButton();
             this.mmc = new Landriesnidis.LCL_Controls.Components.MouseMoveController(this.components);
-            this.timerShake = new System.Windows.Forms.Timer(this.components);
             this.panelBase.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.SuspendLayout();
@@ -84,23 +84,24 @@ namespace Landriesnidis.LCL_Forms.Base
             this.labTitle.Text = "Title";
             this.labTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // timerShake
+            // 
+            this.timerShake.Interval = 30;
+            this.timerShake.Tick += new System.EventHandler(this.TimerShake_Tick);
+            // 
             // btnExit
             // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.Size = new System.Drawing.Size(60, 42);
             this.btnExit.Location = new System.Drawing.Point(439, 1);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(60, 42);
             this.btnExit.TabIndex = 6;
             // 
             // mmc
             // 
             this.mmc.Form = null;
-            // 
-            // timerShake
-            // 
-            this.timerShake.Interval = 30;
-            this.timerShake.Tick += new System.EventHandler(this.TimerShake_Tick);
             // 
             // LCLForm
             // 
