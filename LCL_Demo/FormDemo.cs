@@ -1,4 +1,5 @@
 ﻿using Landriesnidis.LCL_Forms.PromptBoxes;
+using Landriesnidis.LCL_Forms.ToastBox;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -149,6 +150,14 @@ namespace LCL_Forms
             {
                 DialogBoxes.MsgBox(tbTitle.Text, "您取消了选择。", "知道啦");
             }
+        }
+
+        int toastCount = 0;
+        private void Button13_Click(object sender, EventArgs e)
+        {
+            Toast.Show($"{tbToastContent.Text} - {toastCount}", 2000, tbToastContent);
+            labToastCount.Text = ++toastCount + "";
+
         }
     }
 }

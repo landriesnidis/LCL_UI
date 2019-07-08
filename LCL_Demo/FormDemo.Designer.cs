@@ -49,9 +49,15 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbToastContent = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.labToastCount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -138,7 +144,7 @@
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(285, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(623, 428);
+            this.groupBox2.Size = new System.Drawing.Size(623, 297);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Boxes封装";
@@ -187,7 +193,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button11);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 97);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(611, 325);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(611, 194);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button10
@@ -250,11 +256,61 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.Button11_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.labToastCount);
+            this.groupBox3.Controls.Add(this.button13);
+            this.groupBox3.Controls.Add(this.tbToastContent);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(285, 315);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(623, 125);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Toast";
+            // 
+            // tbToastContent
+            // 
+            this.tbToastContent.Location = new System.Drawing.Point(79, 24);
+            this.tbToastContent.Name = "tbToastContent";
+            this.tbToastContent.Size = new System.Drawing.Size(207, 25);
+            this.tbToastContent.TabIndex = 5;
+            this.tbToastContent.Text = "Toast中的信息";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Content";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(313, 24);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(86, 25);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "显示";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.Button13_Click);
+            // 
+            // labToastCount
+            // 
+            this.labToastCount.AutoSize = true;
+            this.labToastCount.Location = new System.Drawing.Point(292, 29);
+            this.labToastCount.Name = "labToastCount";
+            this.labToastCount.Size = new System.Drawing.Size(15, 15);
+            this.labToastCount.TabIndex = 15;
+            this.labToastCount.Text = "0";
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 457);
+            this.ClientSize = new System.Drawing.Size(933, 461);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDemo";
@@ -263,6 +319,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -288,6 +346,11 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox tbToastContent;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label labToastCount;
     }
 }
 

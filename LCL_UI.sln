@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCL_Forms", "LCL_Forms\LCL_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCL_Controls", "LCL_Controls\LCL_Controls.csproj", "{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCL_Demo", "LCL_Demo\LCL_Demo.csproj", "{A894F801-0156-4F0E-9917-B00BD358378B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6C3BCA7-8E14-4C03-9DA1-3A1CD1BC63CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A894F801-0156-4F0E-9917-B00BD358378B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A894F801-0156-4F0E-9917-B00BD358378B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A894F801-0156-4F0E-9917-B00BD358378B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A894F801-0156-4F0E-9917-B00BD358378B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
