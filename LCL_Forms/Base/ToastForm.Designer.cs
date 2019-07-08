@@ -96,7 +96,9 @@
             this.Controls.Add(this.labContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ToastForm";
+            this.ShowInTaskbar = false;
             this.Text = "ToastForm";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(253)))));
             this.Load += new System.EventHandler(this.ToastForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
