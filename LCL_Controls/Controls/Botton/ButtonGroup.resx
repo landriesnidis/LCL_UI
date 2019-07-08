@@ -117,32 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ExitButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exitButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEcAAAAyCAYAAAAOX8ZtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAATJJREFUaEPt1zEKhDAQhWFrwatY2Hoea0+hJ/AC1rZ2Fl5F8BgpZslCILtknzZx
+        BvYVfzWpPkiGFM45YemIAyIOiDgg4oCIAyIOiDgg4oCIAyIOiDgg4oCIAyIOiDgg4oCIA3ocZ9s2KctS
+        +r5Pzr8bx1GqqpJ935PznD2Os66rFEXx7grIw4Sz8zwnz+RM5Voty3IJFMNM05Q8kzu1NwcBWYDxqT7I
+        KSArMD5VHF8M1LatGRifOo4vBrIC4zOBMwzDB87dNZ87dZwYpus6U0CqODFMuEp31vxTqeGkYEJWgFRw
+        EEzIAtDjOPH34WorxUB/8X04jkPqur69rj1Q0zRynmdynjPVB9l6xAERB0QcEHFAxAERB0QcEHFAxAER
+        B0QcEHFAxAERB0QcEHFAxPmZkxdluc4b2tfrtAAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="ExitButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maximizeButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEcAAAAyCAYAAAAOX8ZtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAAJNJREFUaEPt0DEKgDAABMH8/8sp9ANxi4CKOMVUB1fsmHMerIkTxAniBHGCOEGc
+        IE4QJ4gTxAniBHGCOEGcIE4QJzweZ4yxbfV3J3HCa3FW2xVxgjhBnCBOECeIE8QJ4gRxgjjhd3F2rP7u
+        JE54PM6XiBPECeIEcYI4QZwgThAniBPECeIEcYI4QZwgThAniHNpHie17WtU6Q0lOgAAAABJRU5ErkJg
+        gg==
+</value>
   </data>
-  <data name="ExitButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaximizeButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaximizeButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaximizeButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaximizeButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaximizeButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaximizeButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MinimizeButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MinimizeButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MinimizeButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimizeButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEcAAAAyCAYAAAAOX8ZtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAAIhJREFUaEPt0yEOgEAQBMH9/5dXwAeOThAEU6LsiE5mdvfiTJwgThAniBPECeIE
+        cYI4QZwgThAniBPECeIEcYI4QZwgThAniBPECeIEccIvcWbmtdPO18QJbhXECeIEcYI4QZwgThAniBPE
+        CeIEcYI4QZwgThAniBPECeIEcYI4QZwgThDn0V43bxBQ0R8N0asAAAAASUVORK5CYII=
+</value>
   </data>
 </root>

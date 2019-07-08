@@ -51,6 +51,24 @@
     <Compile Include="Components\MouseMoveController.Designer.cs">
       <DependentUpon>MouseMoveController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Botton\ButtonGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Botton\ButtonGroup.Designer.cs">
+      <DependentUpon>ButtonGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Botton\MinimizeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Botton\MinimizeButton.Designer.cs">
+      <DependentUpon>MinimizeButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Botton\MaximizeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Botton\MaximizeButton.Designer.cs">
+      <DependentUpon>MaximizeButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Botton\ExitButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -65,8 +83,13 @@
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\MinimizeButton_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Botton\ButtonGroup.resx">
+      <DependentUpon>ButtonGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,6 +103,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ExitButton_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MinimizeButton_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaximizeButton_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaximizeButton_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaximizeButton_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MinimizeButton_0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
