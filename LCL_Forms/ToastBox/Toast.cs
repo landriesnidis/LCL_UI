@@ -13,6 +13,12 @@ namespace Landriesnidis.LCL_Forms.ToastBox
         private static Queue<ToastMsg> QueueMsg = new Queue<ToastMsg>();
         private static bool IsBusy = false;
 
+        /// <summary>
+        /// 显示消息提示
+        /// </summary>
+        /// <param name="content">消息内容</param>
+        /// <param name="delay">消息提示时长</param>
+        /// <param name="context">当前处于焦点的控件</param>
         public static void Show(string content,int delay = 2000, Control context = null)
         {
             QueueMsg.Enqueue(new ToastMsg(content, delay, context));

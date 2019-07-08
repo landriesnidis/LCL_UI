@@ -140,12 +140,10 @@ namespace LCL_Forms
 
         private void Button12_Click(object sender, EventArgs e)
         {
-            var result = DialogBoxes.SelectBox(tbTitle.Text, tbContent.Text, new string[] { "土豆", "洋葱", "西红柿", "玉米" }, false, new string[] { "确定", "取消", "全选", "反选" });
+            var result = DialogBoxes.SelectBox(tbTitle.Text, tbContent.Text, new string[] { "土豆", "洋葱", "西红柿", "玉米" }, false, new string[] { "确定", "取消", "全选", "反选" },(items) => { return items.Count > 0; });
             if (!result.IsCancel)
             {
-                StringBuilder sb = new StringBuilder();
-                foreach (string s in result.Data) sb.Append(s + " ");
-                DialogBoxes.MsgBox(tbTitle.Text, $"刚才勾选的项目是：{sb}", "好的");
+                DialogBoxes.MsgBox(tbTitle.Text, $"刚才勾选的项目是：{result.Data[0]}", "好的");
             }
             else
             {
