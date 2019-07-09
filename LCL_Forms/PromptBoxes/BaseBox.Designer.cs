@@ -39,13 +39,10 @@
             this.panelBase.Controls.Add(this.panelButtons);
             this.panelBase.Controls.SetChildIndex(this.panelButtons, 0);
             // 
-            // btnExit
+            // buttonGroup
             // 
-            this.btnExit.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Size = new System.Drawing.Size(458, 97);
+            this.buttonGroup.Location = new System.Drawing.Point(319, 1);
+            this.buttonGroup.ExitButtonClick += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnCancel
             // 
@@ -82,6 +79,7 @@
             this.panelButtons.ResumeLayout(false);
             this.panelButtons.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

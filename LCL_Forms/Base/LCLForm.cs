@@ -15,6 +15,11 @@ namespace Landriesnidis.LCL_Forms.Base
         [Browsable(true)]
         public new string Text { get { return labTitle.Text; } set { labTitle.Text = value; } }
 
+        [Bindable(true)]
+        [Browsable(true)]
+        [Localizable(true)]
+        public Image Image { get { return pic.Image; } set { pic.Image = value; } }
+
         public LCLForm()
         {
             InitializeComponent();
@@ -46,6 +51,11 @@ namespace Landriesnidis.LCL_Forms.Base
                 timerShake.Enabled = false;
                 this.Enabled = true;
             }
+        }
+
+        private void LCLForm_Load(object sender, EventArgs e)
+        {
+            pic.Visible = pic.Image != null;
         }
     }
 }

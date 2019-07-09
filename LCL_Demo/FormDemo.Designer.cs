@@ -306,8 +306,11 @@
             // 
             // buttonGroup1
             // 
+            this.buttonGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGroup1.AutoPosition = true;
+            this.buttonGroup1.AutoPositionOffset = -16;
             this.buttonGroup1.AutoSize = true;
-            this.buttonGroup1.Location = new System.Drawing.Point(720, 9);
+            this.buttonGroup1.Location = new System.Drawing.Point(736, 1);
             this.buttonGroup1.Margin = new System.Windows.Forms.Padding(0);
             this.buttonGroup1.MaximizeBox = true;
             this.buttonGroup1.MinimizeBox = true;

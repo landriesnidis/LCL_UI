@@ -91,6 +91,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ButtonGroup";
             this.Size = new System.Drawing.Size(180, 42);
+            this.Load += new System.EventHandler(this.ButtonGroup_Load);
             this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
