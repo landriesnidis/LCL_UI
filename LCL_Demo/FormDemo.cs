@@ -158,5 +158,23 @@ namespace LCL_Forms
             labToastCount.Text = ++toastCount + "";
 
         }
+
+        private void ButtonGroup1_ExitButtonClick(object sender, EventArgs e)
+        {
+            Toast.Show("单击 - 关闭键",800);
+            // DialogBoxes.MsgBox("按钮组事件","单击 - 关闭键");
+        }
+
+        private void ButtonGroup1_MaximizeButtonClick(object sender, EventArgs e)
+        {
+            Toast.Show("单击 - 最大化",800);
+            // DialogBoxes.MsgBox("按钮组事件", "单击 - 最大化");
+        }
+
+        private void ButtonGroup1_MinimizeButtonClick(object sender, EventArgs e)
+        {
+            Toast.Show("单击 - 最小化",800);
+            // DialogBoxes.MsgBox("按钮组事件", "单击 - 最小化");
+        }
     }
 }

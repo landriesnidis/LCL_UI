@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ButtonGroup));
             this.panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.exitButton1 = new Landriesnidis.LCL_Controls.Controls.Botton.ExitButton();
-            this.maximizeButton1 = new Landriesnidis.LCL_Controls.Controls.Botton.MaximizeButton();
-            this.minimizeButton1 = new Landriesnidis.LCL_Controls.Controls.Botton.MinimizeButton();
+            this.exitButton = new Landriesnidis.LCL_Controls.Controls.Botton.ExitButton();
+            this.maximizeButton = new Landriesnidis.LCL_Controls.Controls.Botton.MaximizeButton();
+            this.minimizeButton = new Landriesnidis.LCL_Controls.Controls.Botton.MinimizeButton();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.exitButton1);
-            this.panel.Controls.Add(this.maximizeButton1);
-            this.panel.Controls.Add(this.minimizeButton1);
+            this.panel.AutoSize = true;
+            this.panel.Controls.Add(this.exitButton);
+            this.panel.Controls.Add(this.maximizeButton);
+            this.panel.Controls.Add(this.minimizeButton);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.panel.Location = new System.Drawing.Point(0, 0);
@@ -48,54 +49,59 @@
             this.panel.Size = new System.Drawing.Size(180, 42);
             this.panel.TabIndex = 0;
             // 
-            // exitButton1
+            // exitButton
             // 
-            this.exitButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitButton1.BackgroundImage")));
-            this.exitButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.exitButton1.Location = new System.Drawing.Point(120, 0);
-            this.exitButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.exitButton1.Name = "exitButton1";
-            this.exitButton1.Size = new System.Drawing.Size(60, 42);
-            this.exitButton1.TabIndex = 0;
+            this.exitButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitButton.BackgroundImage")));
+            this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.exitButton.Location = new System.Drawing.Point(120, 0);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(0);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(60, 42);
+            this.exitButton.TabIndex = 0;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // maximizeButton1
+            // maximizeButton
             // 
-            this.maximizeButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("maximizeButton1.BackgroundImage")));
-            this.maximizeButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.maximizeButton1.Location = new System.Drawing.Point(60, 0);
-            this.maximizeButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.maximizeButton1.Name = "maximizeButton1";
-            this.maximizeButton1.Size = new System.Drawing.Size(60, 42);
-            this.maximizeButton1.TabIndex = 1;
+            this.maximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("maximizeButton.BackgroundImage")));
+            this.maximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.maximizeButton.Location = new System.Drawing.Point(60, 0);
+            this.maximizeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.Size = new System.Drawing.Size(60, 42);
+            this.maximizeButton.TabIndex = 1;
+            this.maximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
             // 
-            // minimizeButton1
+            // minimizeButton
             // 
-            this.minimizeButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimizeButton1.BackgroundImage")));
-            this.minimizeButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.minimizeButton1.Location = new System.Drawing.Point(0, 0);
-            this.minimizeButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.minimizeButton1.Name = "minimizeButton1";
-            this.minimizeButton1.Size = new System.Drawing.Size(60, 42);
-            this.minimizeButton1.TabIndex = 2;
+            this.minimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimizeButton.BackgroundImage")));
+            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.minimizeButton.Location = new System.Drawing.Point(0, 0);
+            this.minimizeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(60, 42);
+            this.minimizeButton.TabIndex = 2;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // ButtonGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.panel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ButtonGroup";
             this.Size = new System.Drawing.Size(180, 42);
             this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel panel;
-        private ExitButton exitButton1;
-        private MaximizeButton maximizeButton1;
-        private MinimizeButton minimizeButton1;
+        private ExitButton exitButton;
+        private MinimizeButton minimizeButton;
+        private MaximizeButton maximizeButton;
     }
 }

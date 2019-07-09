@@ -52,6 +52,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.tbToastContent = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonGroup1 = new Landriesnidis.LCL_Controls.Controls.Botton.ButtonGroup();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -66,7 +67,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(24, 20);
+            this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 428);
             this.groupBox1.TabIndex = 6;
@@ -140,7 +141,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox2.Location = new System.Drawing.Point(303, 20);
+            this.groupBox2.Location = new System.Drawing.Point(283, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(623, 297);
             this.groupBox2.TabIndex = 7;
@@ -260,7 +261,7 @@
             this.groupBox3.Controls.Add(this.button13);
             this.groupBox3.Controls.Add(this.tbToastContent);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(303, 323);
+            this.groupBox3.Location = new System.Drawing.Point(283, 369);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(623, 125);
             this.groupBox3.TabIndex = 8;
@@ -303,11 +304,26 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Content";
             // 
+            // buttonGroup1
+            // 
+            this.buttonGroup1.AutoSize = true;
+            this.buttonGroup1.Location = new System.Drawing.Point(720, 9);
+            this.buttonGroup1.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonGroup1.MaximizeBox = true;
+            this.buttonGroup1.MinimizeBox = true;
+            this.buttonGroup1.Name = "buttonGroup1";
+            this.buttonGroup1.Size = new System.Drawing.Size(180, 42);
+            this.buttonGroup1.TabIndex = 9;
+            this.buttonGroup1.ExitButtonClick += new System.EventHandler(this.ButtonGroup1_ExitButtonClick);
+            this.buttonGroup1.MaximizeButtonClick += new System.EventHandler(this.ButtonGroup1_MaximizeButtonClick);
+            this.buttonGroup1.MinimizeButtonClick += new System.EventHandler(this.ButtonGroup1_MinimizeButtonClick);
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 462);
+            this.ClientSize = new System.Drawing.Size(915, 510);
+            this.Controls.Add(this.buttonGroup1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -320,6 +336,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -348,6 +365,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label labToastCount;
+        private Landriesnidis.LCL_Controls.Controls.Botton.ButtonGroup buttonGroup1;
     }
 }
 
