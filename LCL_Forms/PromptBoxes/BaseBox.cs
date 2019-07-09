@@ -70,18 +70,29 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             // 这部分必须要用代码控制，因为panelButtons会遮盖到的panelContainer在父类，无法在可视化设计界面上修改。
             panelButtons.SendToBack();
 
-            foreach(Control ctl in panelButtons.Controls)
+            ResizeButtons();
+        }
+
+        protected void ResizeButtons()
+        {
+            foreach (Control ctl in panelButtons.Controls)
             {
-                if(ctl.GetType() == typeof(Button))
+                if (ctl.GetType() == typeof(Button))
                 {
                     Button btn = (Button)ctl;
-                    btn.AutoSize = true;
-                    int heigt = panelButtons.Height;
-                    int width = (int)(heigt * 1.618);
-                    btn.MaximumSize = new System.Drawing.Size(0, heigt);
-                    btn.MinimumSize = new System.Drawing.Size(width, heigt);
+                    ResizeButton(btn);
                 }
             }
+        }
+
+        protected void ResizeButton(Button btn)
+        {
+            btn.AutoSize = false;
+            int heigt = panelButtons.Height;
+            int width = (int)(heigt * 1.618);
+            btn.MaximumSize = new System.Drawing.Size(0, heigt);
+            btn.MinimumSize = new System.Drawing.Size(width, heigt);
+            btn.AutoSize = true;
         }
     }
 
