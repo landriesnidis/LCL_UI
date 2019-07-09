@@ -12,59 +12,123 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
 {
     public partial class MiniImageButton : UserControl
     {
-        private Bitmap bitmap;
+        [Browsable(true)]
+        public MiniImageButtonColor MiniImageButtonColor { get; set; } = new MiniImageButtonColor();
+
+        private MiniImageButtonImage MiniImageButtonImage { get; set; } = new MiniImageButtonImage();
+
+        [Bindable(true)]
+        [Browsable(true)]
+        [Localizable(true)]
+        public Image Image { get { return BackgroundImage; } set { BackgroundImage = value; ComputingImage(); } }
+
+        private bool isMouseDown = false;
         private bool isInSide = false;
+
+
 
         public MiniImageButton()
         {
             InitializeComponent();
-
-             bitmap = (Bitmap)pic.Image;
         }
 
-        private void pic_MouseMove(object sender, MouseEventArgs e)
+        /// <summary>
+        /// 计算出按钮所需的所有图像
+        /// </summary>
+        private void ComputingImage()
+        {
+            Bitmap bitmap = (Bitmap)Image;
+            MiniImageButtonImage.MouseMoveImage = ChangeBitmapColor(bitmap, MiniImageButtonColor.MouseMoveForegroundColor, MiniImageButtonColor.MouseMoveBackgroundColor);
+            MiniImageButtonImage.MouseDownImage = ChangeBitmapColor(bitmap, MiniImageButtonColor.MouseDownForegroundColor, MiniImageButtonColor.MouseDownBackgroundColor);
+            MiniImageButtonImage.MouseLeaveImage = ChangeBitmapColor(bitmap, MiniImageButtonColor.MouseLeaveForegroundColor, MiniImageButtonColor.MouseLeaveBackgroundColor);
+            MiniImageButtonImage.LostFocusImage = ChangeBitmapColor(bitmap, MiniImageButtonColor.LostFocusForegroundColor, MiniImageButtonColor.LostFocusBackgroundColor);
+        }
+
+        
+
+        public Bitmap ChangeBitmapColor(Bitmap bmp, Color foregroundColor, Color backgroundColor)
+        {
+            // 获取长宽，创建一个新的Bitmap副本
+            int w = bmp.Width;
+            int h = bmp.Height;
+            Bitmap newBmp = new Bitmap(w, h);
+
+            for (int x = 0; x < w; x++)
+            {
+                for (int y = 0; y < h; y++)
+                {
+                    // 透明的地方全是背景色，非透明的地方全是前景色
+                    newBmp.SetPixel(x, y, (bmp.GetPixel(x, y).A == 0) ? backgroundColor : foregroundColor);
+                }
+            }
+            return newBmp;
+        }
+
+        private void MiniImageButton_Load(object sender, EventArgs e)
+        {
+            BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
+        }
+
+        private void MiniImageButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            BackgroundImage = MiniImageButtonImage.MouseDownImage;
+        }
+
+        private void MiniImageButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+            if (isInSide)
+            {
+                BackgroundImage = MiniImageButtonImage.MouseMoveImage;
+            }
+            else
+            {
+                BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
+            }
+        }
+
+        private void MiniImageButton_MouseMove(object sender, MouseEventArgs e)
         {
             if (!isInSide)
             {
-
-                pic.Image = Image.FromHbitmap(RePic(bitmap, bitmap.Width,bitmap.Height).GetHbitmap());
+                BackgroundImage = MiniImageButtonImage.MouseMoveImage;
             }
             isInSide = true;
         }
 
-        private void pic_MouseLeave(object sender, EventArgs e)
+        private void MiniImageButton_MouseLeave(object sender, EventArgs e)
         {
             isInSide = false;
-
-            pic.Image = Image.FromHbitmap(bitmap.GetHbitmap());
+            BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
         }
+    }
 
-        /// <summary>
-        /// 将图片进行反色处理
-        /// </summary>
-        /// <param name="mybm">原始图片</param>
-        /// <param name="width">原始图片的长度</param>
-        /// <param name="height">原始图片的高度</param>
-        /// <returns>被反色后的图片</returns>
-        public Bitmap RePic(Bitmap mybm, int width, int height)
-        {
-            Bitmap bm = new Bitmap(width, height);//初始化一个记录处理后的图片的对象
-            int x, y, resultR, resultG, resultB;
-            Color pixel;
+    public class MiniImageButtonColor
+    {
+        [Browsable(true)]
+        public Color MouseMoveForegroundColor { get; set; } = Color.White;
+        [Browsable(true)]
+        public Color MouseMoveBackgroundColor { get; set; } = Color.FromArgb(82, 176, 239);
+        [Browsable(true)]
+        public Color MouseLeaveForegroundColor { get; set; } = Color.White;
+        [Browsable(true)]
+        public Color MouseLeaveBackgroundColor { get; set; } = Color.FromArgb(0,122,204);
+        [Browsable(true)]
+        public Color MouseDownForegroundColor { get; set; } = Color.White;
+        [Browsable(true)]
+        public Color MouseDownBackgroundColor { get; set; } = Color.FromArgb(14,97,152);
+        [Browsable(true)]
+        public Color LostFocusForegroundColor { get; set; } = Color.FromArgb(30, 30, 30);
+        [Browsable(true)]
+        public Color LostFocusBackgroundColor { get; set; } = Color.FromArgb(251, 251, 251);
+    }
 
-            for (x = 0; x < width; x++)
-            {
-                for (y = 0; y < height; y++)
-                {
-                    pixel = mybm.GetPixel(x, y);//获取当前坐标的像素值
-                    resultR = 255 - pixel.R;//反红
-                    resultG = 255 - pixel.G;//反绿
-                    resultB = 255 - pixel.B;//反蓝
-                    bm.SetPixel(x, y, Color.FromArgb(resultR, resultG, resultB));//绘图
-                }
-            }
-
-            return bm;//返回经过反色处理后的图片
-        }
+    class MiniImageButtonImage
+    {
+        public Image MouseMoveImage { get; set; }
+        public Image MouseLeaveImage { get; set; }
+        public Image MouseDownImage { get; set; }
+        public Image LostFocusImage { get; set; }
     }
 }

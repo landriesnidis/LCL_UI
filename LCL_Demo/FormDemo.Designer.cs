@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDemo));
+            Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButtonColor miniImageButtonColor5 = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButtonColor();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -52,31 +53,18 @@
             this.button13 = new System.Windows.Forms.Button();
             this.tbToastContent = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lclGroupBox1 = new Landriesnidis.LCL_Controls.Controls.LCLGroupBox();
             this.buttonGroup1 = new Landriesnidis.LCL_Controls.Controls.Botton.ButtonGroup();
-            this.groupBox1.SuspendLayout();
+            this.miniImageButton1 = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.lclGroupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 66);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 428);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "实例方式启动";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(29, 349);
+            this.button6.Location = new System.Drawing.Point(31, 359);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(192, 57);
             this.button6.TabIndex = 11;
@@ -86,7 +74,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(29, 286);
+            this.button5.Location = new System.Drawing.Point(31, 296);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(192, 57);
             this.button5.TabIndex = 10;
@@ -96,7 +84,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(29, 223);
+            this.button4.Location = new System.Drawing.Point(31, 233);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(192, 57);
             this.button4.TabIndex = 9;
@@ -106,7 +94,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(29, 160);
+            this.button3.Location = new System.Drawing.Point(31, 170);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(192, 57);
             this.button3.TabIndex = 8;
@@ -116,7 +104,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(29, 97);
+            this.button2.Location = new System.Drawing.Point(31, 107);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 57);
             this.button2.TabIndex = 7;
@@ -126,7 +114,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(29, 34);
+            this.button1.Location = new System.Drawing.Point(31, 44);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 57);
             this.button1.TabIndex = 6;
@@ -304,6 +292,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Content";
             // 
+            // lclGroupBox1
+            // 
+            this.lclGroupBox1.BackColor = System.Drawing.Color.White;
+            this.lclGroupBox1.Controls.Add(this.button6);
+            this.lclGroupBox1.Controls.Add(this.button5);
+            this.lclGroupBox1.Controls.Add(this.button1);
+            this.lclGroupBox1.Controls.Add(this.button4);
+            this.lclGroupBox1.Controls.Add(this.button2);
+            this.lclGroupBox1.Controls.Add(this.button3);
+            this.lclGroupBox1.Location = new System.Drawing.Point(12, 70);
+            this.lclGroupBox1.Name = "lclGroupBox1";
+            this.lclGroupBox1.Size = new System.Drawing.Size(252, 428);
+            this.lclGroupBox1.TabIndex = 11;
+            // 
             // buttonGroup1
             // 
             this.buttonGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -321,30 +323,50 @@
             this.buttonGroup1.MaximizeButtonClick += new System.EventHandler(this.ButtonGroup1_MaximizeButtonClick);
             this.buttonGroup1.MinimizeButtonClick += new System.EventHandler(this.ButtonGroup1_MinimizeButtonClick);
             // 
+            // miniImageButton1
+            // 
+            this.miniImageButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.miniImageButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("miniImageButton1.BackgroundImage")));
+            this.miniImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.miniImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("miniImageButton1.Image")));
+            this.miniImageButton1.Location = new System.Drawing.Point(283, 18);
+            miniImageButtonColor5.LostFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            miniImageButtonColor5.LostFocusForegroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            miniImageButtonColor5.MouseDownBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(97)))), ((int)(((byte)(152)))));
+            miniImageButtonColor5.MouseDownForegroundColor = System.Drawing.Color.White;
+            miniImageButtonColor5.MouseLeaveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            miniImageButtonColor5.MouseLeaveForegroundColor = System.Drawing.Color.White;
+            miniImageButtonColor5.MouseMoveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(176)))), ((int)(((byte)(239)))));
+            miniImageButtonColor5.MouseMoveForegroundColor = System.Drawing.Color.White;
+            this.miniImageButton1.MiniImageButtonColor = miniImageButtonColor5;
+            this.miniImageButton1.Name = "miniImageButton1";
+            this.miniImageButton1.Size = new System.Drawing.Size(69, 42);
+            this.miniImageButton1.TabIndex = 10;
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 510);
             this.Controls.Add(this.buttonGroup1);
+            this.Controls.Add(this.lclGroupBox1);
+            this.Controls.Add(this.miniImageButton1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "FormDemo";
             this.Text = "LCL UI Demo";
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.lclGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
@@ -369,6 +391,8 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label labToastCount;
         private Landriesnidis.LCL_Controls.Controls.Botton.ButtonGroup buttonGroup1;
+        private Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton miniImageButton1;
+        private Landriesnidis.LCL_Controls.Controls.LCLGroupBox lclGroupBox1;
     }
 }
 

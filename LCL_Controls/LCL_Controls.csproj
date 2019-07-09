@@ -149,5 +149,11 @@
   <ItemGroup>
     <Folder Include="Controls\Panel\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowMiniButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseMiniButton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

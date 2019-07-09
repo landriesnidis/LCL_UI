@@ -123,6 +123,26 @@ namespace Landriesnidis.LCL_Controls.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap MiniImageButton_Arrow {
+            get {
+                object obj = ResourceManager.GetObject("MiniImageButton_Arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap MiniImageButton_Close {
+            get {
+                object obj = ResourceManager.GetObject("MiniImageButton_Close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap MinimizeButton_0 {
             get {
                 object obj = ResourceManager.GetObject("MinimizeButton_0", resourceCulture);

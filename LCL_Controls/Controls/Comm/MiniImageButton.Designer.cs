@@ -28,37 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pic = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pic
-            // 
-            this.pic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.ExitButton_2;
-            this.pic.Location = new System.Drawing.Point(0, 0);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(219, 223);
-            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic.TabIndex = 0;
-            this.pic.TabStop = false;
-            this.pic.MouseLeave += new System.EventHandler(this.pic_MouseLeave);
-            this.pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_MouseMove);
             // 
             // MiniImageButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pic);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Name = "MiniImageButton";
-            this.Size = new System.Drawing.Size(219, 223);
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
+            this.Size = new System.Drawing.Size(25, 25);
+            this.Load += new System.EventHandler(this.MiniImageButton_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MiniImageButton_MouseDown);
+            this.MouseLeave += new System.EventHandler(this.MiniImageButton_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MiniImageButton_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MiniImageButton_MouseUp);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pic;
     }
 }

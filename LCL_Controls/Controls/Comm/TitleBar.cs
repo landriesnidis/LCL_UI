@@ -15,6 +15,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         public TitleBar()
         {
             InitializeComponent();
+
+            miniImageButtonArrow.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Arrow;
+            miniImageButtonClose.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Close;
         }
     }
 }
