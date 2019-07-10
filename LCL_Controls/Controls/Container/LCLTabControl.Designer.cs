@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LCLTabControl));
-            Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButtonColor miniImageButtonColor1 = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButtonColor();
+            Landriesnidis.LCL_Controls.Controls.Comm.StateColorSet miniImageButtonColor1 = new Landriesnidis.LCL_Controls.Controls.Comm.StateColorSet();
             this.panelHead = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMain = new System.Windows.Forms.Panel();
