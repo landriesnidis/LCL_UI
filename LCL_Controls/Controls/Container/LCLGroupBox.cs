@@ -1,0 +1,58 @@
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.ComponentModel.Design;
+
+namespace Landriesnidis.LCL_Controls.Controls.Container
+{
+    [DefaultEvent("CloseButtonClick")]
+    [DefaultProperty("Title")]
+    [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
+    public partial class LCLGroupBox : UserControl
+    {
+        [Browsable(true)]
+        public string Title { get { return title; } set { titleBar.Title = value; title = value; } }
+        private string title;
+
+        [Browsable(true)]
+        public bool TitleBarArrowButton { get { return titleBar.btnArrow.Visible; } set { titleBar.btnArrow.Visible = value; } }
+
+        [Browsable(true)]
+        public bool TitleBarCloseButton { get { return titleBar.btnClose.Visible; } set { titleBar.btnClose.Visible = value; } }
+
+        [Browsable(true)]
+        public ContextMenuStrip TitleBarArrowButtonContextMenu { get; set; }
+
+        [Browsable(true)]
+        public event EventHandler CloseButtonClick;
+
+        public LCLGroupBox()
+        {
+            InitializeComponent();
+
+            // 为箭头按钮添加快捷菜单
+            titleBar.btnArrow.Click += (s, e) =>
+            {
+                if (TitleBarArrowButtonContextMenu != null)
+                {
+                    TitleBarArrowButtonContextMenu.Show(titleBar, titleBar.Width - TitleBarArrowButtonContextMenu.Width, titleBar.Height);
+                }
+            };
+            // 为关闭键添加单击事件
+            titleBar.btnClose.Click += (s, e) =>
+            {
+                CloseButtonClick?.Invoke(s, e);
+            };
+        }
+
+        private void LCLGroupBox_Load(object sender, EventArgs e)
+        {
+            this.Padding = new System.Windows.Forms.Padding(0, titleBar.Height, 0, 0);
+
+            titleBar.Title = title;
+            titleBar.Top = 0;
+            titleBar.Left = 0;
+            titleBar.Width = Width;
+        }
+    }
+}

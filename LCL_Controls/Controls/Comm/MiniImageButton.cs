@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Landriesnidis.LCL_Controls.Controls.Comm
 {
+    [DefaultEvent("Click")]
     public partial class MiniImageButton : UserControl
     {
         [Browsable(true)]
@@ -22,10 +23,8 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         [Localizable(true)]
         public Image Image { get { return BackgroundImage; } set { BackgroundImage = value; ComputingImage(); } }
 
-        private bool isMouseDown = false;
+        // private bool isMouseDown = false;
         private bool isInSide = false;
-
-
 
         public MiniImageButton()
         {
@@ -43,8 +42,6 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
             MiniImageButtonImage.MouseLeaveImage = ChangeBitmapColor(bitmap, MiniImageButtonColor.MouseLeaveForegroundColor, MiniImageButtonColor.MouseLeaveBackgroundColor);
             MiniImageButtonImage.LostFocusImage = ChangeBitmapColor(bitmap, MiniImageButtonColor.LostFocusForegroundColor, MiniImageButtonColor.LostFocusBackgroundColor);
         }
-
-        
 
         public Bitmap ChangeBitmapColor(Bitmap bmp, Color foregroundColor, Color backgroundColor)
         {
@@ -67,24 +64,28 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         private void MiniImageButton_Load(object sender, EventArgs e)
         {
             BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
+            BackColor = MiniImageButtonColor.MouseLeaveBackgroundColor;
         }
 
         private void MiniImageButton_MouseDown(object sender, MouseEventArgs e)
         {
-            isMouseDown = true;
+            // isMouseDown = true;
             BackgroundImage = MiniImageButtonImage.MouseDownImage;
+            BackColor = MiniImageButtonColor.MouseDownBackgroundColor;
         }
 
         private void MiniImageButton_MouseUp(object sender, MouseEventArgs e)
         {
-            isMouseDown = false;
+            // isMouseDown = false;
             if (isInSide)
             {
                 BackgroundImage = MiniImageButtonImage.MouseMoveImage;
+                BackColor = MiniImageButtonColor.MouseMoveBackgroundColor;
             }
             else
             {
                 BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
+                BackColor = MiniImageButtonColor.MouseLeaveBackgroundColor;
             }
         }
 
@@ -93,6 +94,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
             if (!isInSide)
             {
                 BackgroundImage = MiniImageButtonImage.MouseMoveImage;
+                BackColor = MiniImageButtonColor.MouseMoveBackgroundColor;
             }
             isInSide = true;
         }
@@ -101,6 +103,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         {
             isInSide = false;
             BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
+            BackColor = MiniImageButtonColor.MouseLeaveBackgroundColor;
         }
     }
 

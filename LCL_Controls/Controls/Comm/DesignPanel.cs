@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design;
 
-namespace Landriesnidis.LCL_Controls.Controls
+namespace Landriesnidis.LCL_Controls.Controls.Comm
 {
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
-    public partial class LCLGroupBox : UserControl
+    public partial class DesignPanel : UserControl
     {
-        public LCLGroupBox()
+        public DesignPanel()
         {
             InitializeComponent();
         }

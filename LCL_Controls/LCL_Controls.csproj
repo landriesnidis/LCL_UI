@@ -32,6 +32,7 @@
     <RegisterForComInterop>false</RegisterForComInterop>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
@@ -75,6 +76,12 @@
     <Compile Include="Controls\Botton\ExitButton.Designer.cs">
       <DependentUpon>ExitButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Comm\DesignPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Comm\DesignPanel.Designer.cs">
+      <DependentUpon>DesignPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Comm\MiniImageButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,11 +94,17 @@
     <Compile Include="Controls\Comm\TitleBar.Designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\LCLGroupBox.cs">
+    <Compile Include="Controls\Container\LCLGroupBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\LCLGroupBox.Designer.cs">
+    <Compile Include="Controls\Container\LCLGroupBox.Designer.cs">
       <DependentUpon>LCLGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Container\LCLTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Container\LCLTabControl.Designer.cs">
+      <DependentUpon>LCLTabControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -114,8 +127,11 @@
     <EmbeddedResource Include="Controls\Comm\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\LCLGroupBox.resx">
+    <EmbeddedResource Include="Controls\Container\LCLGroupBox.resx">
       <DependentUpon>LCLGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Container\LCLTabControl.resx">
+      <DependentUpon>LCLTabControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -146,9 +162,7 @@
   <ItemGroup>
     <None Include="Resources\MinimizeButton_0.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\Panel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\ArrowMiniButton.png" />
   </ItemGroup>
