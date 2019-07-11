@@ -38,6 +38,7 @@
             this.tabControl = new Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.focusListener1 = new Landriesnidis.LCL_Controls.Components.FocusListener(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.lclGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,12 +96,12 @@
             this.panel1.Size = new System.Drawing.Size(178, 146);
             this.panel1.TabIndex = 1;
             // 
-            // tabBar1
+            // tabControl
             // 
             this.tabControl.AutoSize = true;
             this.tabControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabControl.Location = new System.Drawing.Point(272, 34);
-            this.tabControl.Name = "tabBar1";
+            this.tabControl.Name = "tabControl";
             this.tabControl.Size = new System.Drawing.Size(680, 500);
             this.tabControl.TabIndex = 1;
             // 
@@ -154,5 +155,6 @@
         private Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl tabControl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Landriesnidis.LCL_Controls.Components.FocusListener focusListener1;
     }
 }

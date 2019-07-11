@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\BaseComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseComponent.Designer.cs">
+      <DependentUpon>BaseComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\FocusListener.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FocusListener.Designer.cs">
+      <DependentUpon>FocusListener.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\MouseMoveController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -82,6 +94,7 @@
     <Compile Include="Controls\Comm\DesignPanel.Designer.cs">
       <DependentUpon>DesignPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Comm\IFocusState.cs" />
     <Compile Include="Controls\Comm\MiniImageButton.cs">
       <SubType>UserControl</SubType>
     </Compile>

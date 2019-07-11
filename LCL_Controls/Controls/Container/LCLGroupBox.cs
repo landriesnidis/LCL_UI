@@ -11,19 +11,24 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
     public partial class LCLGroupBox : UserControl
     {
         [Browsable(true)]
+        [Description("标题")]
         public string Title { get { return title; } set { titleBar.Title = value; title = value; } }
         private string title;
 
         [Browsable(true)]
+        [Description("是否启用标题箭头按钮")]
         public bool TitleBarArrowButton { get { return titleBar.btnArrow.Visible; } set { titleBar.btnArrow.Visible = value; } }
 
         [Browsable(true)]
+        [Description("是否启用标题关闭按钮")]
         public bool TitleBarCloseButton { get { return titleBar.btnClose.Visible; } set { titleBar.btnClose.Visible = value; } }
 
         [Browsable(true)]
+        [Description("标题栏箭头按钮绑定对应快捷菜单")]
         public ContextMenuStrip TitleBarArrowButtonContextMenu { get; set; }
 
         [Browsable(true)]
+        [Description("标题关闭按钮单击事件")]
         public event EventHandler CloseButtonClick;
 
         public LCLGroupBox()
@@ -42,6 +47,18 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             titleBar.btnClose.Click += (s, e) =>
             {
                 CloseButtonClick?.Invoke(s, e);
+            };
+
+            focusListener.AllowUseClickEvent = true;
+            focusListener.AutoScanChildControl = true;
+            focusListener.ParentControl = this;
+            focusListener.GotFocus += (s, e) =>
+            {
+
+            };
+            focusListener.LostFocus += (s, e) =>
+            {
+
             };
         }
 

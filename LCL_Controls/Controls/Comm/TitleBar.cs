@@ -25,6 +25,8 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
 
             btnArrow.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Arrow;
             btnClose.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Close;
+
+            
         }
 
         private void TitleBar_Load(object sender, EventArgs e)
