@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TitleBar));
-            Landriesnidis.LCL_Controls.Controls.Comm.StateColorSet stateColorSet1 = new Landriesnidis.LCL_Controls.Controls.Comm.StateColorSet();
-            Landriesnidis.LCL_Controls.Controls.Comm.StateColorSet stateColorSet2 = new Landriesnidis.LCL_Controls.Controls.Comm.StateColorSet();
             this.labTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
@@ -72,15 +70,6 @@
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(31, 5);
             this.btnClose.Margin = new System.Windows.Forms.Padding(1, 1, 2, 1);
-            stateColorSet1.LostFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateColorSet1.LostFocusForegroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            stateColorSet1.MouseDownBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(97)))), ((int)(((byte)(152)))));
-            stateColorSet1.MouseDownForegroundColor = System.Drawing.Color.White;
-            stateColorSet1.MouseLeaveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            stateColorSet1.MouseLeaveForegroundColor = System.Drawing.Color.White;
-            stateColorSet1.MouseMoveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(176)))), ((int)(((byte)(239)))));
-            stateColorSet1.MouseMoveForegroundColor = System.Drawing.Color.White;
-            this.btnClose.MiniImageButtonColor = stateColorSet1;
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 0;
@@ -93,15 +82,6 @@
             this.btnArrow.Image = ((System.Drawing.Image)(resources.GetObject("btnArrow.Image")));
             this.btnArrow.Location = new System.Drawing.Point(8, 5);
             this.btnArrow.Margin = new System.Windows.Forms.Padding(1, 1, 2, 1);
-            stateColorSet2.LostFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateColorSet2.LostFocusForegroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            stateColorSet2.MouseDownBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(97)))), ((int)(((byte)(152)))));
-            stateColorSet2.MouseDownForegroundColor = System.Drawing.Color.White;
-            stateColorSet2.MouseLeaveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            stateColorSet2.MouseLeaveForegroundColor = System.Drawing.Color.White;
-            stateColorSet2.MouseMoveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(176)))), ((int)(((byte)(239)))));
-            stateColorSet2.MouseMoveForegroundColor = System.Drawing.Color.White;
-            this.btnArrow.MiniImageButtonColor = stateColorSet2;
             this.btnArrow.Name = "btnArrow";
             this.btnArrow.Size = new System.Drawing.Size(20, 20);
             this.btnArrow.TabIndex = 1;

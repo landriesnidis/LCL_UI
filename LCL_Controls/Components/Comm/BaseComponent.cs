@@ -10,13 +10,23 @@ using System.Windows.Forms;
 
 namespace Landriesnidis.LCL_Controls.Components
 {
+    public delegate void FindedControlHandler(object sender, FindedControlEventArgs e);
+
     public partial class BaseComponent : Component
     {
+        /// <summary>
+        /// 使用设计器添加组件是用到的容器接口
+        /// </summary>
         protected IContainer container;
 
         [Browsable(true)]
-        [Description("接收监听的容器(默认为组件当前所在的容器)")]
-        public Control ParentControl { get; set; }
+        [Description("受组件直接影响的主容器(使用设计器添加时默认为组件当前所在的常规容器控件/用户控件/窗体)")]
+        public Control ParentControl { get { if(parentControl==null) parentControl = GetParentControl();return parentControl; } set { parentControl = value; } }
+        private Control parentControl;
+
+        [Browsable(true)]
+        [Description("遍历主容器下所有子控件时发现控件/有新控件加入")]
+        public event FindedControlHandler FindedControl;
 
         public BaseComponent(Control parent)
         {
@@ -30,6 +40,8 @@ namespace Landriesnidis.LCL_Controls.Components
             container.Add(this);
             this.container = container;
             InitializeComponent();
+
+            parentControl = GetParentControl();
         }
 
         protected Control GetParentControl()
@@ -73,17 +85,46 @@ namespace Landriesnidis.LCL_Controls.Components
         /// <returns></returns>
         protected List<Control> GetChildControls(Control parent)
         {
+            if (parent == null) return null;
+
             List<Control> controls = new List<Control>();
 
             foreach (Control ctl in parent.Controls)
             {
-                controls.Add(ctl);
-                if (ctl.Controls.Count > 0)
+                // 每当发现新的控件时执行事件，将控件对象传入进去。返回的参数中如果IsCancel为true则不添加此控件进入子控件列表
+                FindedControlEventArgs args = new FindedControlEventArgs(ctl);
+                FindedControl?.Invoke(this, args);
+                if(!args.IsCancel) controls.Add(ctl);
+
+                if (args.IsScanChildControl && ctl.Controls.Count > 0)
                 {
                     controls.AddRange(GetChildControls(ctl));
                 }
             }
             return controls;
+        }
+    }
+
+    public class FindedControlEventArgs : EventArgs
+    {
+        /// <summary>
+        /// 正在加入子控件列表的控件
+        /// </summary>
+        public Control Control { get; set; }
+
+        /// <summary>
+        /// 是否取消此控件加入子控件列表
+        /// </summary>
+        public bool IsCancel { get; set; } = false;
+
+        /// <summary>
+        /// 是否扫描此控件的子控件集合
+        /// </summary>
+        public bool IsScanChildControl { get; set; } = true;
+
+        public FindedControlEventArgs(Control control)
+        {
+            Control = control;
         }
     }
 }

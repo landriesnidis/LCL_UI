@@ -33,14 +33,12 @@
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lclGroupBox1 = new Landriesnidis.LCL_Controls.Controls.Container.LCLGroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl = new Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.focusListener1 = new Landriesnidis.LCL_Controls.Components.FocusListener(this.components);
+            this.lclGroupBox1 = new Landriesnidis.LCL_Controls.Controls.Container.LCLGroupBox();
+            this.tabControl = new Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl();
             this.contextMenuStrip1.SuspendLayout();
-            this.lclGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,22 +70,6 @@
             this.cToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.cToolStripMenuItem.Text = "C";
             // 
-            // lclGroupBox1
-            // 
-            this.lclGroupBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lclGroupBox1.Controls.Add(this.panel1);
-            this.lclGroupBox1.Location = new System.Drawing.Point(12, 12);
-            this.lclGroupBox1.MinimumSize = new System.Drawing.Size(150, 30);
-            this.lclGroupBox1.Name = "lclGroupBox1";
-            this.lclGroupBox1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.lclGroupBox1.Size = new System.Drawing.Size(180, 178);
-            this.lclGroupBox1.TabIndex = 0;
-            this.lclGroupBox1.Title = "你好";
-            this.lclGroupBox1.TitleBarArrowButton = true;
-            this.lclGroupBox1.TitleBarArrowButtonContextMenu = this.contextMenuStrip1;
-            this.lclGroupBox1.TitleBarCloseButton = true;
-            this.lclGroupBox1.CloseButtonClick += new System.EventHandler(this.LclGroupBox1_CloseButtonClick);
-            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -96,18 +78,9 @@
             this.panel1.Size = new System.Drawing.Size(178, 146);
             this.panel1.TabIndex = 1;
             // 
-            // tabControl
-            // 
-            this.tabControl.AutoSize = true;
-            this.tabControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabControl.Location = new System.Drawing.Point(272, 34);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.Size = new System.Drawing.Size(680, 500);
-            this.tabControl.TabIndex = 1;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(100, 226);
+            this.button1.Location = new System.Drawing.Point(47, 88);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -118,26 +91,48 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LCL_Demo.Properties.Resources.CloseMiniButton;
-            this.pictureBox1.Location = new System.Drawing.Point(47, 279);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 158);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(178, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // lclGroupBox1
+            // 
+            this.lclGroupBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lclGroupBox1.Location = new System.Drawing.Point(47, -1);
+            this.lclGroupBox1.MinimumSize = new System.Drawing.Size(150, 30);
+            this.lclGroupBox1.Name = "lclGroupBox1";
+            this.lclGroupBox1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.lclGroupBox1.Size = new System.Drawing.Size(150, 83);
+            this.lclGroupBox1.TabIndex = 4;
+            this.lclGroupBox1.Title = "起始页";
+            this.lclGroupBox1.TitleBarArrowButton = true;
+            this.lclGroupBox1.TitleBarArrowButtonContextMenu = this.contextMenuStrip1;
+            this.lclGroupBox1.TitleBarCloseButton = true;
+            this.lclGroupBox1.CloseButtonClick += new System.EventHandler(this.LclGroupBox1_CloseButtonClick_1);
+            // 
+            // tabControl
+            // 
+            this.tabControl.AutoSize = true;
+            this.tabControl.Location = new System.Drawing.Point(251, 12);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.Size = new System.Drawing.Size(654, 360);
+            this.tabControl.TabIndex = 5;
+            // 
             // FormGroupBoxDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 546);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.lclGroupBox1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
             this.Name = "FormGroupBoxDemo";
             this.Text = "FormGroupBoxDemo";
             this.contextMenuStrip1.ResumeLayout(false);
-            this.lclGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,15 +141,14 @@
 
         #endregion
 
-        private Landriesnidis.LCL_Controls.Controls.Container .LCLGroupBox lclGroupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
-        private Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl tabControl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Landriesnidis.LCL_Controls.Components.FocusListener focusListener1;
+        private Landriesnidis.LCL_Controls.Controls.Container.LCLGroupBox lclGroupBox1;
+        private Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl tabControl;
     }
 }

@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\BaseComponent.cs">
+    <Compile Include="Components\BackColorSupport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\BaseComponent.Designer.cs">
+    <Compile Include="Components\BackColorSupport.Designer.cs">
+      <DependentUpon>BackColorSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Comm\BaseComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Comm\BaseComponent.Designer.cs">
       <DependentUpon>BaseComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Comm\UIComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Comm\UIComponent.Designer.cs">
+      <DependentUpon>UIComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\FocusListener.cs">
       <SubType>Component</SubType>
@@ -63,6 +75,12 @@
     </Compile>
     <Compile Include="Components\MouseMoveController.Designer.cs">
       <DependentUpon>MouseMoveController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StateColorSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\StateColorSet.Designer.cs">
+      <DependentUpon>StateColorSet.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Botton\ButtonGroup.cs">
       <SubType>UserControl</SubType>
@@ -101,7 +119,6 @@
     <Compile Include="Controls\Comm\MiniImageButton.Designer.cs">
       <DependentUpon>MiniImageButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Comm\StateColorSet.cs" />
     <Compile Include="Controls\Comm\TitleBar.cs">
       <SubType>UserControl</SubType>
     </Compile>

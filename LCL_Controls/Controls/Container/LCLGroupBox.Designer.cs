@@ -49,7 +49,6 @@
             // focusListener
             // 
             this.focusListener.AllowUseClickEvent = false;
-            this.focusListener.AutoScanChildControl = true;
             this.focusListener.ChildControls = null;
             this.focusListener.ParentControl = null;
             // 

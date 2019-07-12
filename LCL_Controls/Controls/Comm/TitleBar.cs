@@ -19,14 +19,35 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         [Browsable(true)]
         public new bool AutoSize { set { AutoChangeBarWidth(value); } }
 
+        [Browsable(true)]
+        public new Color ForeColor { get { return labTitle.ForeColor; } set { labTitle.ForeColor = value; } }
+
         public TitleBar()
         {
             InitializeComponent();
 
+            TabStop = true;
+
             btnArrow.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Arrow;
             btnClose.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Close;
 
-            
+            BackColorChanged += (s, e) =>
+            {
+                if (labTitle.BackColor != this.BackColor) labTitle.BackColor = this.BackColor;
+            };
+            ForeColorChanged += (s, e) =>
+            {
+                if (labTitle.ForeColor != this.ForeColor) labTitle.ForeColor = this.ForeColor;
+            };
+
+            labTitle.BackColorChanged += (s, e) =>
+            {
+                if (this.BackColor != labTitle.BackColor) this.BackColor = labTitle.BackColor;
+            };
+            labTitle.ForeColorChanged += (s, e) =>
+            {
+                if (this.ForeColor != labTitle.ForeColor) this.ForeColor = labTitle.ForeColor;
+            };
         }
 
         private void TitleBar_Load(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Landriesnidis.LCL_Controls.Components;
 
 namespace Landriesnidis.LCL_Controls.Controls.Comm
 {

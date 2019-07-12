@@ -1,15 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Landriesnidis.LCL_Controls.Controls.Comm
+namespace Landriesnidis.LCL_Controls.Components
 {
-    public class StateColorSet
+    public partial class StateColorSet : Component
     {
+        public StateColorSet()
+        {
+            InitializeComponent();
+        }
+
+        public StateColorSet(IContainer container)
+        {
+            container.Add(this);
+
+            InitializeComponent();
+        }
+
         [Browsable(true)]
         public Color MouseMoveForegroundColor { get; set; } = Color.White;
         [Browsable(true)]
@@ -26,5 +39,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         public Color LostFocusForegroundColor { get; set; } = Color.FromArgb(30, 30, 30);
         [Browsable(true)]
         public Color LostFocusBackgroundColor { get; set; } = Color.FromArgb(251, 251, 251);
+        [Browsable(true)]
+        public Color GotFocusForegroundColor { get; set; } = Color.White;
+        [Browsable(true)]
+        public Color GotFocusBackgroundColor { get; set; } = Color.FromArgb(0, 122, 204);
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Landriesnidis.LCL_Controls.Components.Comm;
+using Landriesnidis.LCL_Controls.Controls.Container;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -12,18 +14,13 @@ using static Landriesnidis.LCL_Controls.Components.FocusListenManager;
 
 namespace Landriesnidis.LCL_Controls.Components
 {
-    public partial class FocusListener : BaseComponent,IFocusBroadcast
+    public delegate void ControlAddedHandler(object sender, PageChangedEventArgs e);
+
+    public partial class FocusListener : UIComponent, IFocusBroadcast
     {
-        public List<Control> ChildControls { get; set; }
-
-
-        [Browsable(true)]
-        [Description("是否自动扫描容器下的所有控件")]
-        public bool AutoScanChildControl { get; set; } = true;
         [Browsable(true)]
         [Description("对于不支持获得焦点的控件，允许通过Click事件获取焦点")]
         public bool AllowUseClickEvent { get; set; } = false;
-
 
         [Browsable(true)]
         [Description("子控件集中有控件获得了焦点")]
@@ -40,33 +37,12 @@ namespace Landriesnidis.LCL_Controls.Components
 
         public FocusListener(Control parent):base(parent)
         {
-            Init();
+            //Init();
         }
 
         public FocusListener(IContainer container):base(container)
         {
-            Init();
-        }
-
-        private void Init()
-        {
-            container.Add(this);
-            InitializeComponent();
-
-            // 加入焦点监听管理器
-            FocusListenManager.AddListener(this);
-
-            // 检查是否指定了父控件
-            if (ParentControl == null)
-            {
-                ParentControl = GetParentControl();
-            }
-
-            // 如果启用了自动扫描子控件
-            if (ParentControl != null && AutoScanChildControl)
-            {
-                RefreshChildControlListAndEvents();
-            }
+            //Init();
         }
 
         ~FocusListener()
@@ -74,33 +50,49 @@ namespace Landriesnidis.LCL_Controls.Components
             FocusListenManager.RemoveListener(this);
         }
 
-        private void RefreshChildControlListAndEvents()
+        public new void Init()
         {
-            ChildControls = GetChildControls(ParentControl);
-            ChildControls.Add(ParentControl);
+            base.Init();
 
-            foreach (Control c in ChildControls)
+            // 加入焦点监听管理器
+            FocusListenManager.AddListener(this);
+
+            this.AddingChildControl += FocusListener_AddingChildControl;
+            this.RemovingChildControl += FocusListener_RemovingChildControl;
+        }
+
+        private void FocusListener_AddingChildControl(object sender, ChildControlListAddingEventArgs e)
+        {
+            Control c = e.Control;
+            try
             {
-                try
+                // 只有支持Tab获取焦点的控件才可以使用自带的焦点事件
+                // 其他的需要使用别的事件替代(单击事件)
+                if (c.TabStop)
                 {
-                    // 只有支持Tab获取焦点的控件才可以使用自带的焦点事件
-                    // 其他的需要使用别的事件替代(单击事件)
-                    if (c.TabStop)
+                    c.GotFocus += ChildControl_GotFocus;
+                    c.LostFocus += ChildControl_LostFocus;
+                }
+                else
+                {
+                    // 是否允许使用Click获取焦点
+                    if (AllowUseClickEvent)
                     {
-                        c.GotFocus += ChildControl_GotFocus;
-                        c.LostFocus += ChildControl_LostFocus;
-                    }
-                    else
-                    {
-                        // 是否允许使用Click获取焦点
-                        if (AllowUseClickEvent)
+                        // c.Click += ChildControl_GotFocus;
+                        c.Click += (s, args) =>
                         {
-                            c.Click += ChildControl_GotFocus;
-                        }
+                            c.Focus();
+                        };
                     }
                 }
-                catch { }
             }
+            catch { }
+        }
+
+        private void FocusListener_RemovingChildControl(object sender, ChildControlListRemovedEventArgs e)
+        {
+            e.Control.GotFocus -= ChildControl_GotFocus;
+            e.Control.LostFocus -= ChildControl_LostFocus;
         }
 
         private void ChildControl_GotFocus(object sender, EventArgs e)

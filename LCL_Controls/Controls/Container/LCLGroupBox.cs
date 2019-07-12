@@ -50,7 +50,6 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             };
 
             focusListener.AllowUseClickEvent = true;
-            focusListener.AutoScanChildControl = true;
             focusListener.ParentControl = this;
             focusListener.GotFocus += (s, e) =>
             {
