@@ -20,7 +20,7 @@ namespace Landriesnidis.LCL_Controls.Components
     {
         [Browsable(true)]
         [Description("对于不支持获得焦点的控件，允许通过Click事件获取焦点")]
-        public bool AllowUseClickEvent { get; set; } = false;
+        public bool AllowUseClickEvent { get; set; } = true;
 
         [Browsable(true)]
         [Description("子控件集中有控件获得了焦点")]
@@ -37,12 +37,12 @@ namespace Landriesnidis.LCL_Controls.Components
 
         public FocusListener(Control parent):base(parent)
         {
-            //Init();
+            Init();
         }
 
         public FocusListener(IContainer container):base(container)
         {
-            //Init();
+            Init();
         }
 
         ~FocusListener()
@@ -50,13 +50,12 @@ namespace Landriesnidis.LCL_Controls.Components
             FocusListenManager.RemoveListener(this);
         }
 
-        public new void Init()
+        private void Init()
         {
-            base.Init();
-
             // 加入焦点监听管理器
             FocusListenManager.AddListener(this);
 
+            // 用事件监听子控件集合的添加或移除
             this.AddingChildControl += FocusListener_AddingChildControl;
             this.RemovingChildControl += FocusListener_RemovingChildControl;
         }
@@ -78,11 +77,11 @@ namespace Landriesnidis.LCL_Controls.Components
                     // 是否允许使用Click获取焦点
                     if (AllowUseClickEvent)
                     {
-                        // c.Click += ChildControl_GotFocus;
-                        c.Click += (s, args) =>
+                        c.Click += (s,args) =>
                         {
                             c.Focus();
                         };
+                        
                     }
                 }
             }
@@ -97,6 +96,8 @@ namespace Landriesnidis.LCL_Controls.Components
 
         private void ChildControl_GotFocus(object sender, EventArgs e)
         {
+           Debug.WriteLine($"[{this.GetType().ToString()}]ChildControl_GotFocus - sender:{((Control)sender).Name}");
+
             // 回调事件
             GotFocus?.Invoke(sender, e);
 
@@ -110,6 +111,8 @@ namespace Landriesnidis.LCL_Controls.Components
 
         private void ChildControl_LostFocus(object sender, EventArgs e)
         {
+            Debug.WriteLine($"[{this.GetType().ToString()}]ChildControl_LostFocus - sender:{((Control)sender).Name}");
+
             // 回调事件
             LostFocus?.Invoke(sender, e);
 

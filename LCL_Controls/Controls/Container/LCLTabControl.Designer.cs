@@ -37,8 +37,6 @@
             this.btnMorePage = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.backColorSupport = new Landriesnidis.LCL_Controls.Components.BackColorSupport(this.components);
-            this.focusListener = new Landriesnidis.LCL_Controls.Components.FocusListener(this.components);
             this.panelHead.SuspendLayout();
             this.panelTitle.SuspendLayout();
             this.SuspendLayout();
@@ -121,25 +119,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(874, 3);
             this.panel1.TabIndex = 4;
-            // 
-            // backColorSupport
-            // 
-            this.backColorSupport.ChildControls = null;
-            this.backColorSupport.FiltrateTypes = null;
-            this.backColorSupport.ParentControl = this.panelTitle;
-            this.backColorSupport.RespondGotFocusEvent = false;
-            this.backColorSupport.RespondLostFocusEvent = false;
-            this.backColorSupport.RespondMouseDownEvent = false;
-            this.backColorSupport.RespondMouseLeaveEvent = true;
-            this.backColorSupport.RespondMouseMoveEvent = true;
-            this.backColorSupport.StateColorSet = this.stateColorSet;
-            this.backColorSupport.TargetTypes = null;
-            // 
-            // focusListener
-            // 
-            this.focusListener.AllowUseClickEvent = true;
-            this.focusListener.ChildControls = null;
-            this.focusListener.ParentControl = this.panelTitle;
+
             // 
             // LCLTabControl
             // 
@@ -167,7 +147,5 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel1;
         private Components.StateColorSet stateColorSet;
-        private Components.BackColorSupport backColorSupport;
-        private Components.FocusListener focusListener;
     }
 }

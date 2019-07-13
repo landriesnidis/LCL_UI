@@ -49,16 +49,18 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
                 CloseButtonClick?.Invoke(s, e);
             };
 
-            focusListener.AllowUseClickEvent = true;
-            focusListener.ParentControl = this;
-            focusListener.GotFocus += (s, e) =>
+            titleBar.FocusListener.AddChildControl(this);
+            
+            this.ControlAdded += (s, e) =>
             {
-
+                titleBar.FocusListener.AddChildControl(e.Control);
             };
-            focusListener.LostFocus += (s, e) =>
+
+            this.ControlRemoved += (s, e) =>
             {
-
+                titleBar.FocusListener.RemoveChildControl(e.Control);
             };
+            
         }
 
         private void LCLGroupBox_Load(object sender, EventArgs e)

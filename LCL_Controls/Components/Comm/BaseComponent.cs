@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace Landriesnidis.LCL_Controls.Components
 {
     public delegate void FindedControlHandler(object sender, FindedControlEventArgs e);
-
+    public delegate void ParentControlChangedHandler(object sender, ParentControlChangedEventArgs e);
+    
     public partial class BaseComponent : Component
     {
         /// <summary>
@@ -21,17 +22,21 @@ namespace Landriesnidis.LCL_Controls.Components
 
         [Browsable(true)]
         [Description("受组件直接影响的主容器(使用设计器添加时默认为组件当前所在的常规容器控件/用户控件/窗体)")]
-        public Control ParentControl { get { if(parentControl==null) parentControl = GetParentControl();return parentControl; } set { parentControl = value; } }
-        private Control parentControl;
+        public Control ParentControl { get { if(parentControl==null) parentControl = GetParentControl();return parentControl; } set { parentControl = value; ParentControlChanged?.Invoke(this, new ParentControlChangedEventArgs(value)); } }
+        protected Control parentControl;
 
         [Browsable(true)]
         [Description("遍历主容器下所有子控件时发现控件/有新控件加入")]
         public event FindedControlHandler FindedControl;
 
+        [Browsable(true)]
+        [Description("当主容器控件发生改变时触发")]
+        public event ParentControlChangedHandler ParentControlChanged;
+
         public BaseComponent(Control parent)
         {
-            container = GetPrivatePropertyValue<Control, IContainer>(parent, "components");
-            container.Add(this);
+            //container = GetPrivatePropertyValue<Control, IContainer>(parent, "components");
+            //container.Add(this);
             InitializeComponent();
         }
 
@@ -123,6 +128,19 @@ namespace Landriesnidis.LCL_Controls.Components
         public bool IsScanChildControl { get; set; } = true;
 
         public FindedControlEventArgs(Control control)
+        {
+            Control = control;
+        }
+    }
+
+    public class ParentControlChangedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// 新的主容器控件
+        /// </summary>
+        public Control Control { get; set; }
+
+        public ParentControlChangedEventArgs(Control control)
         {
             Control = control;
         }

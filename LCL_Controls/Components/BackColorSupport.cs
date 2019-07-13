@@ -41,19 +41,18 @@ namespace Landriesnidis.LCL_Controls.Components
         [Description("响应获得焦点事件")]
         public bool RespondGotFocusEvent { get; set; }
 
-        public BackColorSupport(Form form):base(form)
+        public BackColorSupport(Control control):base(control)
         {
-           // Init();
+           Init();
         }
         public BackColorSupport(IContainer container):base(container)
         {
-           // Init();
+           Init();
         }
 
-        public new  void Init()
+        private void Init()
         {
-            base.Init();
-
+            // 用事件监听子控件集合的添加或移除
             this.AddingChildControl += BackColorSupport_AddingChildControl;
             this.RemovingChildControl += BackColorSupport_RemovingChildControl; 
         }

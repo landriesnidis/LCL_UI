@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Collections.ObjectModel;
 using Landriesnidis.LCL_Controls.Controls.Comm;
 using System.Collections;
+using Landriesnidis.LCL_Controls.Components;
 
 namespace Landriesnidis.LCL_Controls.Controls.Container
 {
@@ -27,6 +28,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
         [Browsable(true)]
         public event PageRemovedHandler PageRemoved;
 
+        BackColorSupport backColorSupport;
+        FocusListener focusListener;
+
         public LCLTabControl()
         {
             InitializeComponent();
@@ -34,6 +38,26 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             Pages = new TabPageCollection(this, panelTitle, panelMain);
 
             btnMorePage.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Arrow;
+
+            backColorSupport = new BackColorSupport(this);
+            focusListener = new FocusListener(this);  
+
+            // 
+            // backColorSupport
+            // 
+            this.backColorSupport.ParentControl = this.panelTitle;
+            this.backColorSupport.RespondGotFocusEvent = false;
+            this.backColorSupport.RespondLostFocusEvent = false;
+            this.backColorSupport.RespondMouseDownEvent = false;
+            this.backColorSupport.RespondMouseLeaveEvent = true;
+            this.backColorSupport.RespondMouseMoveEvent = true;
+            this.backColorSupport.StateColorSet = this.stateColorSet;
+            this.backColorSupport.TargetTypes = null;
+            // 
+            // focusListener
+            // 
+            this.focusListener.AllowUseClickEvent = true;
+            this.focusListener.ParentControl = this.panelTitle;
 
             backColorSupport.TargetTypes = new Type[] { typeof(TitleBar),typeof(Label) };
 
@@ -43,9 +67,6 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             PageRemoved += (s, e) => {
                 backColorSupport.RemoveChildControl(e.TabPage.TitleBar);
             };
-
-            focusListener.Init();
-            backColorSupport.Init();
         }
 
         public void AddPage(TabPage page)

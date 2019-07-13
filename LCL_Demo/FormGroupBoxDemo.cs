@@ -25,7 +25,7 @@ namespace LCL_Demo
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            tabControl.AddPage("Test", new Button());
+            //tabControl.AddPage("Test", new Button());
         }
 
         private void TabControl_PageAdded(object sender, Landriesnidis.LCL_Controls.Controls.Container.PageChangedEventArgs e)
@@ -41,7 +41,11 @@ namespace LCL_Demo
 
         private void LclGroupBox1_CloseButtonClick_1(object sender, EventArgs e)
         {
-            lclGroupBox1.Dispose();
+           // lclGroupBox1.Dispose();
+        }
+
+        private void LclGroupBox1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

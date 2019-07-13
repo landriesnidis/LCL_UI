@@ -26,24 +26,52 @@ namespace Landriesnidis.LCL_Controls.Components.Comm
         /// </summary>
         public List<Control> ChildControls { get; set; } = new List<Control>();
 
-        public UIComponent(Control form) : base(form)
+        public UIComponent(Control control) : base(control)
         {
-            //Init();
+            Init();
         }
 
         public UIComponent(IContainer container) : base(container)
         {
-            //Init();
+            Init();
         }
 
-        public void Init()
+        private void Init()
         {
             FindedControl += UIComponent_FindedControl;
-            ChildControls = GetChildControls(ParentControl);
+            ParentControlChanged += UIComponent_ParentControlChanged;
+        }
+
+        private void UIComponent_ParentControlChanged(object sender, ParentControlChangedEventArgs e)
+        {
+            // 新传入的父容器为空则忽略
+            if (e.Control == null) return;
+
+            // 已存在的主容器不为空时，解除所有子控件的事件并移除列表
+            if(ParentControl != null)
+            {
+                // 如果没有变化则忽略
+                if (e.Control != ParentControl)
+                {
+                    RemoveChildControl(ParentControl);
+                    ChildControls.Clear();
+                    parentControl = e.Control;
+                    ChildControls = GetChildControls(ParentControl);
+                }
+            }
+            else
+            {
+                parentControl = e.Control;
+                ChildControls = GetChildControls(ParentControl);
+            }
+
+            if(ChildControls.Count == 0) ChildControls = GetChildControls(ParentControl);
         }
 
         public void AddChildControl(Control ctl)
         {
+            if (ChildControls.Contains(ctl)) return;
+
             List<Control> controls = GetChildControls(ctl);
             controls.Add(ctl);
             ChildControls.AddRange(controls);
@@ -51,12 +79,14 @@ namespace Landriesnidis.LCL_Controls.Components.Comm
 
         public void RemoveChildControl(Control ctl)
         {
+            if (!ChildControls.Contains(ctl)) return;
+
             var controls = GetChildControls(ctl);
             foreach (Control c in controls)
             {
                 // 控件移除前，删除事件
-                c.ControlAdded -= ChildControlList_ControlAdded;
-                c.ControlRemoved -= ChildControlList_ControlRemoved;
+                try { c.ControlAdded -= ChildControlList_ControlAdded; } catch (StackOverflowException) { }
+                try { c.ControlRemoved -= ChildControlList_ControlRemoved; } catch (StackOverflowException) { }
                 ChildControls.Remove(c);
             }
             ChildControls.Remove(ctl);
@@ -71,9 +101,8 @@ namespace Landriesnidis.LCL_Controls.Components.Comm
                 if (!arg.IsCancel)
                 {
                     AddChildControl(e.Control);
-
-                    e.Control.ControlAdded += ChildControlList_ControlAdded;
-                    e.Control.ControlRemoved += ChildControlList_ControlRemoved;
+                    try { e.Control.ControlAdded += ChildControlList_ControlAdded; } catch { }
+                    try { e.Control.ControlRemoved += ChildControlList_ControlRemoved; } catch { }
                 }
             }
         }

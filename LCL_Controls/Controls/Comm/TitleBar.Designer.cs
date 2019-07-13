@@ -34,7 +34,7 @@
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
             this.btnArrow = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
-            this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.stateColorSet = new Landriesnidis.LCL_Controls.Components.StateColorSet(this.components);
             this.flowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 0;
+            this.btnClose.AllowNoFocusResponseMouseEvent = false;
             // 
             // btnArrow
             // 
@@ -85,15 +86,20 @@
             this.btnArrow.Name = "btnArrow";
             this.btnArrow.Size = new System.Drawing.Size(20, 20);
             this.btnArrow.TabIndex = 1;
+            this.btnArrow.AllowNoFocusResponseMouseEvent = false;
             // 
-            // cms
+            // stateColorSet
             // 
-            this.cms.AutoSize = false;
-            this.cms.BackColor = System.Drawing.Color.White;
-            this.cms.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cms.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cms.Name = "cms";
-            this.cms.Size = new System.Drawing.Size(211, 56);
+            this.stateColorSet.GotFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.stateColorSet.GotFocusForegroundColor = System.Drawing.Color.White;
+            this.stateColorSet.LostFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.stateColorSet.LostFocusForegroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.stateColorSet.MouseDownBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(97)))), ((int)(((byte)(152)))));
+            this.stateColorSet.MouseDownForegroundColor = System.Drawing.Color.White;
+            this.stateColorSet.MouseLeaveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.stateColorSet.MouseLeaveForegroundColor = System.Drawing.Color.White;
+            this.stateColorSet.MouseMoveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(176)))), ((int)(((byte)(239)))));
+            this.stateColorSet.MouseMoveForegroundColor = System.Drawing.Color.White;
             // 
             // TitleBar
             // 
@@ -116,7 +122,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         public MiniImageButton btnClose;
         public MiniImageButton btnArrow;
-        private System.Windows.Forms.ContextMenuStrip cms;
         public System.Windows.Forms.Label labTitle;
+        public Components.StateColorSet stateColorSet;
     }
 }

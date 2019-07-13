@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.titleBar = new Landriesnidis.LCL_Controls.Controls.Comm.TitleBar();
-            this.focusListener = new Landriesnidis.LCL_Controls.Components.FocusListener(this.components);
             this.SuspendLayout();
             // 
             // titleBar
@@ -45,12 +43,6 @@
             this.titleBar.Size = new System.Drawing.Size(150, 30);
             this.titleBar.TabIndex = 0;
             this.titleBar.Title = null;
-            // 
-            // focusListener
-            // 
-            this.focusListener.AllowUseClickEvent = false;
-            this.focusListener.ChildControls = null;
-            this.focusListener.ParentControl = null;
             // 
             // LCLGroupBox
             // 
@@ -70,6 +62,5 @@
         #endregion
 
         public Comm.TitleBar titleBar;
-        private Components.FocusListener focusListener;
     }
 }

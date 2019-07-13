@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Landriesnidis.LCL_Controls.Components;
+using System.Diagnostics;
 
 namespace Landriesnidis.LCL_Controls.Controls.Comm
 {
@@ -21,6 +23,16 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
 
         [Browsable(true)]
         public new Color ForeColor { get { return labTitle.ForeColor; } set { labTitle.ForeColor = value; } }
+
+        /// <summary>
+        /// 主要用于改变TitleBar背景色的焦点监听器
+        /// </summary>
+        public FocusListener FocusListener { get; set; }
+
+        /// <summary>
+        /// 与TitleBar焦点状态关联的控件组
+        /// </summary>
+        public List<Control> FocusStateAssociatedControlList { get { return FocusListener.ChildControls; } }
 
         public TitleBar()
         {
@@ -48,7 +60,39 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
             {
                 if (this.ForeColor != labTitle.ForeColor) this.ForeColor = labTitle.ForeColor;
             };
+
+            FocusListener = new FocusListener(this);
+            FocusListener.ParentControl = this;
+            FocusListener.AllowUseClickEvent = true;
+
+            FocusListener.GotFocus += FocusListener_GotFocus;
+            FocusListener.LostFocus += FocusListener_LostFocus;
+
+            FocusListener_GotFocus(this,null);
         }
+
+        private void FocusListener_GotFocus(object sender, EventArgs e)
+        {
+            Debug.WriteLine($"[{this.GetType().ToString()}]FocusListener_GotFocus - sender:{((Control)sender).Name}");
+
+            BackColor = stateColorSet.GotFocusBackgroundColor;
+            ForeColor = stateColorSet.GotFocusForegroundColor;
+
+            btnClose.MiniImageButton_MouseUp(sender, null);
+            btnArrow.MiniImageButton_MouseUp(sender, null);
+        }
+
+        private void FocusListener_LostFocus(object sender, EventArgs e)
+        {
+            Debug.WriteLine($"[{this.GetType().ToString()}]FocusListener_LostFocus - sender:{((Control)sender).Name}");
+
+            BackColor = stateColorSet.LostFocusBackgroundColor;
+            ForeColor = stateColorSet.LostFocusForegroundColor;
+
+            btnClose.MiniImageButton_LostFocus(sender, null);
+            btnArrow.MiniImageButton_LostFocus(sender, null);
+        }
+
 
         private void TitleBar_Load(object sender, EventArgs e)
         {

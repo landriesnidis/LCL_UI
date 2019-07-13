@@ -17,6 +17,10 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         [Browsable(true)]
         public StateColorSet MiniImageButtonColor { get; set; } = new StateColorSet();
 
+        [Browsable(true)]
+        [Description("是否允许当按钮未获得焦点时响应MouseMove、MouseLeave鼠标事件")]
+        public bool AllowNoFocusResponseMouseEvent { get; set; } = true;
+
         private MiniImageButtonImage MiniImageButtonImage { get; set; } = new MiniImageButtonImage();
 
         [Bindable(true)]
@@ -25,12 +29,17 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         public Image Image { get { return BackgroundImage; } set { BackgroundImage = value; ComputingImage(); } }
 
         // private bool isMouseDown = false;
+        private bool isOnFocus = false;
         private bool isInSide = false;
 
         public MiniImageButton()
         {
             InitializeComponent();
+
+            this.LostFocus += MiniImageButton_LostFocus;
         }
+
+
 
         /// <summary>
         /// 计算出按钮所需的所有图像
@@ -68,16 +77,18 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
             BackColor = MiniImageButtonColor.MouseLeaveBackgroundColor;
         }
 
-        private void MiniImageButton_MouseDown(object sender, MouseEventArgs e)
+        public void MiniImageButton_MouseDown(object sender, MouseEventArgs e)
         {
-            // isMouseDown = true;
+            isOnFocus = true;
+
             BackgroundImage = MiniImageButtonImage.MouseDownImage;
             BackColor = MiniImageButtonColor.MouseDownBackgroundColor;
         }
 
-        private void MiniImageButton_MouseUp(object sender, MouseEventArgs e)
+        public void MiniImageButton_MouseUp(object sender, MouseEventArgs e)
         {
-            // isMouseDown = false;
+            isOnFocus = true;
+
             if (isInSide)
             {
                 BackgroundImage = MiniImageButtonImage.MouseMoveImage;
@@ -90,9 +101,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
             }
         }
 
-        private void MiniImageButton_MouseMove(object sender, MouseEventArgs e)
+        public void MiniImageButton_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!isInSide)
+            if (!isInSide && (isOnFocus || AllowNoFocusResponseMouseEvent))
             {
                 BackgroundImage = MiniImageButtonImage.MouseMoveImage;
                 BackColor = MiniImageButtonColor.MouseMoveBackgroundColor;
@@ -100,11 +111,22 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
             isInSide = true;
         }
 
-        private void MiniImageButton_MouseLeave(object sender, EventArgs e)
+        public void MiniImageButton_MouseLeave(object sender, EventArgs e)
         {
             isInSide = false;
-            BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
-            BackColor = MiniImageButtonColor.MouseLeaveBackgroundColor;
+            if (isOnFocus || AllowNoFocusResponseMouseEvent)
+            {
+                BackgroundImage = MiniImageButtonImage.MouseLeaveImage;
+                BackColor = MiniImageButtonColor.MouseLeaveBackgroundColor;
+            }
+        }
+
+        public void MiniImageButton_LostFocus(object sender, EventArgs e)
+        {
+            isOnFocus = false;
+
+            BackgroundImage = MiniImageButtonImage.LostFocusImage;
+            BackColor = MiniImageButtonColor.LostFocusBackgroundColor;
         }
     }
 
