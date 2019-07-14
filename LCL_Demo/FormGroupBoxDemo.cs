@@ -44,8 +44,35 @@ namespace LCL_Demo
            // lclGroupBox1.Dispose();
         }
 
-        private void LclGroupBox1_Click(object sender, EventArgs e)
+        private void ExitButton1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void FormGroupBoxDemo_Load(object sender, EventArgs e)
+        {
+            exitButton1.LostFocus += (s, args) =>
+            {
+                this.Text = "exitButton1.LostFocus";
+            };
+            exitButton1.GotFocus += (s, args) =>
+            {
+                this.Text = "exitButton1.GotFocus";
+            };
+
+            miniImageButton1.LostFocus += (s, args) =>
+            {
+                this.Text = "miniImageButton1.LostFocus";
+            };
+            miniImageButton1.GotFocus += (s, args) =>
+            {
+                this.Text = "miniImageButton1.GotFocus";
+            };
+        }
+
+        private void MiniImageButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

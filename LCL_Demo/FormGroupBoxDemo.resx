@@ -120,4 +120,16 @@
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exitButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEcAAAAyCAYAAAAOX8ZtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAATJJREFUaEPt1zEKhDAQhWFrwatY2Hoea0+hJ/AC1rZ2Fl5F8BgpZslCILtknzZx
+        BvYVfzWpPkiGFM45YemIAyIOiDgg4oCIAyIOiDgg4oCIAyIOiDgg4oCIAyIOiDgg4oCIA3ocZ9s2KctS
+        +r5Pzr8bx1GqqpJ935PznD2Os66rFEXx7grIw4Sz8zwnz+RM5Voty3IJFMNM05Q8kzu1NwcBWYDxqT7I
+        KSArMD5VHF8M1LatGRifOo4vBrIC4zOBMwzDB87dNZ87dZwYpus6U0CqODFMuEp31vxTqeGkYEJWgFRw
+        EEzIAtDjOPH34WorxUB/8X04jkPqur69rj1Q0zRynmdynjPVB9l6xAERB0QcEHFAxAERB0QcEHFAxAER
+        B0QcEHFAxAERB0QcEHFAxPmZkxdluc4b2tfrtAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
