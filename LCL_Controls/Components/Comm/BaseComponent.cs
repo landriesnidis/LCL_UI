@@ -98,8 +98,12 @@ namespace Landriesnidis.LCL_Controls.Components
             {
                 // 每当发现新的控件时执行事件，将控件对象传入进去。返回的参数中如果IsCancel为true则不添加此控件进入子控件列表
                 FindedControlEventArgs args = new FindedControlEventArgs(ctl);
+                string n = $"{parent.Name} - {ctl.Name}";
                 FindedControl?.Invoke(this, args);
-                if(!args.IsCancel) controls.Add(ctl);
+
+
+                if(!args.IsCancel)
+                    controls.Add(ctl);
 
                 if (args.IsScanChildControl && ctl.Controls.Count > 0)
                 {

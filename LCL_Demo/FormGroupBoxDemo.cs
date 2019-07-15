@@ -74,5 +74,15 @@ namespace LCL_Demo
         {
 
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            foreach(Control c in button2.Parent.Controls)
+            {
+                s += c.Name + " / ";
+            }
+            MessageBox.Show(s);
+        }
     }
 }

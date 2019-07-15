@@ -57,7 +57,7 @@ namespace Landriesnidis.LCL_Controls.Components
         private void Init()
         {
             // 加入焦点监听管理器
-            // FocusListenManager.AddListener(this);
+            FocusListenManager.AddListener(this);
 
             // 用事件监听子控件集合的添加或移除
             this.AddingChildControl += FocusListener_AddingChildControl;
@@ -81,10 +81,13 @@ namespace Landriesnidis.LCL_Controls.Components
                     // 是否允许使用Click获取焦点
                     if (AllowUseClickEvent)
                     {
+                        c.Click += ChildControl_GotFocus;
+                        
                         c.Click += (s,args) =>
                         {
                             c.Focus();
                         };
+                        
                     }
                 }
             }
@@ -97,12 +100,9 @@ namespace Landriesnidis.LCL_Controls.Components
             e.Control.LostFocus -= ChildControl_LostFocus;
         }
 
-        int ccccc = 0;
-
         private void ChildControl_GotFocus(object sender, EventArgs e)
         {
             Debug.WriteLine($"[{this.GetType().ToString()}]ChildControl_GotFocus - sender:{((Control)sender).Name}");
-            ccccc = ChildControls.Count;
 
             // 回调事件
             GotFocus?.Invoke(sender, e);
@@ -112,7 +112,7 @@ namespace Landriesnidis.LCL_Controls.Components
             lastOnFocusControl = (Control)sender;
 
             // 得到焦点后，除了要自身响应焦点事件外，还需要通知所有FocusListener
-            // FocusListenManager.Broadcast(FocusEvent.Got, this, (Control)sender);
+            FocusListenManager.Broadcast(FocusEvent.Got, this, (Control)sender);
         }
 
         private void ChildControl_LostFocus(object sender, EventArgs e)
@@ -120,9 +120,7 @@ namespace Landriesnidis.LCL_Controls.Components
             // 当控件失去焦点时判断新获得焦点的控件是不是当前监听器下同一组的控件
             // 如果同属一组，则不回调控件焦点丢失的事件委托
 
-            ccccc--;
-            if (ccccc > 0)
-                return;
+
 
             Debug.WriteLine($"[{this.GetType().ToString()}]ChildControl_LostFocus - sender:{((Control)sender).Name}");
 
@@ -133,13 +131,12 @@ namespace Landriesnidis.LCL_Controls.Components
             isOnFocus = false;
 
             // 失去焦点后，除了要自身响应焦点事件外，还需要通知所有FocusListener
-            FocusListenManager.Broadcast(FocusEvent.Lost, this, (Control)sender);
+            //FocusListenManager.Broadcast(FocusEvent.Lost, this, (Control)sender);
         }
 
 
         public void OnBroadcast(FocusEvent @event, FocusListener context, Control eventControl)
         {
-            return;
             // 判断是不是其他监听器的消息（广播转发的时候其实已经过滤了，这句判断可以不加）
             if (context != this)
             {
@@ -147,7 +144,10 @@ namespace Landriesnidis.LCL_Controls.Components
                 {
                     case FocusEvent.Got:
                         // 如果是其他监听器下的控件获得了焦点，且焦点最后的状态记录为true，则主动执行失去焦点的事件函数
-                        if(isOnFocus)ChildControl_LostFocus(lastOnFocusControl, new EventArgs());
+                        if (isOnFocus && !ChildControls.Contains(eventControl))
+                        {
+                            ChildControl_LostFocus(lastOnFocusControl, new EventArgs());
+                        }
                         break;
                     case FocusEvent.Lost:
 

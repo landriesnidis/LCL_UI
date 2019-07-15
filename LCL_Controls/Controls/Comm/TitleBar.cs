@@ -86,6 +86,8 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         {
             Debug.WriteLine($"[{this.GetType().ToString()}]FocusListener_LostFocus - sender:{((Control)sender).Name}");
 
+            string s = this.Name;
+
             BackColor = stateColorSet.LostFocusBackgroundColor;
             ForeColor = stateColorSet.LostFocusForegroundColor;
 

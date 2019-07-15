@@ -72,9 +72,19 @@ namespace Landriesnidis.LCL_Controls.Components.Comm
         {
             if (ChildControls.Contains(ctl)) return;
 
-            List<Control> controls = GetChildControls(ctl);
-            controls.Add(ctl);
-            ChildControls.AddRange(controls);
+            ChildControlListAddingEventArgs arg = new ChildControlListAddingEventArgs(ctl);
+            AddingChildControl?.Invoke(this, arg);
+            if (!arg.IsCancel)
+            {
+                try { ctl.ControlAdded += ChildControlList_ControlAdded; } catch { }
+                try { ctl.ControlRemoved += ChildControlList_ControlRemoved; } catch { }
+
+                List<Control> controls = GetChildControls(ctl);
+                controls.Add(ctl);
+                ChildControls.AddRange(controls);
+            }
+
+            
         }
 
         public void RemoveChildControl(Control ctl)
@@ -94,13 +104,17 @@ namespace Landriesnidis.LCL_Controls.Components.Comm
 
         private void UIComponent_FindedControl(object sender, FindedControlEventArgs e)
         {
+            if (ChildControls.Contains(e.Control)) return;
+
             if (!e.IsCancel)
             {
                 ChildControlListAddingEventArgs arg = new ChildControlListAddingEventArgs(e.Control);
                 AddingChildControl?.Invoke(this, arg);
                 if (!arg.IsCancel)
                 {
-                    AddChildControl(e.Control);
+                    string n = e.Control.Name;
+                    // AddChildControl(e.Control);
+                    ChildControls.Add(e.Control);
                     try { e.Control.ControlAdded += ChildControlList_ControlAdded; } catch { }
                     try { e.Control.ControlRemoved += ChildControlList_ControlRemoved; } catch { }
                 }
@@ -109,6 +123,7 @@ namespace Landriesnidis.LCL_Controls.Components.Comm
 
         private void ChildControlList_ControlAdded(object sender, ControlEventArgs e)
         {
+            string n = e.Control.Name;
             UIComponent_FindedControl(sender, new FindedControlEventArgs(e.Control));
         }
 

@@ -48,8 +48,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             {
                 CloseButtonClick?.Invoke(s, e);
             };
-
-            titleBar.FocusListener.AddChildControl(this);
+            
             
             this.ControlAdded += (s, e) =>
             {

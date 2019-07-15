@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.titleBar = new Landriesnidis.LCL_Controls.Controls.Comm.TitleBar();
             this.SuspendLayout();
             // 
