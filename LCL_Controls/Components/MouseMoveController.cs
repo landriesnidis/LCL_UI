@@ -94,6 +94,16 @@ namespace Landriesnidis.LCL_Controls.Components
                     leftFlag = false;
                 }
             };
+            control.DoubleClick += (obj, args) => {
+                if (Form.WindowState == FormWindowState.Maximized)
+                {
+                    Form.WindowState = FormWindowState.Normal;
+                }
+                else
+                {
+                    Form.WindowState = FormWindowState.Maximized;
+                }
+            };
         }
 
         private void InitAllControlsEvents(ICollection<Control> controls)

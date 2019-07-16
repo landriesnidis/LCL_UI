@@ -28,7 +28,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
         [Browsable(true)]
         public event PageRemovedHandler PageRemoved;
 
-        BackColorSupport backColorSupport;
+        //BackColorSupport backColorSupport;
         FocusListener focusListener;
 
         public LCLTabControl()
@@ -39,9 +39,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
 
             btnMorePage.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.MiniImageButton_Arrow;
 
-            backColorSupport = new BackColorSupport(this);
-            focusListener = new FocusListener(this);  
-
+            //backColorSupport = new BackColorSupport(this);
+            focusListener = new FocusListener(this);
+            /*
             // 
             // backColorSupport
             // 
@@ -60,13 +60,43 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             this.focusListener.ParentControl = this.panelTitle;
 
             backColorSupport.TargetTypes = new Type[] { typeof(TitleBar),typeof(Label) };
-
+            
             PageAdded += (s, e)=>{
                 backColorSupport.AddChildControl(e.TabPage.TitleBar);
+                RefreshPagesMenu();
             };
             PageRemoved += (s, e) => {
                 backColorSupport.RemoveChildControl(e.TabPage.TitleBar);
+                RefreshPagesMenu();
             };
+            */
+
+            // 为箭头按钮添加快捷菜单
+            btnMorePage.Click += (s, e) =>
+            {
+                cmsPagesMenu.Show(btnMorePage, btnMorePage.Width - cmsPagesMenu.Width, cmsPagesMenu.Height);
+            };
+
+            cmsPagesMenu.Opening += (s, e) =>
+            {
+                cmsPagesMenu.Items.Clear();
+
+                foreach (Control c in panelTitle.Controls)
+                {
+                    TitleBar tb = (TitleBar)c;
+                    if (c.Top != 1)
+                    {
+                        var item = new ToolStripButton();
+                        item.Text = tb.Title;
+                        cmsPagesMenu.Items.Add(item);
+                    }
+                }
+            };
+        }
+
+        private void RefreshPagesMenu()
+        {
+
         }
 
         public void AddPage(TabPage page)
@@ -80,6 +110,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             page.ContentControl = control;
             page.TitleBar = new TitleBar();
             page.TitleBar.Title = title;
+
+            page.TitleBar.FocusListener.AddChildControl(control);
+
             Pages.Add(page);
         }
 
@@ -133,14 +166,10 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             item.ContentControl.Dock = DockStyle.Fill;
 
             item.TitleBar.btnClose.Click += (s,e)=>{
-                MessageBox.Show("btnClose.Click");
-
                 Remove(item);
             };
 
             item.TitleBar.labTitle.Click += (s, e) => {
-                MessageBox.Show("labTitle.Click");
-
                 mainPanel.Controls.Clear();
                 mainPanel.Controls.Add(item.ContentControl);
             };

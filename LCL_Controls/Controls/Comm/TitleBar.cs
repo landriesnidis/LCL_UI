@@ -34,6 +34,8 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         /// </summary>
         public List<Control> FocusStateAssociatedControlList { get { return FocusListener.ChildControls; } }
 
+        private BackColorSupport backColorSupport;
+
         public TitleBar()
         {
             InitializeComponent();
@@ -68,7 +70,39 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
             FocusListener.GotFocus += FocusListener_GotFocus;
             FocusListener.LostFocus += FocusListener_LostFocus;
 
-            FocusListener_GotFocus(this,null);
+            labTitle.MouseMove += All_MouseMove;
+            labTitle.MouseLeave += All_MouseLeave;
+            flowLayoutPanel.MouseMove += All_MouseMove;
+            flowLayoutPanel.MouseLeave += All_MouseLeave;
+            /*
+            backColorSupport = new BackColorSupport(this);
+            backColorSupport.RespondMouseLeaveEvent = true;
+            backColorSupport.RespondMouseMoveEvent = true;
+            backColorSupport.StateColorSet = this.stateColorSet;
+            backColorSupport.TargetTypes = new Type[] { typeof(TitleBar), typeof(Label) };
+            backColorSupport.ParentControl = this;
+            */
+        }
+
+        private void All_MouseLeave(object sender, EventArgs e)
+        {
+            if (FocusListener.Focused)
+            {
+                BackColor = stateColorSet.MouseLeaveBackgroundColor;
+                ForeColor = stateColorSet.MouseLeaveForegroundColor;
+            }
+            else
+            {
+                BackColor = stateColorSet.LostFocusBackgroundColor;
+                ForeColor = stateColorSet.LostFocusForegroundColor;
+            }
+            
+        }
+
+        private void All_MouseMove(object sender, MouseEventArgs e)
+        {
+            BackColor = stateColorSet.MouseMoveBackgroundColor;
+            ForeColor = stateColorSet.MouseMoveForegroundColor;
         }
 
         private void FocusListener_GotFocus(object sender, EventArgs e)
@@ -99,6 +133,8 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         private void TitleBar_Load(object sender, EventArgs e)
         {
             labTitle.Text = title;
+
+            FocusListener_LostFocus(this, null);
         }
 
         private void AutoChangeBarWidth(bool b)

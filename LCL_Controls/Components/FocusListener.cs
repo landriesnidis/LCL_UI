@@ -36,6 +36,8 @@ namespace Landriesnidis.LCL_Controls.Components
         // 当前监听的主对象的最后焦点获取状态
         private bool isOnFocus = false;
 
+        public bool Focused { get { return isOnFocus; } }
+
         // 最后一个获得焦点的子控件
         private Control lastOnFocusControl = null;
 

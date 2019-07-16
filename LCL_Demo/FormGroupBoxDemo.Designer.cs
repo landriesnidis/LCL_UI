@@ -38,7 +38,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.lclTabControl1 = new Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl();
             this.lclGroupBox1 = new Landriesnidis.LCL_Controls.Controls.Container.LCLGroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.miniImageButton1 = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
             this.exitButton1 = new Landriesnidis.LCL_Controls.Controls.Botton.ExitButton();
@@ -113,11 +115,20 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // lclTabControl1
+            // 
+            this.lclTabControl1.AutoSize = true;
+            this.lclTabControl1.Location = new System.Drawing.Point(278, 22);
+            this.lclTabControl1.Name = "lclTabControl1";
+            this.lclTabControl1.Size = new System.Drawing.Size(674, 387);
+            this.lclTabControl1.TabIndex = 10;
+            // 
             // lclGroupBox1
             // 
             this.lclGroupBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lclGroupBox1.Controls.Add(this.button4);
             this.lclGroupBox1.Controls.Add(this.button2);
-            this.lclGroupBox1.Location = new System.Drawing.Point(692, 224);
+            this.lclGroupBox1.Location = new System.Drawing.Point(151, 431);
             this.lclGroupBox1.MinimumSize = new System.Drawing.Size(150, 30);
             this.lclGroupBox1.Name = "lclGroupBox1";
             this.lclGroupBox1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
@@ -128,11 +139,20 @@
             this.lclGroupBox1.TitleBarArrowButtonContextMenu = null;
             this.lclGroupBox1.TitleBarCloseButton = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(76, 50);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(39, 41);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(52, 62);
+            this.button2.Location = new System.Drawing.Point(15, 50);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 117);
+            this.button2.Size = new System.Drawing.Size(39, 41);
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -144,7 +164,7 @@
             this.miniImageButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("miniImageButton1.BackgroundImage")));
             this.miniImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.miniImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("miniImageButton1.Image")));
-            this.miniImageButton1.Location = new System.Drawing.Point(383, 224);
+            this.miniImageButton1.Location = new System.Drawing.Point(47, 367);
             this.miniImageButton1.Name = "miniImageButton1";
             this.miniImageButton1.Size = new System.Drawing.Size(78, 67);
             this.miniImageButton1.TabIndex = 6;
@@ -154,7 +174,7 @@
             // 
             this.exitButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitButton1.BackgroundImage")));
             this.exitButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.exitButton1.Location = new System.Drawing.Point(550, 185);
+            this.exitButton1.Location = new System.Drawing.Point(151, 367);
             this.exitButton1.Name = "exitButton1";
             this.exitButton1.Size = new System.Drawing.Size(60, 42);
             this.exitButton1.TabIndex = 5;
@@ -165,6 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 546);
+            this.Controls.Add(this.lclTabControl1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lclGroupBox1);
             this.Controls.Add(this.miniImageButton1);
@@ -178,6 +199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.lclGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,5 +217,7 @@
         private Landriesnidis.LCL_Controls.Controls.Container.LCLGroupBox lclGroupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private Landriesnidis.LCL_Controls.Controls.Container.LCLTabControl lclTabControl1;
     }
 }

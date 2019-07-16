@@ -30,29 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LCLTabControl));
-            this.stateColorSet = new Landriesnidis.LCL_Controls.Components.StateColorSet(this.components);
             this.panelHead = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.FlowLayoutPanel();
-            this.titleBar1 = new Landriesnidis.LCL_Controls.Controls.Comm.TitleBar();
-            this.btnMorePage = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmsPagesMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnMorePage = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
+            this.stateColorSet = new Landriesnidis.LCL_Controls.Components.StateColorSet(this.components);
             this.panelHead.SuspendLayout();
-            this.panelTitle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // stateColorSet
-            // 
-            this.stateColorSet.GotFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.stateColorSet.GotFocusForegroundColor = System.Drawing.Color.White;
-            this.stateColorSet.LostFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.stateColorSet.LostFocusForegroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.stateColorSet.MouseDownBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(97)))), ((int)(((byte)(152)))));
-            this.stateColorSet.MouseDownForegroundColor = System.Drawing.Color.White;
-            this.stateColorSet.MouseLeaveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.stateColorSet.MouseLeaveForegroundColor = System.Drawing.Color.White;
-            this.stateColorSet.MouseMoveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(176)))), ((int)(((byte)(239)))));
-            this.stateColorSet.MouseMoveForegroundColor = System.Drawing.Color.White;
             // 
             // panelHead
             // 
@@ -69,37 +55,11 @@
             // 
             this.panelTitle.AutoSize = true;
             this.panelTitle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelTitle.Controls.Add(this.titleBar1);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(849, 30);
+            this.panelTitle.Size = new System.Drawing.Size(864, 30);
             this.panelTitle.TabIndex = 3;
-            // 
-            // titleBar1
-            // 
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.titleBar1.Location = new System.Drawing.Point(1, 1);
-            this.titleBar1.Margin = new System.Windows.Forms.Padding(1);
-            this.titleBar1.MaximumSize = new System.Drawing.Size(0, 30);
-            this.titleBar1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(200, 30);
-            this.titleBar1.TabIndex = 0;
-            this.titleBar1.Title = "起始页";
-            // 
-            // btnMorePage
-            // 
-            this.btnMorePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnMorePage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMorePage.BackgroundImage")));
-            this.btnMorePage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMorePage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMorePage.Image = ((System.Drawing.Image)(resources.GetObject("btnMorePage.Image")));
-            this.btnMorePage.Location = new System.Drawing.Point(849, 0);
-            this.btnMorePage.MiniImageButtonColor = this.stateColorSet;
-            this.btnMorePage.Name = "btnMorePage";
-            this.btnMorePage.Size = new System.Drawing.Size(25, 30);
-            this.btnMorePage.TabIndex = 2;
             // 
             // panelMain
             // 
@@ -119,7 +79,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(874, 3);
             this.panel1.TabIndex = 4;
-
+            // 
+            // cmsPagesMenu
+            // 
+            this.cmsPagesMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsPagesMenu.Name = "cmsPagesMenu";
+            this.cmsPagesMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // btnMorePage
+            // 
+            this.btnMorePage.AllowNoFocusResponseMouseEvent = true;
+            this.btnMorePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnMorePage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMorePage.BackgroundImage")));
+            this.btnMorePage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMorePage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMorePage.Image = ((System.Drawing.Image)(resources.GetObject("btnMorePage.Image")));
+            this.btnMorePage.Location = new System.Drawing.Point(864, 0);
+            this.btnMorePage.MiniImageButtonColor = this.stateColorSet;
+            this.btnMorePage.Name = "btnMorePage";
+            this.btnMorePage.Size = new System.Drawing.Size(10, 30);
+            this.btnMorePage.TabIndex = 2;
+            // 
+            // stateColorSet
+            // 
+            this.stateColorSet.GotFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.stateColorSet.GotFocusForegroundColor = System.Drawing.Color.White;
+            this.stateColorSet.LostFocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.stateColorSet.LostFocusForegroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.stateColorSet.MouseDownBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(97)))), ((int)(((byte)(152)))));
+            this.stateColorSet.MouseDownForegroundColor = System.Drawing.Color.White;
+            this.stateColorSet.MouseLeaveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.stateColorSet.MouseLeaveForegroundColor = System.Drawing.Color.White;
+            this.stateColorSet.MouseMoveBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(176)))), ((int)(((byte)(239)))));
+            this.stateColorSet.MouseMoveForegroundColor = System.Drawing.Color.White;
             // 
             // LCLTabControl
             // 
@@ -133,7 +125,6 @@
             this.Size = new System.Drawing.Size(874, 562);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
-            this.panelTitle.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -142,10 +133,10 @@
 
         private System.Windows.Forms.Panel panelHead;
         private System.Windows.Forms.FlowLayoutPanel panelTitle;
-        private Comm.TitleBar titleBar1;
         private Comm.MiniImageButton btnMorePage;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel1;
         private Components.StateColorSet stateColorSet;
+        private System.Windows.Forms.ContextMenuStrip cmsPagesMenu;
     }
 }

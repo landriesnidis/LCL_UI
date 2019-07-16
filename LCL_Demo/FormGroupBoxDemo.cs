@@ -25,7 +25,7 @@ namespace LCL_Demo
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //tabControl.AddPage("Test", new Button());
+            lclTabControl1.AddPage("Test", new Button());
         }
 
         private void TabControl_PageAdded(object sender, Landriesnidis.LCL_Controls.Controls.Container.PageChangedEventArgs e)
