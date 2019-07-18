@@ -139,12 +139,25 @@
     <Compile Include="Controls\Container\LCLTabControl.Designer.cs">
       <DependentUpon>LCLTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ListBox\KeyValueListBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListBox\KeyValueListBox.Designer.cs">
+      <DependentUpon>KeyValueListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListBox\KeyValueListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListBox\KeyValueListItem.Designer.cs">
+      <DependentUpon>KeyValueListItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utils\AeList.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +178,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Container\LCLTabControl.resx">
       <DependentUpon>LCLTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListBox\KeyValueListBox.resx">
+      <DependentUpon>KeyValueListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListBox\KeyValueListItem.resx">
+      <DependentUpon>KeyValueListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
