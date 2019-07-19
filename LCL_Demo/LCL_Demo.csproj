@@ -58,6 +58,12 @@
     <Compile Include="FormGroupBoxDemo.Designer.cs">
       <DependentUpon>FormGroupBoxDemo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListBox.Designer.cs">
+      <DependentUpon>FormListBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormButtonDemo.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGroupBoxDemo.resx">
       <DependentUpon>FormGroupBoxDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListBox.resx">
+      <DependentUpon>FormListBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
