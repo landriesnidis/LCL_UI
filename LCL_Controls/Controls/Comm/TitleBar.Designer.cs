@@ -40,6 +40,7 @@
             // 
             // labTitle
             // 
+            this.labTitle.AutoEllipsis = true;
             this.labTitle.BackColor = System.Drawing.Color.Transparent;
             this.labTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labTitle.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -64,6 +65,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.AllowNoFocusResponseMouseEvent = false;
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -73,10 +75,10 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 0;
-            this.btnClose.AllowNoFocusResponseMouseEvent = false;
             // 
             // btnArrow
             // 
+            this.btnArrow.AllowNoFocusResponseMouseEvent = false;
             this.btnArrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnArrow.BackgroundImage")));
             this.btnArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -86,7 +88,6 @@
             this.btnArrow.Name = "btnArrow";
             this.btnArrow.Size = new System.Drawing.Size(20, 20);
             this.btnArrow.TabIndex = 1;
-            this.btnArrow.AllowNoFocusResponseMouseEvent = false;
             // 
             // stateColorSet
             // 

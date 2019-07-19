@@ -48,6 +48,14 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
             {
                 ValueChanged?.Invoke(s, e);
             };
+
+            labKey.Click += Labels_Click;
+            labValue.Click += Labels_Click;
+        }
+
+        private void Labels_Click(object sender, EventArgs e)
+        {
+            this.OnClick(e);
         }
 
         public KeyValueListItem(string key,string value = ""):this()

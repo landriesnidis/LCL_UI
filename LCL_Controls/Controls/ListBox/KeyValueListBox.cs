@@ -15,10 +15,12 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
     public partial class KeyValueListBox : UserControl
     {
         [Browsable(true)]
-        public AeList<KeyValueListItem> Items;
+        public int ScrollBarWidth { get; set; } = 18;
 
-        [Browsable(true)]
-        public int ScrollBarWidth = 18;
+        //[Browsable(true)]
+        public AeList<KeyValueListItem> Items { get; set; }
+
+        
 
         private bool isUseScrollBar = false;
 
@@ -62,6 +64,12 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
 
             flowPanel.SizeChanged += (s, e) =>
             {
+                var controls = flowPanel.Controls;
+                int count = controls.Count;
+
+                if (count == 0) return;
+                Control c = controls[count - 1];
+                isUseScrollBar = (c.Height + c.Top >= Height);
                 ChangeControlsWidth(isUseScrollBar);
             };
         }

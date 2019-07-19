@@ -33,13 +33,14 @@
             // 
             // flowPanel
             // 
+            this.flowPanel.AutoScroll = true;
             this.flowPanel.AutoScrollMargin = new System.Drawing.Size(20, 0);
             this.flowPanel.AutoScrollMinSize = new System.Drawing.Size(20, 0);
             this.flowPanel.AutoSize = true;
             this.flowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPanel.Location = new System.Drawing.Point(0, 0);
             this.flowPanel.Name = "flowPanel";
-            this.flowPanel.Size = new System.Drawing.Size(260, 274);
+            this.flowPanel.Size = new System.Drawing.Size(183, 173);
             this.flowPanel.TabIndex = 0;
             // 
             // KeyValueListBox
@@ -49,7 +50,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.flowPanel);
             this.Name = "KeyValueListBox";
-            this.Size = new System.Drawing.Size(260, 274);
+            this.Size = new System.Drawing.Size(183, 173);
             this.ResumeLayout(false);
             this.PerformLayout();
 
