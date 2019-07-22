@@ -54,6 +54,19 @@
     <Compile Include="Components\BackColorSupport.Designer.cs">
       <DependentUpon>BackColorSupport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Broadcast\BroadcastPublisher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Broadcast\BroadcastPublisher.Designer.cs">
+      <DependentUpon>BroadcastPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Broadcast\BroadcastPublisherManager.cs" />
+    <Compile Include="Components\Broadcast\BroadcastReceiver.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Broadcast\BroadcastReceiver.Designer.cs">
+      <DependentUpon>BroadcastReceiver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Comm\BaseComponent.cs">
       <SubType>Component</SubType>
     </Compile>

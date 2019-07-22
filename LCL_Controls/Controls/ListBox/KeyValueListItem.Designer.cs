@@ -34,6 +34,7 @@
             // 
             // labKey
             // 
+            this.labKey.AutoEllipsis = true;
             this.labKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.labKey.Dock = System.Windows.Forms.DockStyle.Left;
             this.labKey.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -46,6 +47,7 @@
             // 
             // labValue
             // 
+            this.labValue.AutoEllipsis = true;
             this.labValue.BackColor = System.Drawing.Color.White;
             this.labValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labValue.Font = new System.Drawing.Font("微软雅黑", 9F);
@@ -57,14 +59,14 @@
             this.labValue.Text = "Value";
             this.labValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // DeviceListItem
+            // KeyValueListItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labValue);
             this.Controls.Add(this.labKey);
-            this.Name = "DeviceListItem";
+            this.Name = "KeyValueListItem";
             this.Size = new System.Drawing.Size(246, 31);
             this.SizeChanged += new System.EventHandler(this.DeviceListItem_SizeChanged);
             this.ResumeLayout(false);
