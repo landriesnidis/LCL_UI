@@ -20,8 +20,6 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
         //[Browsable(true)]
         public AeList<KeyValueListItem> Items { get; set; }
 
-        
-
         private bool isUseScrollBar = false;
 
         public KeyValueListBox()
@@ -72,6 +70,18 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
                 isUseScrollBar = (c.Height + c.Top >= Height);
                 ChangeControlsWidth(isUseScrollBar);
             };
+        }
+
+        public KeyValueListItem GetItem(string key)
+        {
+            foreach(KeyValueListItem item in Items)
+            {
+                if (item.Key == key)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
 
         private void ChangeControlsWidth(bool isUseScrollBar)
