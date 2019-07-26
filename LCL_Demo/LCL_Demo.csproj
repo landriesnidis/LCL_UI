@@ -70,6 +70,12 @@
     <Compile Include="FormListBox.Designer.cs">
       <DependentUpon>FormListBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSlideBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSlideBox.Designer.cs">
+      <DependentUpon>FormSlideBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMsgBoxDemo.resx">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormListBox.resx">
       <DependentUpon>FormListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSlideBox.resx">
+      <DependentUpon>FormSlideBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

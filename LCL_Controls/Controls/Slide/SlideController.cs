@@ -12,14 +12,14 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
     {
         public int ReviseValue { get; set; } = 10;
         public int Rate { get; set; } = 2;
-        public Control CurrentPage { get { return CurrentPage; } set { CurrentPage = value;timer.Enabled = true;if (Controls.Contains(value)) Controls.Add(value); } }
+        public Control CurrentPage { get { return CurrentPage; } set { if (Controls.Contains(value)) { Controls.Add(value); } CurrentPage = value; timer.Enabled = true; } }
         private Control CurrentLeftPage { get { return CurrentLeftPage; } set { CurrentLeftPage = value; CurrentLeftPage.Visible = true; } }
         private Control CurrentRightPage { get { return CurrentRightPage; } set { CurrentRightPage = value; CurrentRightPage.Visible = true; } }
 
         public AeList<Control> Controls { get; set; }
         private Timer timer;
 
-        public SlideController()
+        public SlideController(SlideBox box)
         {
             timer = new Timer();
             timer.Interval = 50;

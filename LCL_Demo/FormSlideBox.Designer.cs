@@ -1,16 +1,16 @@
-﻿namespace Landriesnidis.LCL_Controls.Controls.Slide
+﻿namespace LCL_Demo
 {
-    partial class SlideBox
+    partial class FormSlideBox
     {
-        /// <summary> 
-        /// 必需的设计器变量。
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// 清理所有正在使用的资源。
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,22 +20,23 @@
             base.Dispose(disposing);
         }
 
-        #region 组件设计器生成的代码
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// 设计器支持所需的方法 - 不要修改
-        /// 使用代码编辑器修改此方法的内容。
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // SlideBox
+            // FormSlideBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "SlideBox";
-            this.Size = new System.Drawing.Size(772, 455);
+            this.ClientSize = new System.Drawing.Size(1035, 521);
+            this.Name = "FormSlideBox";
+            this.Text = "FormSlideBox";
             this.ResumeLayout(false);
 
         }
