@@ -1,4 +1,4 @@
-﻿namespace Landriesnidis.LCL_Controls.Controls.Comm
+﻿namespace Landriesnidis.LCL_Controls.Controls.Button
 {
     partial class MiniImageButton
     {

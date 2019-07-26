@@ -1,4 +1,6 @@
-﻿namespace Landriesnidis.LCL_Controls.Controls.Container
+﻿using Landriesnidis.LCL_Controls.Controls.Button;
+
+namespace Landriesnidis.LCL_Controls.Controls.Container
 {
     partial class LCLTabControl
     {
@@ -35,7 +37,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmsPagesMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnMorePage = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
+            this.btnMorePage = new MiniImageButton();
             this.stateColorSet = new Landriesnidis.LCL_Controls.Components.StateColorSet(this.components);
             this.panelHead.SuspendLayout();
             this.SuspendLayout();
@@ -133,7 +135,7 @@
 
         private System.Windows.Forms.Panel panelHead;
         private System.Windows.Forms.FlowLayoutPanel panelTitle;
-        private Comm.MiniImageButton btnMorePage;
+        private MiniImageButton btnMorePage;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel1;
         private Components.StateColorSet stateColorSet;

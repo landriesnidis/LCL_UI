@@ -51,38 +51,7 @@ namespace LCL_Demo
 
         private void FormGroupBoxDemo_Load(object sender, EventArgs e)
         {
-            exitButton1.LostFocus += (s, args) =>
-            {
-                this.Text = "exitButton1.LostFocus";
-            };
-            exitButton1.GotFocus += (s, args) =>
-            {
-                this.Text = "exitButton1.GotFocus";
-            };
 
-            miniImageButton1.LostFocus += (s, args) =>
-            {
-                this.Text = "miniImageButton1.LostFocus";
-            };
-            miniImageButton1.GotFocus += (s, args) =>
-            {
-                this.Text = "miniImageButton1.GotFocus";
-            };
-        }
-
-        private void MiniImageButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            string s = "";
-            foreach(Control c in button2.Parent.Controls)
-            {
-                s += c.Name + " / ";
-            }
-            MessageBox.Show(s);
         }
     }
 }

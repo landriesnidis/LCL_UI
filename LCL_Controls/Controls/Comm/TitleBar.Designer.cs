@@ -1,4 +1,6 @@
-﻿namespace Landriesnidis.LCL_Controls.Controls.Comm
+﻿using Landriesnidis.LCL_Controls.Controls.Button;
+
+namespace Landriesnidis.LCL_Controls.Controls.Comm
 {
     partial class TitleBar
     {
@@ -32,8 +34,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TitleBar));
             this.labTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnClose = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
-            this.btnArrow = new Landriesnidis.LCL_Controls.Controls.Comm.MiniImageButton();
+            this.btnClose = new Landriesnidis.LCL_Controls.Controls.Button.MiniImageButton();
+            this.btnArrow = new Landriesnidis.LCL_Controls.Controls.Button.MiniImageButton();
             this.stateColorSet = new Landriesnidis.LCL_Controls.Components.StateColorSet(this.components);
             this.flowLayoutPanel.SuspendLayout();
             this.SuspendLayout();

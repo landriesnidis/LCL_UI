@@ -11,11 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LCL_Forms
+namespace LCL_Demo
 {
-    public partial class FormDemo : Form
+    public partial class FormMsgBoxDemo : Form
     {
-        public FormDemo()
+        public FormMsgBoxDemo()
         {
             InitializeComponent();
         }

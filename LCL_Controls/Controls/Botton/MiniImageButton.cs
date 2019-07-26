@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Landriesnidis.LCL_Controls.Components;
 
-namespace Landriesnidis.LCL_Controls.Controls.Comm
+namespace Landriesnidis.LCL_Controls.Controls.Button
 {
     [DefaultEvent("Click")]
     public partial class MiniImageButton : UserControl

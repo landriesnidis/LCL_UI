@@ -1,6 +1,6 @@
-﻿namespace LCL_Forms
+﻿namespace LCL_Demo
 {
-    partial class FormDemo
+    partial class FormMsgBoxDemo
     {
         /// <summary>
         /// 必需的设计器变量。

@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormButtonDemo.cs">
+    <Compile Include="FormMsgBoxDemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormButtonDemo.Designer.cs">
-      <DependentUpon>FormButtonDemo.cs</DependentUpon>
+    <Compile Include="FormMsgBoxDemo.Designer.cs">
+      <DependentUpon>FormMsgBoxDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDemoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDemoMenu.Designer.cs">
+      <DependentUpon>FormDemoMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGroupBoxDemo.cs">
       <SubType>Form</SubType>
@@ -66,8 +72,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormButtonDemo.resx">
-      <DependentUpon>FormButtonDemo.cs</DependentUpon>
+    <EmbeddedResource Include="FormMsgBoxDemo.resx">
+      <DependentUpon>FormMsgBoxDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDemoMenu.resx">
+      <DependentUpon>FormDemoMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGroupBoxDemo.resx">
       <DependentUpon>FormGroupBoxDemo.cs</DependentUpon>

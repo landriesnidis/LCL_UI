@@ -1,5 +1,4 @@
-﻿using LCL_Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace LCL_Demo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormListBox());
+            Application.Run(new FormDemoMenu());
         }
     }
 }
