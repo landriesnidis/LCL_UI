@@ -12,10 +12,14 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
 {
     public partial class SlideBox : UserControl
     {
+        public delegate void PageChangedEventHandler(object sender, PageChangedEventArgs e);
+
+        public event PageChangedEventHandler PageChanged;
+
         private int targetLocation = 0;
         private int pageIndex = -1;
-        public int Rate { get; set; } = 10;
-        public int ReviseValue { get; set; } = 3;
+        public int Rate { get; set; } = 5;
+        public int ReviseValue { get; set; } = 5;
         Timer timer = new Timer();
 
         public SlideBox()
@@ -52,6 +56,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
                 {
                     panel.Left = targetLocation;
                     timer.Enabled = false;
+                    PageChanged?.Invoke(this, new PageChangedEventArgs(pageIndex));
                     return;
                 }
                 panel.Left = panel.Left - (panel.Left - targetLocation) / Rate;
@@ -66,6 +71,11 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             p.Margin = new System.Windows.Forms.Padding(0);
             p.Padding = new System.Windows.Forms.Padding(0);
             p.Controls.Add(control);
+            p.ControlRemoved += (s, e) =>
+            {
+                // 当控件移除时，SlideBox和Page之间的Panel也需要移除
+                if (p.Controls.Count == 0) panel.Controls.Remove(p);
+            };
             control.Dock = DockStyle.Fill;
             panel.Controls.Add(p);
 
@@ -83,6 +93,12 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
                 }
 
             }
+        }
+
+        public Control GetPage(int pageNum)
+        {
+            // SlideBox和Page之间有一层普通Panel
+            return panel.Controls[pageNum].Controls[0];
         }
 
         public void RemovePageAt(int pageNum)
@@ -107,6 +123,16 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
         public void PreviousPage()
         {
             Jump(pageIndex - 1);
+        }
+    }
+
+    public class PageChangedEventArgs : EventArgs
+    {
+        public int PageIndex { get; set; }
+
+        public PageChangedEventArgs(int pageIndex)
+        {
+            PageIndex = pageIndex;
         }
     }
 }

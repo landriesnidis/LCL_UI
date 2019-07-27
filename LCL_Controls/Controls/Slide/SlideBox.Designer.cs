@@ -33,7 +33,7 @@
             // 
             // panel
             // 
-            this.panel.Location = new System.Drawing.Point(90, 39);
+            this.panel.Location = new System.Drawing.Point(11, 10);
             this.panel.Margin = new System.Windows.Forms.Padding(0);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(228, 142);
@@ -46,7 +46,7 @@
             this.Controls.Add(this.panel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "SlideBox";
-            this.Size = new System.Drawing.Size(485, 247);
+            this.Size = new System.Drawing.Size(252, 162);
             this.ResumeLayout(false);
 
         }
