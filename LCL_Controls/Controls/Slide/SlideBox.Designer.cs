@@ -28,18 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // panel
+            // 
+            this.panel.Location = new System.Drawing.Point(90, 39);
+            this.panel.Margin = new System.Windows.Forms.Padding(0);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(228, 142);
+            this.panel.TabIndex = 0;
             // 
             // SlideBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "SlideBox";
-            this.Size = new System.Drawing.Size(772, 455);
+            this.Size = new System.Drawing.Size(485, 247);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel panel;
     }
 }
