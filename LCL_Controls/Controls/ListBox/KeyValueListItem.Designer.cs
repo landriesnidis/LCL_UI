@@ -40,7 +40,7 @@
             this.labKey.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labKey.Location = new System.Drawing.Point(0, 0);
             this.labKey.Name = "labKey";
-            this.labKey.Size = new System.Drawing.Size(75, 31);
+            this.labKey.Size = new System.Drawing.Size(75, 33);
             this.labKey.TabIndex = 0;
             this.labKey.Text = "Key";
             this.labKey.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -54,7 +54,7 @@
             this.labValue.Location = new System.Drawing.Point(75, 0);
             this.labValue.Name = "labValue";
             this.labValue.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labValue.Size = new System.Drawing.Size(171, 31);
+            this.labValue.Size = new System.Drawing.Size(173, 33);
             this.labValue.TabIndex = 1;
             this.labValue.Text = "Value";
             this.labValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -63,11 +63,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labValue);
             this.Controls.Add(this.labKey);
             this.Name = "KeyValueListItem";
-            this.Size = new System.Drawing.Size(246, 31);
+            this.Size = new System.Drawing.Size(248, 33);
             this.SizeChanged += new System.EventHandler(this.DeviceListItem_SizeChanged);
             this.ResumeLayout(false);
 

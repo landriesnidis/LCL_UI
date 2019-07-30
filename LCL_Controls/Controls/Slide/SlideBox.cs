@@ -18,9 +18,17 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
 
         private int targetLocation = 0;
         private int pageIndex = -1;
+
+        [Browsable(true)]
+        [Description("翻页时移动的速率，当Rate = 1时，无翻页动画效果，Rate值越大翻页越慢")]
         public int Rate { get; set; } = 5;
+
+        [Browsable(true)]
+        [Description("翻页时最小的移动速度(像素单位)")]
         public int ReviseValue { get; set; } = 5;
         Timer timer = new Timer();
+
+        public int PageCount { get { return panel.Controls.Count; } }
 
         public SlideBox()
         {
@@ -52,6 +60,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             timer.Interval = 10;
             timer.Tick += (s, e) =>
             {
+                // 当前位置与目标位置相差距离小于最小移动距离时，结束运动
                 if (Math.Abs(panel.Left - targetLocation) <= ReviseValue)
                 {
                     panel.Left = targetLocation;
@@ -59,11 +68,13 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
                     PageChanged?.Invoke(this, new PageChangedEventArgs(pageIndex));
                     return;
                 }
-                panel.Left = panel.Left - (panel.Left - targetLocation) / Rate;
+                int v = (panel.Left - targetLocation) / Rate;
+                if (Math.Abs(v) < ReviseValue) v = ReviseValue * (v < 0 ? -1 : 1);
+                panel.Left = panel.Left - v;
             };
         }
 
-        public void AddPage(Control control)
+        public int AddPage(Control control)
         {
             Panel p = new Panel();
             p.Size = Size;
@@ -80,6 +91,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             panel.Controls.Add(p);
 
             if (pageIndex == -1) pageIndex = 0;
+
+            // 返回当前页面的
+            return PageCount - 1;
         }
 
         public void RemovePage(Control control)
@@ -91,7 +105,6 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
                     panel.Controls.Remove(c);
                     return;
                 }
-
             }
         }
 
