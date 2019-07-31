@@ -20,6 +20,9 @@ namespace Landriesnidis.LCL_Forms.Base
         [Localizable(true)]
         public Image Image { get { return pic.Image; } set { pic.Image = value; } }
 
+        [Browsable(true)]
+        public bool AllowDoubleClickMaximization { get { return mmc.AllowDoubleClickMaximization; }set { mmc.AllowDoubleClickMaximization = value; } }
+
         public LCLForm()
         {
             InitializeComponent();

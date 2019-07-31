@@ -34,10 +34,10 @@ namespace Landriesnidis.LCL_Forms.Base
             this.panelBase = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.labTitle = new System.Windows.Forms.Label();
-            this.timerShake = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labTitle = new System.Windows.Forms.Label();
             this.pic = new System.Windows.Forms.PictureBox();
+            this.timerShake = new System.Windows.Forms.Timer(this.components);
             this.buttonGroup = new Landriesnidis.LCL_Controls.Controls.Botton.ButtonGroup();
             this.mmc = new Landriesnidis.LCL_Controls.Components.MouseMoveController(this.components);
             this.panelBase.SuspendLayout();
@@ -76,6 +76,16 @@ namespace Landriesnidis.LCL_Forms.Base
             this.panelContainer.Size = new System.Drawing.Size(458, 133);
             this.panelContainer.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labTitle);
+            this.panel1.Controls.Add(this.pic);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(20, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(458, 40);
+            this.panel1.TabIndex = 3;
+            // 
             // labTitle
             // 
             this.labTitle.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,21 +96,6 @@ namespace Landriesnidis.LCL_Forms.Base
             this.labTitle.TabIndex = 0;
             this.labTitle.Text = "Title";
             this.labTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // timerShake
-            // 
-            this.timerShake.Interval = 30;
-            this.timerShake.Tick += new System.EventHandler(this.TimerShake_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.labTitle);
-            this.panel1.Controls.Add(this.pic);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(20, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(458, 40);
-            this.panel1.TabIndex = 3;
             // 
             // pic
             // 
@@ -113,13 +108,18 @@ namespace Landriesnidis.LCL_Forms.Base
             this.pic.TabIndex = 1;
             this.pic.TabStop = false;
             // 
+            // timerShake
+            // 
+            this.timerShake.Interval = 30;
+            this.timerShake.Tick += new System.EventHandler(this.TimerShake_Tick);
+            // 
             // buttonGroup
             // 
             this.buttonGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGroup.AutoPosition = true;
             this.buttonGroup.AutoPositionOffset = 0;
             this.buttonGroup.AutoSize = true;
-            this.buttonGroup.Location = new System.Drawing.Point(319, 1);
+            this.buttonGroup.Location = new System.Drawing.Point(337, 1);
             this.buttonGroup.Margin = new System.Windows.Forms.Padding(0);
             this.buttonGroup.MaximizeBox = false;
             this.buttonGroup.MinimizeBox = false;
@@ -129,7 +129,8 @@ namespace Landriesnidis.LCL_Forms.Base
             // 
             // mmc
             // 
-            this.mmc.Form = null;
+            this.mmc.AllowDoubleClickMaximization = false;
+            this.mmc.Form = this;
             // 
             // LCLForm
             // 

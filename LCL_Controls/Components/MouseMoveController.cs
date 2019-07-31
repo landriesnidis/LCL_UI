@@ -7,6 +7,10 @@ namespace Landriesnidis.LCL_Controls.Components
 {
     public partial class MouseMoveController : Component
     {
+        [Browsable(true)]
+        public bool AllowDoubleClickMaximization { get; set; } = false;
+
+        [Browsable(true)]
         public Form Form { get; set; }
 
         private List<Control> Controls { get; set; } = new List<Control>();
@@ -95,13 +99,16 @@ namespace Landriesnidis.LCL_Controls.Components
                 }
             };
             control.DoubleClick += (obj, args) => {
-                if (Form.WindowState == FormWindowState.Maximized)
+                if (AllowDoubleClickMaximization)
                 {
-                    Form.WindowState = FormWindowState.Normal;
-                }
-                else
-                {
-                    Form.WindowState = FormWindowState.Maximized;
+                    if (Form.WindowState == FormWindowState.Maximized)
+                    {
+                        Form.WindowState = FormWindowState.Normal;
+                    }
+                    else
+                    {
+                        Form.WindowState = FormWindowState.Maximized;
+                    }
                 }
             };
         }
