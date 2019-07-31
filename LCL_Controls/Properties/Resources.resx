@@ -121,34 +121,34 @@
   <data name="ExitButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExitButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ExitButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ExitButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaximizeButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaximizeButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaximizeButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaximizeButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaximizeButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaximizeButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MiniImageButton_Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ArrowMiniButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MiniImageButton_Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CloseMiniButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MinimizeButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MinimizeButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinimizeButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MinimizeButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MinimizeButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MinimizeButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MiniImageButton_Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrowMiniButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExitButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExitButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaximizeButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaximizeButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinimizeButton_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinimizeButton_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiniImageButton_Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseMiniButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaximizeButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaximizeButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExitButton_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExitButton_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaximizeButton_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaximizeButton_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -12,6 +12,7 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
 {
     public partial class KeyValueListItem : UserControl
     {
+        public event EventHandler EditButtonClick;
 
         [Browsable(true)]
         public string Key { get { return labKey.Text; }set { labKey.Text = value; } }
@@ -33,6 +34,15 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
 
         [Browsable(true)]
         public event EventHandler ValueChanged;
+
+        [Browsable(true)]
+        public ContentAlignment KeyTextAlign { get { return labKey.TextAlign; }set { labKey.TextAlign = value; } }
+
+        [Browsable(true)]
+        public ContentAlignment ValueTextAlign { get { return labValue.TextAlign; }set { labValue.TextAlign = value; } }
+
+        [Browsable(true)]
+        public bool AllowEdit { get { return btnEdit.Visible; } set { btnEdit.Visible = value; } }
 
         public KeyValueListItem()
         {
@@ -64,9 +74,20 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
             Value = value;
         }
 
-        private void DeviceListItem_SizeChanged(object sender, EventArgs e)
+        private void KeyValueListItem_SizeChanged(object sender, EventArgs e)
         {
             labKey.Width = this.Width / 3;
+        }
+
+        private void KeyValueListItem_Resize(object sender, EventArgs e)
+        {
+            btnEdit.Top = (Height - btnEdit.Height) / 2;
+            btnEdit.Left = Width - btnEdit.Width - btnEdit.Top;
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            EditButtonClick?.Invoke(sender, e);
         }
     }
 }

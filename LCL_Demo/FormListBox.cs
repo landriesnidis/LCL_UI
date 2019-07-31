@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Landriesnidis.LCL_Controls.Controls.ListBox;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,9 @@ namespace LCL_Demo
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            kvlb.Items.Add(new Landriesnidis.LCL_Controls.Controls.ListBox.KeyValueListItem(textBox1.Text, textBox2.Text));
+            KeyValueListItem item = new KeyValueListItem(textBox1.Text, textBox2.Text);
+            item.AllowEdit = checkBox1.Checked;
+            kvlb.Items.Add(item);
         }
 
         private void Button2_Click(object sender, EventArgs e)

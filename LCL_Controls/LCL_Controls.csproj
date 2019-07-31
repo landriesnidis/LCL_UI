@@ -236,7 +236,6 @@
   <ItemGroup>
     <None Include="Resources\MinimizeButton_0.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\ArrowMiniButton.png" />
   </ItemGroup>

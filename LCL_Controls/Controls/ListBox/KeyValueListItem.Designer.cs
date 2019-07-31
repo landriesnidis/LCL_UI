@@ -30,6 +30,7 @@
         {
             this.labKey = new System.Windows.Forms.Label();
             this.labValue = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labKey
@@ -59,15 +60,29 @@
             this.labValue.Text = "Value";
             this.labValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnEdit.Location = new System.Drawing.Point(222, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(23, 23);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "…";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
             // KeyValueListItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.labValue);
             this.Controls.Add(this.labKey);
             this.Name = "KeyValueListItem";
             this.Size = new System.Drawing.Size(248, 33);
-            this.SizeChanged += new System.EventHandler(this.DeviceListItem_SizeChanged);
+            this.SizeChanged += new System.EventHandler(this.KeyValueListItem_SizeChanged);
+            this.Resize += new System.EventHandler(this.KeyValueListItem_Resize);
             this.ResumeLayout(false);
 
         }
@@ -76,5 +91,6 @@
 
         private System.Windows.Forms.Label labKey;
         private System.Windows.Forms.Label labValue;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
