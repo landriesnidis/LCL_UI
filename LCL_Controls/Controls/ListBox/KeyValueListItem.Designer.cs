@@ -38,7 +38,7 @@
             this.labKey.AutoEllipsis = true;
             this.labKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.labKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labKey.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labKey.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.labKey.Location = new System.Drawing.Point(0, 0);
             this.labKey.Name = "labKey";
             this.labKey.Size = new System.Drawing.Size(75, 33);
@@ -67,6 +67,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(23, 23);
             this.btnEdit.TabIndex = 2;
+            this.btnEdit.TabStop = false;
             this.btnEdit.Text = "…";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Visible = false;

@@ -20,6 +20,18 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
         //[Browsable(true)]
         public AeList<KeyValueListItem> Items { get; set; }
 
+        [Browsable(true)]
+        public Padding ItemsPadding { get; set; } = new Padding(3);
+
+        [Browsable(true)]
+        [Description("关联用以信息筛选的控件(控件的Text属性)")]
+        public Control SearchBox { get { return searchBox; } set { SearchBoxChange(value); } }
+        private Control searchBox { get; set; }
+
+        [Browsable(true)]
+        [Description("检索时的匹配的内容(Key/Value/Key&Value)")]
+        public SearchBoxFilterItem SearchBoxFilter { get; set; }
+
         private bool isUseScrollBar = false;
 
         public KeyValueListBox()
@@ -36,7 +48,7 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
             {
                 Control c = e.Control;
                 c.Width = flowPanel.Width;
-                c.Margin = new Padding(0);
+                c.Margin = ItemsPadding;
                 if (c.Height + c.Top >= Height)
                 {
                     isUseScrollBar = true;
@@ -70,6 +82,65 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
                 isUseScrollBar = (c.Height + c.Top >= Height);
                 ChangeControlsWidth(isUseScrollBar);
             };
+        }
+
+        private void SearchBoxChange(Control newControl)
+        {
+            if (searchBox != null)
+            {
+                searchBox.TextChanged -= SearchBox_TextChanged;
+            }
+
+            if (searchBox != null && newControl == null)
+            {
+                searchBox.TextChanged -= SearchBox_TextChanged;
+            }
+
+            if (newControl == null)
+            {
+                searchBox = null;
+                return;
+            }
+
+            searchBox = newControl;
+            searchBox.TextChanged += SearchBox_TextChanged;
+
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (searchBox == null) return;
+
+            if (searchBox.Text == "")
+            {
+                foreach (var item in Items)
+                {
+                    item.Visible = true;
+                }
+                return;
+            }
+
+            switch (SearchBoxFilter)
+            {
+                case SearchBoxFilterItem.OnlyKey:
+                    foreach (var item in Items)
+                    {
+                        item.Visible = item.Key.Contains(searchBox.Text);
+                    }
+                    break;
+                case SearchBoxFilterItem.OnlyValue:
+                    foreach (var item in Items)
+                    {
+                        item.Visible = item.Value.Contains(searchBox.Text);
+                    }
+                    break;
+                case SearchBoxFilterItem.KeyAndValue:
+                    foreach (var item in Items)
+                    {
+                        item.Visible = item.Key.Contains(searchBox.Text) || item.Value.Contains(searchBox.Text);
+                    }
+                    break;
+            }
         }
 
         public KeyValueListItem GetItem(string key)
@@ -111,6 +182,11 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
         private void Items_ItemAddedEvent(AeList<KeyValueListItem> list, ListItemsChangedEventArgs<KeyValueListItem> e)
         {
             flowPanel.Controls.Add(e.Item);
+        }
+
+        public enum SearchBoxFilterItem
+        {
+            OnlyKey,OnlyValue,KeyAndValue
         }
     }
 }

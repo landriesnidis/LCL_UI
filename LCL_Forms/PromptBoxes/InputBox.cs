@@ -21,6 +21,9 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
         [Browsable(true)]
         public string ButtonCleanText { get { return btnClean.Text; } set { btnClean.Text = value; } }
 
+        [Browsable(true)]
+        public string InputText { get { return tbText.Text; } set { tbText.Text = value; } }
+
         public InputBox()
         {
             InitializeComponent();

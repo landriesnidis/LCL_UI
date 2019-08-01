@@ -9,7 +9,6 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
 {
     public class DialogBoxes
     {
-
         /// <summary>
         /// 输入框
         /// </summary>
@@ -18,12 +17,27 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
         /// <param name="buttonNames">按钮名称</param>
         /// <param name="handler">数据格式检查委托</param>
         /// <returns></returns>
-        public static BoxResult<string> InputBox(string title,string content = default,string[] buttonNames = null, InputBox.CheckFormatHandler handler = null)
+        public static BoxResult<string> InputBox(string title, string content = default, string[] buttonNames = null, InputBox.CheckFormatHandler handler = null)
+        {
+            return InputBox(title, content, "", buttonNames, handler);
+        }
+
+        /// <summary>
+        /// 输入框
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="content">详细内容</param>
+        /// <param name="defaultValue">输入框默认值</param>
+        /// <param name="buttonNames">按钮名称</param>
+        /// <param name="handler">数据格式检查委托</param>
+        /// <returns></returns>
+        public static BoxResult<string> InputBox(string title, string content = default, string defaultValue = "", string[] buttonNames = null, InputBox.CheckFormatHandler handler = null)
         {
             InputBox box = new InputBox();
             box.Text = title;
             box.Content = content;
             box.CheckFormat = handler;
+            box.InputText = defaultValue;
             try
             {
                 box.ButtonOKText = buttonNames[0];
