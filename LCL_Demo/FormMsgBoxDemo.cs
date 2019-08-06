@@ -90,7 +90,7 @@ namespace LCL_Demo
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            var result = DialogBoxes.InputBox(tbTitle.Text, tbContent.Text, null);
+            var result = DialogBoxes.InputBox(tbTitle.Text, tbContent.Text,null, null);
             if (!result.IsCancel)
             {
                 DialogBoxes.MsgBox(tbTitle.Text, $"刚才输入的内容是：{result.Data}", "好的");
