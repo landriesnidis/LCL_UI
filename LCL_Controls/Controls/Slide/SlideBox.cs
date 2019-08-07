@@ -19,6 +19,8 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
         private int targetLocation = 0;
         private int pageIndex = -1;
 
+        public int PageIndex { get { return pageIndex; } }
+
         [Browsable(true)]
         [Description("翻页时移动的速率，当Rate = 1时，无翻页动画效果，Rate值越大翻页越慢")]
         public int Rate { get; set; } = 5;

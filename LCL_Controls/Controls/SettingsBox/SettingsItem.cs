@@ -41,18 +41,22 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                     break;
                 case SettingsItemType.Boolean:
                     SetMainControl(CreateCheckBox());
-                    //((CheckBox)GetMainControl()).Text = Key;
                     break;
                 case SettingsItemType.Integer:
                     SetMainControl(CreateNumberTextBox());
                     break;
                 case SettingsItemType.Password:
                     SetMainControl(new TextBox());
-                    ((TextBox)GetMainControl()).PasswordChar = '·';
+                    ((TextBox)GetMainControl()).PasswordChar = '*';
                     break;
                 case SettingsItemType.Image:
                     break;
                 case SettingsItemType.File:
+                    break;
+                case SettingsItemType.None:
+                    break;
+                case SettingsItemType.StringList:
+                    SetMainControl(new ItemControl_StringList());
                     break;
             }
         }
@@ -69,8 +73,12 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 
             mainControl = control;
             Controls.Add(control);
-            control.Dock = DockStyle.Bottom;
-            Height = control.Top + control.Height;
+            control.Top = labTitle.Top + labTitle.Height;
+            control.Left = labTitle.Left;
+            control.Width = labTitle.Width -1;
+            control.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+
+            Height = labTitle.Height + control.Height + 10;
 
             mainControl.GotFocus += MainControl_GotFocus;
         }
@@ -85,12 +93,17 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
             return mainControl;
         }
 
+        /// <summary>
+        /// 获取有效数据
+        /// </summary>
+        /// <returns></returns>
         public object GetValue()
         {
             TextBox tb; CheckBox cb;PictureBox pic;
+            ItemControl_StringList strlst;
             switch (SettingsItemType)
             {
-                
+
                 case SettingsItemType.String:
                     tb = (TextBox)mainControl;
                     return tb.Text;
@@ -107,6 +120,11 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                     return realValue;
                 case SettingsItemType.File:
                     return realValue;
+                case SettingsItemType.None:
+                    break;
+                case SettingsItemType.StringList:
+                    strlst = (ItemControl_StringList)mainControl;
+                    return strlst.GetValue();
             }
             return null;
         }
@@ -138,10 +156,15 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
             };
             return tb;
         }
+
+        private void SettingsItem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public enum SettingsItemType
     {
-        None,String,Boolean,Integer,Password,Image,File
+        None, String, StringList, Boolean,Integer,Password,Image,File
     }
 }

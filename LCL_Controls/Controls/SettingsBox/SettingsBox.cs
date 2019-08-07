@@ -24,17 +24,12 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
         public SettingsBox()
         {
             InitializeComponent();
-
-            flp.ControlAdded += Flp_ControlAdded;
-        }
-
-        private void Flp_ControlAdded(object sender, ControlEventArgs e)
-        {
-            e.Control.Width = flp.Width - 2;
         }
 
         public void SetData(object data)
         {
+            if (data == null) return;
+
             this.data = data;
 
             flp.Controls.Clear();
@@ -67,36 +62,46 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 
                 SettingsItem item = null;
 
-                switch (pi.PropertyType.Name)
+                if (pi.PropertyType == typeof(bool))
                 {
-                    case "Boolean":
-                        if (itemType == SettingsItemType.None) itemType = SettingsItemType.Boolean;
-                        item = new SettingsItem(itemType, pi.Name, meaning, description);
-                        ((CheckBox)item.GetMainControl()).Checked = (bool)value;
-                        break;
-                    case "Int32":
-                        if (itemType == SettingsItemType.None) itemType = SettingsItemType.Integer;
-                        item = new SettingsItem(itemType, pi.Name, meaning, description);
-                        item.GetMainControl().LostFocus += (s, e) =>
+                    if (itemType == SettingsItemType.None) itemType = SettingsItemType.Boolean;
+                    item = new SettingsItem(itemType, pi.Name, meaning, description);
+                    ((CheckBox)item.GetMainControl()).Checked = (bool)value;
+                }
+                else if (pi.PropertyType == typeof(int))
+                {
+                    if (itemType == SettingsItemType.None) itemType = SettingsItemType.Integer;
+                    item = new SettingsItem(itemType, pi.Name, meaning, description);
+                    item.GetMainControl().LostFocus += (s, e) =>
+                    {
+                        bool b = int.TryParse(item.GetMainControl().Text, out int x);
+                        if (!b)
                         {
-                            bool b = int.TryParse(item.GetMainControl().Text, out int x);
-                            if (!b)
-                            {
-                                item.Focus();
-                            }
-                        };
-                        if (value == null) value = 0;
-                        ((TextBox)item.GetMainControl()).Text = value.ToString();
-                        break;
-                    case "String":
-                        if (itemType == SettingsItemType.None) itemType = SettingsItemType.String;
-                        item = new SettingsItem(itemType, pi.Name, meaning, description);
-                        if (value == null) value = "";
-                        ((TextBox)item.GetMainControl()).Text = value.ToString();
-                        break;
-                    default:
+                            item.Focus();
+                        }
+                    };
+                    if (value == null) value = 0;
+                    ((TextBox)item.GetMainControl()).Text = value.ToString();
+                }
+                else if(pi.PropertyType == typeof(string))
+                {
+                    if (itemType == SettingsItemType.None) itemType = SettingsItemType.String;
+                    item = new SettingsItem(itemType, pi.Name, meaning, description);
+                    if (value == null) value = "";
+                    ((TextBox)item.GetMainControl()).Text = value.ToString();
+                }
+                else if(pi.PropertyType == typeof(List<string>))
+                {
+                    if (itemType == SettingsItemType.None) itemType = SettingsItemType.StringList;
+                    item = new SettingsItem(itemType, pi.Name, meaning, description);
+                    if (value == null) value = new List<string>();
+                    ItemControl_StringList ctrl = ((ItemControl_StringList)item.GetMainControl());
+                    ctrl.AddItems((List<string>)value);
+                    ctrl.Height = 200;
+                }
+                else
+                {
 
-                        break;
                 }
                 
                 if (item!=null){
@@ -107,8 +112,8 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                         item.GetMainControl().Enabled = false;
                     }
 
-                    flp.Controls.Add(item);
                     item.OnShowDescription += Item_OnShowDescription;
+                    flp.Controls.Add(item);
                 }
             }
         }
@@ -131,17 +136,25 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
             return data;
         }
 
-        private void Flp_Resize(object sender, EventArgs e)
+        private void SettingsBox_Resize(object sender, EventArgs e)
         {
-            foreach (Control c in flp.Controls)
+            foreach(Control c in flp.Controls)
             {
-                c.Width = flp.Width-3;
+                c.Width = flp.Width - 10;
             }
         }
     }
 
+    /// <summary>
+    /// 显示详情委托
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public delegate void ShowDescriptionEventHandler(SettingsItem sender, ShowDescriptionEventArgs e);
 
+    /// <summary>
+    /// 配置属性项的基本信息
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
     public class SettingsAttribute : Attribute
     {
@@ -156,12 +169,21 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
         }
     }
 
+    /// <summary>
+    /// 不参与显示的属性
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
     public class InvalidSettingsAttribute : Attribute { }
 
+    /// <summary>
+    /// 不可编辑的属性
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
     public class LockSettingsAttribute : Attribute { }
 
+    /// <summary>
+    /// 显示详情事件参数
+    /// </summary>
     public class ShowDescriptionEventArgs : EventArgs
     {
         public string Meaning { get; private set; }

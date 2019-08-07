@@ -164,6 +164,12 @@
     <Compile Include="Controls\ListBox\KeyValueListItem.Designer.cs">
       <DependentUpon>KeyValueListItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SettingsBox\ItemControl_StringList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SettingsBox\ItemControl_StringList.Designer.cs">
+      <DependentUpon>ItemControl_StringList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SettingsBox\SettingsBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ListBox\KeyValueListItem.resx">
       <DependentUpon>KeyValueListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SettingsBox\ItemControl_StringList.resx">
+      <DependentUpon>ItemControl_StringList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SettingsBox\SettingsBox.resx">
       <DependentUpon>SettingsBox.cs</DependentUpon>

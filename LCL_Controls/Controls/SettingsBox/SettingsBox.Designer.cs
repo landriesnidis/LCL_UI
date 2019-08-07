@@ -33,25 +33,28 @@
             // 
             // flp
             // 
+            this.flp.AutoSize = true;
             this.flp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp.Location = new System.Drawing.Point(0, 0);
             this.flp.Margin = new System.Windows.Forms.Padding(0);
             this.flp.Name = "flp";
-            this.flp.Size = new System.Drawing.Size(221, 237);
+            this.flp.Size = new System.Drawing.Size(319, 352);
             this.flp.TabIndex = 0;
-            this.flp.Resize += new System.EventHandler(this.Flp_Resize);
             // 
             // SettingsBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.Controls.Add(this.flp);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "SettingsBox";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.Size = new System.Drawing.Size(241, 237);
+            this.Size = new System.Drawing.Size(339, 352);
+            this.Resize += new System.EventHandler(this.SettingsBox_Resize);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
