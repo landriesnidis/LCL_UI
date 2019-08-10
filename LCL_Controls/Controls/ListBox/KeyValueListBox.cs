@@ -47,7 +47,7 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
             flowPanel.ControlAdded += (s, e) =>
             {
                 Control c = e.Control;
-                c.Width = flowPanel.Width;
+                c.Width = flowPanel.Width-1;
                 c.Margin = ItemsPadding;
                 if (c.Height + c.Top >= Height)
                 {
@@ -140,6 +140,32 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
                         item.Visible = item.Key.Contains(searchBox.Text) || item.Value.Contains(searchBox.Text);
                     }
                     break;
+            }
+        }
+
+        public Dictionary<string,string> ToDictionary()
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            foreach (KeyValueListItem item in Items)
+            {
+                try
+                {
+                    dict.Add(item.Key, item.Value);
+                }
+                catch { }
+            }
+            return dict;
+        }
+
+        public void Input(Dictionary<string, string> dict)
+        {
+            foreach (var kv in dict)
+            {
+                try
+                {
+                    Items.Add(new KeyValueListItem(kv.Key, kv.Value));
+                }
+                catch { }
             }
         }
 

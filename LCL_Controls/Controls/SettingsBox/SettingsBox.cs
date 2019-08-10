@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using Landriesnidis.LCL_Controls.Controls.ListBox;
 
 namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 {
@@ -18,6 +19,9 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
         [Browsable(true)]
         [Description("属性项主控件获得焦点时返回相应属性的文本信息")]
         public event ShowDescriptionEventHandler OnShowDescription;
+
+        [Browsable(true)]
+        public int ScrollBarWidth { get; set; } = 20;
 
         private object data;
 
@@ -90,13 +94,22 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                     if (value == null) value = "";
                     ((TextBox)item.GetMainControl()).Text = value.ToString();
                 }
-                else if(pi.PropertyType == typeof(List<string>))
+                else if (pi.PropertyType == typeof(List<string>))
                 {
                     if (itemType == SettingsItemType.None) itemType = SettingsItemType.StringList;
                     item = new SettingsItem(itemType, pi.Name, meaning, description);
                     if (value == null) value = new List<string>();
                     ItemControl_StringList ctrl = ((ItemControl_StringList)item.GetMainControl());
                     ctrl.AddItems((List<string>)value);
+                    ctrl.Height = 200;
+                }
+                else if (pi.PropertyType == typeof(List<KeyValueItem>))
+                {
+                    if (itemType == SettingsItemType.None) itemType = SettingsItemType.StringDictionary;
+                    item = new SettingsItem(itemType, pi.Name, meaning, description);
+                    if (value == null) value = new List<KeyValueItem>();
+                    ItemControl_StringDictionary ctrl = ((ItemControl_StringDictionary)item.GetMainControl());
+                    ctrl.SetData((List<KeyValueItem>)value);
                     ctrl.Height = 200;
                 }
                 else
@@ -111,7 +124,7 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                     {
                         item.GetMainControl().Enabled = false;
                     }
-
+                    item .Width = flp.Width - 10;
                     item.OnShowDescription += Item_OnShowDescription;
                     flp.Controls.Add(item);
                 }
@@ -138,7 +151,8 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 
         private void SettingsBox_Resize(object sender, EventArgs e)
         {
-            foreach(Control c in flp.Controls)
+            flp.Width = this.Width - ScrollBarWidth;
+            foreach (Control c in flp.Controls)
             {
                 c.Width = flp.Width - 10;
             }
@@ -196,4 +210,10 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
         }
     }
 
+    /*
+    public interface IRequestInputOperation
+    {
+        string InputString(string title, string content = default, string defaultValue = default);
+    }
+    */
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Landriesnidis.LCL_Controls.Controls.ListBox;
 
 namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 {
@@ -56,7 +57,10 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.None:
                     break;
                 case SettingsItemType.StringList:
-                    SetMainControl(new ItemControl_StringList());
+                    SetMainControl(CreateItemControl_StringList());
+                    break;
+                case SettingsItemType.StringDictionary:
+                    SetMainControl(CreateItemControl_StringDictionary());
                     break;
             }
         }
@@ -101,6 +105,7 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
         {
             TextBox tb; CheckBox cb;PictureBox pic;
             ItemControl_StringList strlst;
+            ItemControl_StringDictionary strDict;
             switch (SettingsItemType)
             {
 
@@ -125,6 +130,9 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.StringList:
                     strlst = (ItemControl_StringList)mainControl;
                     return strlst.GetValue();
+                case SettingsItemType.StringDictionary:
+                    strDict = (ItemControl_StringDictionary)mainControl;
+                    return strDict.GetValue();
             }
             return null;
         }
@@ -157,6 +165,27 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
             return tb;
         }
 
+        private ItemControl_StringList CreateItemControl_StringList()
+        {
+            ItemControl_StringList sl = new ItemControl_StringList();
+            Control[] cs = new Control[] { sl.btnAdd,sl.btnRemove,sl.tb,sl.lbStringList};
+            foreach (Control c in cs)
+            {
+                c.GotFocus += (s, e) =>
+                {
+                    OnShowDescription?.Invoke(this, new ShowDescriptionEventArgs(Meaning, Description));
+                };
+            }
+            return sl;
+        }
+
+        private ItemControl_StringDictionary CreateItemControl_StringDictionary()
+        {
+            ItemControl_StringDictionary sd = new ItemControl_StringDictionary();
+            sd.Height = 300;
+            return sd;
+        }
+
         private void SettingsItem_Load(object sender, EventArgs e)
         {
 
@@ -165,6 +194,6 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 
     public enum SettingsItemType
     {
-        None, String, StringList, Boolean,Integer,Password,Image,File
+        None, String, StringList, StringDictionary, Boolean,Integer,Password,Image,File
     }
 }

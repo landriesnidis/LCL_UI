@@ -44,6 +44,9 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
         [Browsable(true)]
         public bool AllowEdit { get { return btnEdit.Visible; } set { btnEdit.Visible = value; } }
 
+        [Browsable(true)]
+        public double KeyWidthWeight { get; set; } = 0.3;
+
         public KeyValueListItem()
         {
             InitializeComponent();
@@ -76,7 +79,7 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
 
         private void KeyValueListItem_SizeChanged(object sender, EventArgs e)
         {
-            labKey.Width = this.Width / 3;
+            labKey.Width = (int)(Width * KeyWidthWeight);
         }
 
         private void KeyValueListItem_Resize(object sender, EventArgs e)

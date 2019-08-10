@@ -33,8 +33,9 @@
             // 
             // flp
             // 
+            this.flp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flp.AutoSize = true;
-            this.flp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp.Location = new System.Drawing.Point(0, 0);
             this.flp.Margin = new System.Windows.Forms.Padding(0);

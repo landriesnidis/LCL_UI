@@ -16,8 +16,16 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
         {
             InitializeComponent();
 
+            Load += ItemControl_StringList_Load;
             btnRemove.Click += BtnRemove_Click;
             btnAdd.Click += BtnAdd_Click;
+        }
+
+        private void ItemControl_StringList_Load(object sender, EventArgs e)
+        {
+            panel.Height = tb.Height + 1;
+            btnAdd.Height = tb.Height;
+            btnRemove.Height = tb.Height;
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
