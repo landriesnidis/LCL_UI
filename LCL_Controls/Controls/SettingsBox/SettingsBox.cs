@@ -99,9 +99,21 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                     if (itemType == SettingsItemType.None) itemType = SettingsItemType.StringList;
                     item = new SettingsItem(itemType, pi.Name, meaning, description);
                     if (value == null) value = new List<string>();
-                    ItemControl_StringList ctrl = ((ItemControl_StringList)item.GetMainControl());
-                    ctrl.AddItems((List<string>)value);
-                    ctrl.Height = 200;
+
+                    if (itemType == SettingsItemType.StringList)
+                    {
+                        ItemControl_StringList ctrl = ((ItemControl_StringList)item.GetMainControl());
+                        ctrl.AddItems((List<string>)value);
+                        ctrl.Height = 200;
+                    }
+                    else if (itemType == SettingsItemType.Select)
+                    {
+                        ComboBox ctrl = ((ComboBox)item.GetMainControl());
+                        string[] arr = ((List<string>)value).ToArray();
+                        ctrl.Items.AddRange(arr);
+                        ctrl.Text = arr[0];
+                    }
+                    
                 }
                 else if (pi.PropertyType == typeof(List<KeyValueItem>))
                 {

@@ -40,6 +40,10 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.String:
                     SetMainControl(new TextBox());
                     break;
+                case SettingsItemType.Select:
+                    SetMainControl(new ComboBox());
+                    ((ComboBox)GetMainControl()).DropDownStyle = ComboBoxStyle.DropDownList;
+                    break;
                 case SettingsItemType.Boolean:
                     SetMainControl(CreateCheckBox());
                     break;
@@ -62,6 +66,7 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.StringDictionary:
                     SetMainControl(CreateItemControl_StringDictionary());
                     break;
+                
             }
         }
 
@@ -103,7 +108,7 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
         /// <returns></returns>
         public object GetValue()
         {
-            TextBox tb; CheckBox cb;PictureBox pic;
+            TextBox tb; CheckBox cb;PictureBox pic;ComboBox cbb;
             ItemControl_StringList strlst;
             ItemControl_StringDictionary strDict;
             switch (SettingsItemType)
@@ -112,6 +117,9 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.String:
                     tb = (TextBox)mainControl;
                     return tb.Text;
+                case SettingsItemType.Select:
+                    cbb = (ComboBox)mainControl;
+                    return GetComboBoxControlValue(cbb);
                 case SettingsItemType.Boolean:
                     cb = (CheckBox)mainControl;
                     return cb.Checked;
@@ -133,6 +141,7 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.StringDictionary:
                     strDict = (ItemControl_StringDictionary)mainControl;
                     return strDict.GetValue();
+                
             }
             return null;
         }
@@ -186,6 +195,17 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
             return sd;
         }
 
+        private List<string> GetComboBoxControlValue(ComboBox cbb)
+        {
+            List<string> result = new List<string>() { cbb.Text};
+            foreach (var item in cbb.Items)
+            {
+                string str = item.ToString();
+                if (result.Contains(str)) result.Add(str);
+            }
+            return result;
+        }
+
         private void SettingsItem_Load(object sender, EventArgs e)
         {
 
@@ -194,6 +214,6 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 
     public enum SettingsItemType
     {
-        None, String, StringList, StringDictionary, Boolean,Integer,Password,Image,File
+        None, String , Select, StringList, StringDictionary, Boolean,Integer,Password,Image,File
     }
 }
