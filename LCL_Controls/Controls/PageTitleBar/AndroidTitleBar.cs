@@ -16,6 +16,10 @@ namespace Landriesnidis.LCL_Controls.Controls.PageTitleBar
 
         [Browsable(true)]
         public new String Text { get { return labTitle.Text; }set { labTitle.Text = value; } }
+        [Browsable(true)]
+        public event EventHandler BackButtonClick;
+        [Browsable(true)]
+        public event EventHandler FunctionButtonClick;
 
         private Button.MiniImageButton btnBack;
         private Button.MiniImageButton btnFunc;
@@ -46,6 +50,7 @@ namespace Landriesnidis.LCL_Controls.Controls.PageTitleBar
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(Height, Height);
             this.btnBack.TabIndex = 1;
+            
 
             this.btnFunc.AllowNoFocusResponseMouseEvent = true;
             this.btnFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -57,9 +62,22 @@ namespace Landriesnidis.LCL_Controls.Controls.PageTitleBar
             this.btnFunc.Size = new System.Drawing.Size(Height, Height);
             this.btnFunc.TabIndex = 2;
 
+            btnBack.Click += BtnBack_Click;
+            btnFunc.Click += BtnFunc_Click
+                ;
             this.Controls.Add(this.btnFunc);
             this.Controls.Add(this.btnBack);
 
+        }
+
+        private void BtnFunc_Click(object sender, EventArgs e)
+        {
+            FunctionButtonClick?.Invoke(sender, e);
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            BackButtonClick?.Invoke(sender,e);
         }
 
         private void AndroidTitleBar_Resize(object sender, EventArgs e)

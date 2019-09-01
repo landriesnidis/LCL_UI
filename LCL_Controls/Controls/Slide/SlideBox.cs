@@ -98,15 +98,20 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             return PageCount - 1;
         }
 
+
+
         public void RemovePage(Control control)
         {
+            int i = 0;
             foreach (Control c in panel.Controls)
             {
                 if (c.Controls[0] == control)
                 {
-                    panel.Controls.Remove(c);
+                    //panel.Controls.Remove(c);
+                    RemovePageAt(i);
                     return;
                 }
+                i++;
             }
         }
 
@@ -119,6 +124,11 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
         public void RemovePageAt(int pageNum)
         {
             panel.Controls.RemoveAt(pageNum);
+            if(pageNum<= pageIndex)
+            {
+                pageIndex--;
+                panel.Left = - panel.Controls[pageIndex].Left;
+            }
         }
 
         public void Jump(int pageNum)
