@@ -60,6 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\LCLMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\LCLMainForm.Designer.cs">
+      <DependentUpon>LCLMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\ToastForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToastBox\Toast.cs" />
+    <EmbeddedResource Include="Base\LCLMainForm.resx">
+      <DependentUpon>LCLMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </EmbeddedResource>

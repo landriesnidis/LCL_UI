@@ -155,6 +155,7 @@
     <Compile Include="Controls\Container\LCLTabControl.Designer.cs">
       <DependentUpon>LCLTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TabControl\ITabControl.cs" />
     <Compile Include="Controls\ListBox\KeyValueListBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
