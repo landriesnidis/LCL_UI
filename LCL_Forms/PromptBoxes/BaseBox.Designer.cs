@@ -41,8 +41,13 @@
             // 
             // buttonGroup
             // 
-            this.buttonGroup.Location = new System.Drawing.Point(319, 1);
+            this.buttonGroup.Location = new System.Drawing.Point(239, 1);
             this.buttonGroup.ExitButtonClick += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // labTitle
+            // 
+            this.labTitle.Location = new System.Drawing.Point(0, 0);
+            this.labTitle.Size = new System.Drawing.Size(343, 32);
             // 
             // btnCancel
             // 
@@ -50,9 +55,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnCancel.Location = new System.Drawing.Point(378, 0);
+            this.btnCancel.Location = new System.Drawing.Point(283, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 35);
+            this.btnCancel.Size = new System.Drawing.Size(60, 28);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -62,16 +68,18 @@
             // 
             this.panelButtons.Controls.Add(this.btnCancel);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(20, 148);
+            this.panelButtons.Location = new System.Drawing.Point(15, 118);
+            this.panelButtons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(458, 35);
+            this.panelButtons.Size = new System.Drawing.Size(343, 28);
             this.panelButtons.TabIndex = 3;
             // 
             // BaseBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 200);
+            this.ClientSize = new System.Drawing.Size(375, 160);
+            this.MinimumSize = new System.Drawing.Size(281, 128);
             this.Name = "BaseBox";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseBox_FormClosing);
             this.Load += new System.EventHandler(this.BaseBox_Load);

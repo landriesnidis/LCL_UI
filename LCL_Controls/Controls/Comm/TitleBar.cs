@@ -34,8 +34,6 @@ namespace Landriesnidis.LCL_Controls.Controls.Comm
         /// </summary>
         public List<Control> FocusStateAssociatedControlList { get { return FocusListener.ChildControls; } }
 
-        private BackColorSupport backColorSupport;
-
         public TitleBar()
         {
             InitializeComponent();

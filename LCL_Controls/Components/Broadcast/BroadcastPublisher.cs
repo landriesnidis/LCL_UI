@@ -22,9 +22,9 @@ namespace Landriesnidis.LCL_Controls.Components.Broadcast
             container.Add(this);
         }
 
-        public void Publish(object data,string tag="")
+        public void Publish(object data,string topic="")
         {
-            BroadcastManager.Broadcast(data, tag);
+            BroadcastManager.Broadcast(data, topic);
         }
     }
 

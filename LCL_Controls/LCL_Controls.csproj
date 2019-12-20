@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>8.0</LangVersion>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\LCL_Controls.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>8.0</LangVersion>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -63,7 +63,7 @@
     <Compile Include="Components\Broadcast\BroadcastPublisher.Designer.cs">
       <DependentUpon>BroadcastPublisher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Broadcast\BroadcastPublisherManager.cs" />
+    <Compile Include="Components\Broadcast\BroadcastManager.cs" />
     <Compile Include="Components\Broadcast\BroadcastReceiver.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -81,6 +81,12 @@
     </Compile>
     <Compile Include="Components\Comm\UIComponent.Designer.cs">
       <DependentUpon>UIComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ControlVisibleAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ControlVisibleAdapter.Designer.cs">
+      <DependentUpon>ControlVisibleAdapter.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\FocusListener.cs">
       <SubType>Component</SubType>
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="Controls\Botton\ExitButton.Designer.cs">
       <DependentUpon>ExitButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Botton\SimpleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Botton\SimpleButton.Designer.cs">
+      <DependentUpon>SimpleButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Comm\DesignPanel.cs">
       <SubType>UserControl</SubType>
@@ -204,6 +216,12 @@
     <Compile Include="Controls\PageTitleBar\AndroidTitleBar.Designer.cs">
       <DependentUpon>AndroidTitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TabControl\SlideTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabControl\SlideTabControl.Designer.cs">
+      <DependentUpon>SlideTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -222,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Botton\MiniImageButton.resx">
       <DependentUpon>MiniImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Botton\SimpleButton.resx">
+      <DependentUpon>SimpleButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Comm\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
@@ -255,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PageTitleBar\AndroidTitleBar.resx">
       <DependentUpon>AndroidTitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TabControl\SlideTabControl.resx">
+      <DependentUpon>SlideTabControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

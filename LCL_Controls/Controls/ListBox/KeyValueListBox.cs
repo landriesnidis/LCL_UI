@@ -21,7 +21,7 @@ namespace Landriesnidis.LCL_Controls.Controls.ListBox
         public AeList<KeyValueListItem> Items { get; set; }
 
         [Browsable(true)]
-        public Padding ItemsPadding { get; set; } = new Padding(3);
+        public Padding ItemsPadding { get; set; }                                 = new Padding(3);
 
         [Browsable(true)]
         [Description("关联用以信息筛选的控件(控件的Text属性)")]

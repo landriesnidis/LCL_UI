@@ -42,14 +42,19 @@ namespace Landriesnidis.LCL_Controls.Components.Broadcast
         /// 数据广播
         /// </summary>
         /// <param name="obj"></param>
-        /// <param name="tag"></param>
-        public static void Broadcast(object obj, string tag)
+        /// <param name="topic"></param>
+        public static void Broadcast(object obj, string topic)
         {
             foreach (BroadcastReceiver receiver in manager.BroadcastReceivers)
             {
                 if (receiver != null)
                 {
-                    receiver.OnBroadcast(obj, tag);
+                    // 没有设置Topic集合或Topic再集合中被注册了 则执行广播接收器的事件 
+                    // 如果Topic的注册集合为空 则所有消息都会被广播到（兼容上一个无topic的版本）
+                    if (receiver.Topics==null || receiver.Topics.Count==0 || receiver.Topics.Contains(topic))
+                    {
+                        receiver.OnBroadcast(obj, topic);
+                    }
                 }
             }
         }

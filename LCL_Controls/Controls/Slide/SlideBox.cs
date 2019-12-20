@@ -107,12 +107,16 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             {
                 if (c.Controls[0] == control)
                 {
-                    //panel.Controls.Remove(c);
                     RemovePageAt(i);
                     return;
                 }
                 i++;
             }
+        }
+
+        public void Clear()
+        {
+            panel.Controls.Clear();
         }
 
         public Control GetPage(int pageNum)
@@ -127,7 +131,8 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             if(pageNum<= pageIndex)
             {
                 pageIndex--;
-                panel.Left = - panel.Controls[pageIndex].Left;
+                if(pageIndex>=0)
+                    panel.Left = - panel.Controls[pageIndex].Left;
             }
         }
 

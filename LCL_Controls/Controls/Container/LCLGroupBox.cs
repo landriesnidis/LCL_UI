@@ -46,7 +46,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             // 为关闭键添加单击事件
             titleBar.btnClose.Click += (s, e) =>
             {
-                CloseButtonClick?.Invoke(s, e);
+                CloseButtonClick?.Invoke(this, e);
             };
             
             

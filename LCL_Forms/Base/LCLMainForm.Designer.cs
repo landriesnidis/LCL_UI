@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.labStatusInfo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -54,10 +56,19 @@
             // statusStrip
             // 
             this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labStatusInfo});
             this.statusStrip.Location = new System.Drawing.Point(0, 428);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(800, 22);
             this.statusStrip.TabIndex = 8;
+            // 
+            // labStatusInfo
+            // 
+            this.labStatusInfo.ForeColor = System.Drawing.Color.White;
+            this.labStatusInfo.Name = "labStatusInfo";
+            this.labStatusInfo.Size = new System.Drawing.Size(32, 17);
+            this.labStatusInfo.Text = "就绪";
             // 
             // LCLMainForm
             // 
@@ -69,6 +80,8 @@
             this.Controls.SetChildIndex(this.statusStrip, 0);
             this.Controls.SetChildIndex(this.panelBase, 0);
             this.Controls.SetChildIndex(this.buttonGroup, 0);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,6 +89,7 @@
 
         #endregion
 
-        private System.Windows.Forms.StatusStrip statusStrip;
+        public System.Windows.Forms.ToolStripStatusLabel labStatusInfo;
+        public System.Windows.Forms.StatusStrip statusStrip;
     }
 }
