@@ -50,6 +50,9 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.Integer:
                     SetMainControl(CreateNumberTextBox());
                     break;
+                case SettingsItemType.Double:
+                    SetMainControl(CreateDoubleNumberTextBox());
+                    break;
                 case SettingsItemType.Password:
                     SetMainControl(new TextBox());
                     ((TextBox)GetMainControl()).PasswordChar = '*';
@@ -126,6 +129,9 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                 case SettingsItemType.Integer:
                     tb = (TextBox)mainControl;
                     return int.Parse(tb.Text);
+                case SettingsItemType.Double:
+                    tb = (TextBox)mainControl;
+                    return double.Parse(tb.Text);
                 case SettingsItemType.Password:
                     tb = (TextBox)mainControl;
                     return tb.Text;
@@ -162,7 +168,24 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
             TextBox tb = new TextBox();
             tb.TextChanged += (s, e) =>
             {
-                if(int.TryParse(tb.Text,out int n))
+                if (int.TryParse(tb.Text, out int n))
+                {
+                    realValue = tb.Text;
+                }
+                else
+                {
+                    tb.Text = realValue.ToString();
+                }
+            };
+            return tb;
+        }
+
+        private TextBox CreateDoubleNumberTextBox()
+        {
+            TextBox tb = new TextBox();
+            tb.TextChanged += (s, e) =>
+            {
+                if (double.TryParse(tb.Text, out double n))
                 {
                     realValue = tb.Text;
                 }
@@ -214,6 +237,6 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
 
     public enum SettingsItemType
     {
-        None, String , Select, StringList, StringDictionary, Boolean,Integer,Password,Image,File
+        None, String , Select, StringList, StringDictionary, Boolean,Integer,Double,Password,Image,File
     }
 }

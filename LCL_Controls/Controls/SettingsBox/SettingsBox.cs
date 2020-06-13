@@ -83,6 +83,29 @@ namespace Landriesnidis.LCL_Controls.Controls.SettingsBox
                         {
                             item.Focus();
                         }
+                        else
+                        {
+                            value = x;
+                        }
+                    };
+                    if (value == null) value = 0;
+                    ((TextBox)item.GetMainControl()).Text = value.ToString();
+                }
+                else if (pi.PropertyType == typeof(double))
+                {
+                    if (itemType == SettingsItemType.None) itemType = SettingsItemType.Double;
+                    item = new SettingsItem(itemType, pi.Name, meaning, description);
+                    item.GetMainControl().LostFocus += (s, e) =>
+                    {
+                        bool b = double.TryParse(item.GetMainControl().Text, out double x);
+                        if (!b)
+                        {
+                            item.Focus();
+                        }
+                        else
+                        {
+                            value = x;
+                        }
                     };
                     if (value == null) value = 0;
                     ((TextBox)item.GetMainControl()).Text = value.ToString();
