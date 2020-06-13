@@ -68,7 +68,7 @@
             this.labStatusInfo.ForeColor = System.Drawing.Color.White;
             this.labStatusInfo.Name = "labStatusInfo";
             this.labStatusInfo.Size = new System.Drawing.Size(32, 17);
-            this.labStatusInfo.Text = "就绪";
+            this.labStatusInfo.Text = "";
             // 
             // LCLMainForm
             // 

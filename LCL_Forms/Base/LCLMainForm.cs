@@ -12,6 +12,10 @@ namespace Landriesnidis.LCL_Forms.Base
 {
     public partial class LCLMainForm : LCLForm
     {
+
+        [Browsable(true)]
+        public string StatusString { get { return labStatusInfo.Text; }set { labStatusInfo.Text = value; } }
+
         public LCLMainForm()
         {
             InitializeComponent();
