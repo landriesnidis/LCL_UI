@@ -43,6 +43,7 @@
             this.labButtonText.TabIndex = 0;
             this.labButtonText.Text = "Button";
             this.labButtonText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labButtonText.Click += new System.EventHandler(this.labButtonText_Click);
             this.labButtonText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labButtonText_MouseDown);
             this.labButtonText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.labButtonText_MouseUp);
             // 

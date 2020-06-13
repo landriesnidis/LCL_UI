@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Landriesnidis.LCL_Controls.Controls.Botton
 {
+    [DefaultEvent("Click")]
     public partial class SimpleButton : UserControl
     {
         [Browsable(true)]
@@ -43,6 +44,11 @@ namespace Landriesnidis.LCL_Controls.Controls.Botton
         {
             labButtonText.ForeColor = MouseUpForegroundColor;
             labButtonText.BackColor = MouseUpBackgroundColor;
+        }
+
+        private void labButtonText_Click(object sender, EventArgs e)
+        {
+            OnClick(e);
         }
     }
 }
