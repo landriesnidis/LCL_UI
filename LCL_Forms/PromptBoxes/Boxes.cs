@@ -113,7 +113,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             return box.Result;
         }
         /// <summary>
-        /// 
+        /// 选择框
         /// </summary>
         /// <param name="title">标题</param>
         /// <param name="content">详细内容</param>
@@ -138,6 +138,33 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             }
             catch { }
             box.CheckFormat = handler;
+            box.ShowDialog();
+            return box.Result;
+        }
+
+        /// <summary>
+        /// 时间选择框
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="year">默认年份</param>
+        /// <param name="month">默认月份</param>
+        /// <param name="buttonNames">按钮名称</param>
+        /// <param name="handler">数据格式检查委托</param>
+        /// <returns></returns>
+        public static BoxResult<DateTime> DatePickBox(string title, int? year=null, int? month=null, string[] buttonNames = null, DatePickBox.CheckFormatHandler handler = null)
+        {
+            DatePickBox box = new DatePickBox();
+            box.Text = title;
+            box.CheckFormat = handler;
+            box.Year = year??2020;
+            box.Month = month??1;
+            try
+            {
+                box.ButtonOKText = buttonNames[0];
+                box.ButtonDefaultCancelText = buttonNames[1];
+                box.ButtonTodayText = buttonNames[2];
+            }
+            catch { }
             box.ShowDialog();
             return box.Result;
         }
