@@ -25,6 +25,9 @@ namespace Landriesnidis.LCL_Controls.Controls.Botton
         [Browsable(true)]
         public Color MouseUpBackgroundColor { get; set; } = Color.FromArgb(0, 122, 204);
 
+        public override Color BackColor { get { return labButtonText.BackColor; } set { labButtonText.BackColor = value; } }
+        public override Color ForeColor { get { return labButtonText.ForeColor; } set { labButtonText.ForeColor = value; } }
+
         public SimpleButton()
         {
             InitializeComponent();
