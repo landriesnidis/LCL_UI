@@ -15,7 +15,7 @@ namespace Landriesnidis.LCL_Controls.Controls.PageTitleBar
     {
 
         [Browsable(true)]
-        public new String Text { get { return labTitle.Text; }set { labTitle.Text = value; } }
+        public new String Text { get { return labTitle.Text; } set { labTitle.Text = value; } }
         [Browsable(true)]
         public event EventHandler BackButtonClick;
         [Browsable(true)]
@@ -39,7 +39,7 @@ namespace Landriesnidis.LCL_Controls.Controls.PageTitleBar
             stateColor.LostFocusForegroundColor = stateColor.MouseLeaveForegroundColor;
             labTitle.BackColor = stateColor.MouseLeaveBackgroundColor;
             labTitle.ForeColor = stateColor.MouseLeaveForegroundColor;
-            
+
 
             this.btnBack.AllowNoFocusResponseMouseEvent = true;
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -50,21 +50,20 @@ namespace Landriesnidis.LCL_Controls.Controls.PageTitleBar
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(Height, Height);
             this.btnBack.TabIndex = 1;
-            
+
 
             this.btnFunc.AllowNoFocusResponseMouseEvent = true;
             this.btnFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnFunc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFunc.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFunc.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.android_title_bar_detail;
+            this.btnFunc.Image = global::Landriesnidis.LCL_Controls.Properties.Resources.android_title_bar_arrow;
             this.btnFunc.Location = new System.Drawing.Point(465, 0);
             this.btnFunc.Name = "btnFunc";
             this.btnFunc.Size = new System.Drawing.Size(Height, Height);
             this.btnFunc.TabIndex = 2;
 
             btnBack.Click += BtnBack_Click;
-            btnFunc.Click += BtnFunc_Click
-                ;
+            btnFunc.Click += BtnFunc_Click;
             this.Controls.Add(this.btnFunc);
             this.Controls.Add(this.btnBack);
 
@@ -77,12 +76,12 @@ namespace Landriesnidis.LCL_Controls.Controls.PageTitleBar
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            BackButtonClick?.Invoke(sender,e);
+            BackButtonClick?.Invoke(sender, e);
         }
 
         private void AndroidTitleBar_Resize(object sender, EventArgs e)
         {
-            if(btnBack != null && btnFunc != null)
+            if (btnBack != null && btnFunc != null)
             {
                 btnBack.Width = Height;
                 btnFunc.Width = Height;
