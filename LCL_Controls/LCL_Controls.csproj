@@ -167,6 +167,42 @@
     <Compile Include="Controls\Container\LCLTabControl.Designer.cs">
       <DependentUpon>LCLTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DatePickers\DatePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DatePickers\DatePicker.Designer.cs">
+      <DependentUpon>DatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatePickers\DaysPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DatePickers\DaysPicker.Designer.cs">
+      <DependentUpon>DaysPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatePickers\MonthPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DatePickers\MonthPicker.Designer.cs">
+      <DependentUpon>MonthPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatePickers\YearPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DatePickers\YearPicker.Designer.cs">
+      <DependentUpon>YearPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageTitleBar\NavigationTitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageTitleBar\NavigationTitleBar.Designer.cs">
+      <DependentUpon>NavigationTitleBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Slide\RollerShutter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Slide\RollerShutter.Designer.cs">
+      <DependentUpon>RollerShutter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TabControl\ITabControl.cs" />
     <Compile Include="Controls\ListBox\KeyValueListBox.cs">
       <SubType>UserControl</SubType>
@@ -253,11 +289,26 @@
     <EmbeddedResource Include="Controls\Container\LCLTabControl.resx">
       <DependentUpon>LCLTabControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DatePickers\DatePicker.resx">
+      <DependentUpon>DatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DatePickers\DaysPicker.resx">
+      <DependentUpon>DaysPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DatePickers\MonthPicker.resx">
+      <DependentUpon>MonthPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DatePickers\YearPicker.resx">
+      <DependentUpon>YearPicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ListBox\KeyValueListBox.resx">
       <DependentUpon>KeyValueListBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ListBox\KeyValueListItem.resx">
       <DependentUpon>KeyValueListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageTitleBar\NavigationTitleBar.resx">
+      <DependentUpon>NavigationTitleBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SettingsBox\ItemControl_StringDictionary.resx">
       <DependentUpon>ItemControl_StringDictionary.cs</DependentUpon>
@@ -270,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SettingsBox\SettingsItem.resx">
       <DependentUpon>SettingsItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Slide\RollerShutter.resx">
+      <DependentUpon>RollerShutter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Slide\SlideBox.resx">
       <DependentUpon>SlideBox.cs</DependentUpon>
@@ -320,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\android_title_bar_detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android_title_bar_arrow_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

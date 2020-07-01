@@ -85,6 +85,12 @@
       <DependentUpon>LCLForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PromptBoxes\Boxes.cs" />
+    <Compile Include="PromptBoxes\DatePickerBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromptBoxes\DatePickerBox.Designer.cs">
+      <DependentUpon>DatePickerBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="PromptBoxes\MsgBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Base\LCLForm.resx">
       <DependentUpon>LCLForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromptBoxes\DatePickerBox.resx">
+      <DependentUpon>DatePickerBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PromptBoxes\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>

@@ -31,6 +31,10 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
         [Description("标题关闭按钮单击事件")]
         public event EventHandler CloseButtonClick;
 
+        [Browsable(true)]
+        [Description("标题箭头按钮单击事件")]
+        public event EventHandler ArrowButtonClick;
+
         public LCLGroupBox()
         {
             InitializeComponent();
@@ -48,7 +52,11 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             {
                 CloseButtonClick?.Invoke(this, e);
             };
-            
+
+            titleBar.btnArrow.Click += (s, e) =>
+            {
+                ArrowButtonClick?.Invoke(this,e);
+            };
             
             this.ControlAdded += (s, e) =>
             {

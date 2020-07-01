@@ -73,6 +73,16 @@ namespace Landriesnidis.LCL_Controls.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap android_title_bar_arrow_right {
+            get {
+                object obj = ResourceManager.GetObject("android_title_bar_arrow_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap android_title_bar_detail {
             get {
                 object obj = ResourceManager.GetObject("android_title_bar_detail", resourceCulture);
