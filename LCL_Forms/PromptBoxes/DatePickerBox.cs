@@ -25,6 +25,9 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
         [Browsable(true)]
         public string ButtonTodayText { get { return btnToday.Text; } set { btnToday.Text = value; } }
 
+        [Browsable(true)]
+        public string Content { get { return labInfo.Text; } set { labInfo.Text = value; } }
+
         public DatePickBox()
         {
             InitializeComponent();
@@ -51,6 +54,17 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
             btnOK.Enabled = true;
             result.Data = dt;
             labDate.Text = $"{dt.Year}-{dt.Month}-{dt.Day}  ";
+        }
+
+        private void labInfo_Paint(object sender, PaintEventArgs e)
+        {
+            int num = 0;
+            num = (int)e.Graphics.MeasureString(labInfo.Text, labInfo.Font).Width / labInfo.Width;
+            if (e.Graphics.MeasureString(labInfo.Text,labInfo.Font).Width % labInfo.Width != 0)
+            {
+                ++num;
+            }
+            labInfo.Height = num * (int)e.Graphics.MeasureString(labInfo.Text, labInfo.Font).Height;
         }
     }
 }

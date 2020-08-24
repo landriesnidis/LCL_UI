@@ -44,7 +44,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
                 box.ButtonDefaultCancelText = buttonNames[1];
                 box.ButtonCleanText = buttonNames[2];
             }
-            catch { }
+            catch (Exception){ }
             box.ShowDialog();
             return box.Result;
         }
@@ -86,7 +86,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
                 box.ButtonDefaultCancelText = buttonNames[1];
                 box.ButtonCleanText = buttonNames[2];
             }
-            catch { }
+            catch (Exception){ }
             box.ShowDialog();
             return box.Result;
         }
@@ -108,7 +108,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
                 box.ButtonOKText = buttonNames[0];
                 box.ButtonDefaultCancelText = buttonNames[1];
             }
-            catch { }
+            catch (Exception){ }
             box.ShowDialog();
             return box.Result;
         }
@@ -136,7 +136,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
                 box.ButtonSelectAllText = buttonNames[2];
                 box.ButtonInvertText = buttonNames[3];
             }
-            catch { }
+            catch (Exception ex){ }
             box.CheckFormat = handler;
             box.ShowDialog();
             return box.Result;
@@ -151,10 +151,11 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
         /// <param name="buttonNames">按钮名称</param>
         /// <param name="handler">数据格式检查委托</param>
         /// <returns></returns>
-        public static BoxResult<DateTime> DatePickBox(string title, int? year=null, int? month=null, string[] buttonNames = null, DatePickBox.CheckFormatHandler handler = null)
+        public static BoxResult<DateTime> DatePickBox(string title, string content = default, int? year=null, int? month=null, string[] buttonNames = null, DatePickBox.CheckFormatHandler handler = null)
         {
             DatePickBox box = new DatePickBox();
             box.Text = title;
+            box.Content = content;
             box.CheckFormat = handler;
             box.Year = year??2020;
             box.Month = month??1;
@@ -164,7 +165,7 @@ namespace Landriesnidis.LCL_Forms.PromptBoxes
                 box.ButtonDefaultCancelText = buttonNames[1];
                 box.ButtonTodayText = buttonNames[2];
             }
-            catch { }
+            catch (Exception){ }
             box.ShowDialog();
             return box.Result;
         }

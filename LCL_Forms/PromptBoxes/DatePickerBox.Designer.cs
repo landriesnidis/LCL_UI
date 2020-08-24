@@ -33,6 +33,7 @@
             this.labDate = new System.Windows.Forms.Label();
             this.btnToday = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Label();
+            this.labInfo = new System.Windows.Forms.Label();
             this.panelButtons.SuspendLayout();
             this.panelBase.SuspendLayout();
             this.panelContainer.SuspendLayout();
@@ -67,6 +68,7 @@
             // panelContainer
             // 
             this.panelContainer.Controls.Add(this.datePicker);
+            this.panelContainer.Controls.Add(this.labInfo);
             this.panelContainer.Size = new System.Drawing.Size(268, 218);
             // 
             // buttonGroup
@@ -86,10 +88,10 @@
             // datePicker
             // 
             this.datePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datePicker.Location = new System.Drawing.Point(4, 0);
+            this.datePicker.Location = new System.Drawing.Point(4, 10);
             this.datePicker.Month = 1;
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(264, 218);
+            this.datePicker.Size = new System.Drawing.Size(264, 208);
             this.datePicker.TabIndex = 0;
             this.datePicker.Year = 0;
             // 
@@ -110,11 +112,12 @@
             // 
             // labDate
             // 
-            this.labDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labDate.AutoSize = true;
+            this.labDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.labDate.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labDate.Location = new System.Drawing.Point(0, 0);
             this.labDate.Name = "labDate";
-            this.labDate.Size = new System.Drawing.Size(89, 28);
+            this.labDate.Size = new System.Drawing.Size(0, 17);
             this.labDate.TabIndex = 8;
             this.labDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -141,6 +144,17 @@
             this.panel1.Size = new System.Drawing.Size(3, 28);
             this.panel1.TabIndex = 10;
             // 
+            // labInfo
+            // 
+            this.labInfo.AutoEllipsis = true;
+            this.labInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labInfo.Location = new System.Drawing.Point(4, 0);
+            this.labInfo.Name = "labInfo";
+            this.labInfo.Size = new System.Drawing.Size(264, 10);
+            this.labInfo.TabIndex = 1;
+            this.labInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.labInfo_Paint);
+            // 
             // DatePickBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnToday;
         private System.Windows.Forms.Label panel1;
+        private System.Windows.Forms.Label labInfo;
     }
 }
