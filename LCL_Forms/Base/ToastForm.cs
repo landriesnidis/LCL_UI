@@ -31,6 +31,16 @@ namespace Landriesnidis.LCL_Forms.Base
             timerWait.Enabled = true;
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // 用双缓冲绘制窗口的所有子控件
+                return cp;
+            }
+        }
+
         private void TimerHide_Tick(object sender, EventArgs e)
         {
             if (Opacity > 0.1)
