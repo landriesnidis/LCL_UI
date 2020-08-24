@@ -25,6 +25,22 @@ namespace Landriesnidis.LCL_Controls.Controls.TabControl
 
         public ToolStripItem AddPage(string title, Control content, Image icon = null)
         {
+            // 检查加入的控件是否已存在，若存在则跳转
+            if (Pages.Values.Contains(content))
+            {
+                Jump(content);
+                foreach(var kv in Pages) 
+                    if(kv.Value==content)
+                        return kv.Key;
+            }
+
+            // 当控件销毁时移除页面
+            content.Disposed += (s, e) =>
+            {
+                RemovePage(content);
+            };
+
+            // 创建新标签
             ToolStripItem item = tsTitle.Items.Add(title, icon);
             Pages.Add(item, content);
             slideBox.AddPage(content);
@@ -64,19 +80,19 @@ namespace Landriesnidis.LCL_Controls.Controls.TabControl
 
         public void NextPage()
         {
-            Jump(CurrentIndex+1);
+            Jump(CurrentIndex + 1);
         }
 
         public void PreviousPage()
         {
-            if(CurrentIndex>0) Jump(CurrentIndex -1);
+            if (CurrentIndex > 0) Jump(CurrentIndex - 1);
         }
 
         public Control RemovePage(string title)
         {
             foreach (ToolStripItem item in tsTitle.Items)
             {
-                if(item.Text == title)
+                if (item.Text == title)
                 {
                     Control control = Pages[item];
                     tsTitle.Items.Remove(item);
@@ -88,9 +104,9 @@ namespace Landriesnidis.LCL_Controls.Controls.TabControl
 
         public void RemovePage(Control content)
         {
-            foreach(var kv in Pages)
+            foreach (var kv in Pages)
             {
-                if(content == kv.Value)
+                if (content == kv.Value)
                 {
                     tsTitle.Items.Remove(kv.Key);
                     return;
@@ -122,7 +138,7 @@ namespace Landriesnidis.LCL_Controls.Controls.TabControl
         {
             foreach (ToolStripItem item in tsTitle.Items)
             {
-                if(newItem != item && newItem.Text == item.Text)
+                if (newItem != item && newItem.Text == item.Text)
                 {
                     return true;
                 }

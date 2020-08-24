@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Landriesnidis.LCL_Controls.Controls.DatePickers
 {
-        public delegate void DatePickedEventHandler(DatePicker picker, DatePickedEventArgs e);
+    public delegate void DatePickedEventHandler(DatePicker picker, DatePickedEventArgs e);
     public partial class DatePicker : UserControl
     {
         /// <summary>

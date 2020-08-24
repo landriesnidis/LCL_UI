@@ -81,35 +81,11 @@ namespace Landriesnidis.LCL_Controls.Controls.Botton
             }
         }
 
-        /// <summary>
-        /// 获取控件所属的Form对象
-        /// </summary>
-        /// <param name="control"></param>
-        /// <returns></returns>
-        private Form SearchParentForm(Control control)
-        {
-            try
-            {
-                if (typeof(Form).IsAssignableFrom(control.GetType()))
-                {
-                    return (Form)control;
-                }
-                else
-                {
-                    return SearchParentForm(control.Parent);
-                }
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
         public void AutoSetPosition(Control parentControl)
         {
             if (parentControl == null)
             {
-                parentControl = SearchParentForm(this);
+                parentControl = this.FindForm();
                 if (parentControl == null) return;
             }
 
@@ -128,7 +104,7 @@ namespace Landriesnidis.LCL_Controls.Controls.Botton
         private void ButtonGroup_Load(object sender, EventArgs e)
         {
             // 获取父窗体
-            parentForm = SearchParentForm(this);
+            parentForm = this.FindForm();
 
             // 判断是否设置自动位置
             if (AutoPosition && parentForm != null)

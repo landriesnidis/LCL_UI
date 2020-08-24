@@ -79,5 +79,22 @@ namespace Landriesnidis.LCL_Controls.Controls.Container
             titleBar.Left = 0;
             titleBar.Width = Width;
         }
+
+        public void Expansion(int offset=0)
+        {
+            int max = 0;
+            foreach (Control c in Controls)
+            {
+                if (!c.Visible) break;
+                int temp = c.Top + c.Height;
+                if (temp > max) max = temp;
+            }
+            Height = offset + max;
+        }
+
+        public void Shrinkage()
+        {
+            Height = 0;
+        }
     }
 }

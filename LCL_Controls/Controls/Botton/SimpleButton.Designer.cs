@@ -34,9 +34,9 @@
             // labButtonText
             // 
             this.labButtonText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.labButtonText.ForeColor = System.Drawing.Color.White;
             this.labButtonText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labButtonText.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labButtonText.ForeColor = System.Drawing.Color.White;
             this.labButtonText.Location = new System.Drawing.Point(0, 0);
             this.labButtonText.Name = "labButtonText";
             this.labButtonText.Size = new System.Drawing.Size(91, 37);
@@ -51,7 +51,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Controls.Add(this.labButtonText);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "SimpleButton";
             this.Size = new System.Drawing.Size(91, 37);
             this.ResumeLayout(false);

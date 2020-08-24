@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,9 +36,13 @@
     <RegisterForComInterop>false</RegisterForComInterop>
     <LangVersion>8.0</LangVersion>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
@@ -258,6 +263,8 @@
     <Compile Include="Controls\TabControl\SlideTabControl.Designer.cs">
       <DependentUpon>SlideTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ControlExtensions\DataGridViewExtensions.cs" />
+    <Compile Include="Extensions\ControlExtensions\TreeViewExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -268,6 +275,7 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\MinimizeButton_1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -377,6 +385,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\android_title_bar_arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\ComponentExtensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

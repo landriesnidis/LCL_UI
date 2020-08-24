@@ -59,25 +59,31 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             // 如果是已经展开的则关闭
             if (OpenedGroupBox == mainBox)
             {
-                mainBox.Height = 0;
+                mainBox.Shrinkage();
                 OpenedGroupBox = null;
                 return;
             }
 
-            int max = 0;
-            foreach (Control c in mainBox.Controls)
-            {
-                int temp = c.Top + c.Height;
-                if (temp > max) max = temp;
-            }
-            mainBox.Height = 10 + max;
+            mainBox.Expansion(2);
 
-            foreach (var b in list)
+            foreach (var box in list)
             {
-                if (b != mainBox) b.Height = 0;
+                if (box != mainBox) box.Shrinkage();
             }
 
             OpenedGroupBox = mainBox;
+        }
+
+        /// <summary>
+        /// 展开所有
+        /// </summary>
+        /// <param name="offset"></param>
+        public void ExpansionAll(int offset = 0)
+        {
+            foreach(var box in list)
+            {
+                box.Expansion(offset);
+            }
         }
     }
 
