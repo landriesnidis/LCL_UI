@@ -43,5 +43,10 @@ namespace LCL_Demo
         {
             OpenForm(new FormSlideBox());
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
