@@ -72,6 +72,7 @@
     <Compile Include="Base\ToastForm.Designer.cs">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\FormExtensions.cs" />
     <Compile Include="PromptBoxes\BaseBox.cs">
       <SubType>Form</SubType>
     </Compile>

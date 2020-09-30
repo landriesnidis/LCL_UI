@@ -57,7 +57,7 @@ namespace Landriesnidis.LCL_Forms.Base
         {
             try
             {
-                Context.Focus();
+                Context?.Focus();
             }
             catch { }
         }
