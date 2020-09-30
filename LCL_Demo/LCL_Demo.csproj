@@ -117,6 +117,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LCL.FormsPlus\LCL_FormsPlus.csproj">
+      <Project>{87008581-8053-4B6F-823F-2BAC5279731E}</Project>
+      <Name>LCL_FormsPlus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LCL_Controls\LCL_Controls.csproj">
       <Project>{a6c3bca7-8e14-4c03-9da1-3a1cd1bc63ca}</Project>
       <Name>LCL_Controls</Name>
