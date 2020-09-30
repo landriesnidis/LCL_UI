@@ -263,6 +263,7 @@
     <Compile Include="Controls\TabControl\SlideTabControl.Designer.cs">
       <DependentUpon>SlideTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ControlExtensions\ControlExtensions.cs" />
     <Compile Include="Extensions\ControlExtensions\DataGridViewExtensions.cs" />
     <Compile Include="Extensions\ControlExtensions\TreeViewExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

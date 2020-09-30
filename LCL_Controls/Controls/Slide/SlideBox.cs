@@ -41,14 +41,26 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             panel.AutoScroll = false;
             panel.AutoSize = true;
 
-            this.ControlAdded += (s, e) => {
+            this.ControlAdded += (s, e) =>
+            {
                 AddPage(e.Control);
             };
 
             this.Resize += (s, e) =>
             {
+                // 挂起UI
+                this.SuspendLayout();
                 panel.Size = Size;
-                if(pageIndex!=-1)panel.Controls[pageIndex].Size = Size;
+                if (pageIndex != -1)
+                {
+                    foreach (Control page in panel.Controls)
+                    {
+                        page.Size = panel.Size;
+                    }
+                    panel.Left = -panel.Controls[pageIndex].Left;
+                }
+                // 恢复UI
+                this.ResumeLayout();
             };
             this.SizeChanged += (s, e) =>
             {
@@ -128,11 +140,11 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
         public void RemovePageAt(int pageNum)
         {
             panel.Controls.RemoveAt(pageNum);
-            if(pageNum<= pageIndex)
+            if (pageNum <= pageIndex)
             {
                 pageIndex--;
-                if(pageIndex>=0)
-                    panel.Left = - panel.Controls[pageIndex].Left;
+                if (pageIndex >= 0)
+                    panel.Left = -panel.Controls[pageIndex].Left;
             }
         }
 
@@ -141,13 +153,13 @@ namespace Landriesnidis.LCL_Controls.Controls.Slide
             if (pageNum < 0 || pageNum >= panel.Controls.Count) return;
             pageIndex = pageNum;
 
-            targetLocation = - panel.Controls[pageNum].Left;
+            targetLocation = -panel.Controls[pageNum].Left;
             timer.Enabled = true;
         }
 
         public void NextPage()
         {
-            Jump(pageIndex+1);
+            Jump(pageIndex + 1);
         }
 
         public void PreviousPage()

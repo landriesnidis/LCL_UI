@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +16,7 @@ namespace Landriesnidis.LCL_Controls.Extensions.ControlExtensions
         /// <param name="isClear">是否清空数据</param>
         public static void LoadJsonDataToTreeViewNode(this TreeView treeView, JContainer jc, bool isClear = true)
         {
-            treeView.Nodes.InputJsonDataToTreeViewNode(jc,isClear);
+            treeView.Nodes.InputJsonDataToTreeViewNode(jc, isClear);
         }
 
         /// <summary>
